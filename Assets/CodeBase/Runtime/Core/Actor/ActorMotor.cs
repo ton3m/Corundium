@@ -76,7 +76,7 @@ public class ActorMotor : MonoBehaviour
 
     private void SetJumpActive(bool isJumpActive)
     {
-        _isJumpActive = isActiveAndEnabled;
+        _isJumpActive = isJumpActive;
     }
 
     private void AddJumpForce()
