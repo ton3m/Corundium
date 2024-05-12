@@ -17,8 +17,8 @@ public class ActorMotor : MonoBehaviour
     private Transform _motorObject;
     private Vector3 _currentMoveDirection;
     private Vector3 _newMoveDirection;
-    private Vector3 _jumpDirection;
     private float _jumpForce;
+    private bool _isJumpActive  =  false;
 
     private void Awake()
     {
@@ -32,14 +32,14 @@ public class ActorMotor : MonoBehaviour
 
         _inputHandler.RotateInputChanged += SetRotationDirection;
         _inputHandler.MoveInputChanged += SetMoveDirection;
-        _inputHandler.JumpInputPressed += SetJump;
+        _inputHandler.JumpInputPressed += SetJumpActive;
     }
 
     private void OnDisable()
     {
         _inputHandler.RotateInputChanged -= SetRotationDirection;
         _inputHandler.MoveInputChanged -= SetMoveDirection;
-        _inputHandler.JumpInputPressed -= SetJump;
+        _inputHandler.JumpInputPressed -= SetJumpActive;
     }
 
     private void Update()
@@ -49,12 +49,14 @@ public class ActorMotor : MonoBehaviour
         _currentMoveDirection = _motorObject.right * _newMoveDirection.x + _motorObject.forward * _newMoveDirection.y;
         _currentMoveDirection = _currentMoveDirection.normalized * Time.deltaTime;
 
+        if(_isJumpActive)
+            AddJumpForce();
+
         _controller.Move(Vector3.up * _jumpForce * Time.deltaTime);
 
         if(_currentMoveDirection != _newMoveDirection)
-        {
             _controller.Move(_currentMoveDirection * _moveSpeed);
-        }
+        
     }
 
     private void SetRotationDirection(Vector2 rotation)
@@ -72,9 +74,15 @@ public class ActorMotor : MonoBehaviour
         _newMoveDirection = moveDirection;
     }
 
-    private void SetJump()
+    private void SetJumpActive(bool isJumpActive)
     {
-        _jumpForce = _jumpHeight;
+        _isJumpActive = isActiveAndEnabled;
+    }
+
+    private void AddJumpForce()
+    {
+        if(_controller.isGrounded)
+            _jumpForce = _jumpHeight;
     }
 
     private void UpdateGravity()
