@@ -1,6 +1,7 @@
 using UnityEngine;
+using Mirror;
 
-public class ActorMotor : MonoBehaviour
+public class ActorMotor : NetworkBehaviour
 {
     [Header("References")]
     [SerializeField] private CharacterController _controller;
@@ -33,6 +34,11 @@ public class ActorMotor : MonoBehaviour
         _inputHandler.RotateInputChanged += SetRotationDirection;
         _inputHandler.MoveInputChanged += SetMoveDirection;
         _inputHandler.JumpInputPressed += SetJumpActive;
+
+        if (!isLocalPlayer)
+        {
+            _camera.gameObject.SetActive(false);
+        }
     }
 
     private void OnDisable()
@@ -44,6 +50,11 @@ public class ActorMotor : MonoBehaviour
 
     private void Update()
     {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+
         UpdateGravity();
 
         _currentMoveDirection = _motorObject.right * _newMoveDirection.x + _motorObject.forward * _newMoveDirection.y;
