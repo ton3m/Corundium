@@ -1,5 +1,6 @@
 using Mirror;
 using UnityEngine;
+using Mirror;
 
 public class ActorMotor : NetworkBehaviour
 {
@@ -52,7 +53,7 @@ public class ActorMotor : NetworkBehaviour
     {
         if (!isLocalPlayer)
             return;
-        
+
         UpdateGravity();
 
         if(_isJumpActive)
