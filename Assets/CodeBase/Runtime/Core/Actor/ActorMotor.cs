@@ -1,3 +1,4 @@
+using Mirror;
 using UnityEngine;
 using Mirror;
 
@@ -13,13 +14,15 @@ public class ActorMotor : NetworkBehaviour
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
+    [SerializeField] private float _smoothMoveDeltaTime;
 
     private float _yRotation;
     private Transform _motorObject;
     private Vector3 _currentMoveDirection;
     private Vector3 _newMoveDirection;
     private float _jumpForce;
-    private bool _isJumpActive  =  false;
+    private bool _isJumpActive = false;
+    private Vector3 _currentVelocity;
 
     private void Awake()
     {
@@ -36,9 +39,7 @@ public class ActorMotor : NetworkBehaviour
         _inputHandler.JumpInputPressed += SetJumpActive;
 
         if (!isLocalPlayer)
-        {
             _camera.gameObject.SetActive(false);
-        }
     }
 
     private void OnDisable()
@@ -51,23 +52,19 @@ public class ActorMotor : NetworkBehaviour
     private void Update()
     {
         if (!isLocalPlayer)
-        {
             return;
-        }
 
         UpdateGravity();
-
-        _currentMoveDirection = _motorObject.right * _newMoveDirection.x + _motorObject.forward * _newMoveDirection.y;
-        _currentMoveDirection = _currentMoveDirection.normalized * Time.deltaTime;
 
         if(_isJumpActive)
             AddJumpForce();
 
-        _controller.Move(Vector3.up * _jumpForce * Time.deltaTime);
+        Vector3 moveVector = transform.TransformDirection(new Vector3(_newMoveDirection.x, 0, _newMoveDirection.y)).normalized;
 
-        if(_currentMoveDirection != _newMoveDirection)
-            _controller.Move(_currentMoveDirection * _moveSpeed);
+        _currentMoveDirection.y = _jumpForce;
+        _currentMoveDirection = Vector3.SmoothDamp(_currentMoveDirection, moveVector * _moveSpeed, ref _currentVelocity, _smoothMoveDeltaTime);
         
+        _controller.Move(_currentMoveDirection * Time.deltaTime);     
     }
 
     private void SetRotationDirection(Vector2 rotation)
@@ -80,6 +77,7 @@ public class ActorMotor : NetworkBehaviour
         _camera.transform.localRotation = Quaternion.Euler(_yRotation, 0f, 0f);
         _motorObject.Rotate(Vector3.up * rotation.x);
     }
+
     private void SetMoveDirection(Vector2 moveDirection)
     {
         _newMoveDirection = moveDirection;
@@ -93,7 +91,9 @@ public class ActorMotor : NetworkBehaviour
     private void AddJumpForce()
     {
         if(_controller.isGrounded)
+        {
             _jumpForce = _jumpHeight;
+        }
     }
 
     private void UpdateGravity()
