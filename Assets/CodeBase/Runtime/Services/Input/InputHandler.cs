@@ -8,6 +8,7 @@ public class InputHandler : NetworkBehaviour
     public event Action<Vector2> MoveInputChanged = delegate { };
     public event Action<bool> JumpInputPressed = delegate { };
     public event Action HitInputPressed = delegate { };
+    public event Action TakeInputPressed = delegate { };
 
     private Input _input;
     private Input Input => _input ??= new Input();
@@ -23,6 +24,8 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
 
         Input.Gameplay.Hit.performed += ctx => HitInputPressed?.Invoke();
+        
+        Input.Gameplay.Take.performed += ctx => TakeInputPressed?.Invoke();
 
         Input.Enable();
     }
@@ -38,6 +41,8 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.canceled -= ctx => JumpInputPressed?.Invoke(false);
         
         Input.Gameplay.Hit.canceled -= ctx => HitInputPressed?.Invoke();
+        Input.Gameplay.Take.canceled += ctx => TakeInputPressed?.Invoke();
+
     }
 
     private void OnRotateInputChanged(Vector2 direction)

@@ -769,7 +769,7 @@ Transform:
   m_GameObject: {fileID: 8749569497472591985}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6717464, y: -0.22080952, z: -0.22080952, w: 0.6717463}
-  m_LocalPosition: {x: 0.42911386, y: 0, z: 0.65}
+  m_LocalPosition: {x: 4.84, y: -0, z: -0.49}
   m_LocalScale: {x: 0.76297593, y: 0.76297593, z: 0.76297593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -857,7 +857,7 @@ Transform:
   m_GameObject: {fileID: 8774328799118404253}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6717464, y: -0.22080952, z: -0.22080952, w: 0.6717463}
-  m_LocalPosition: {x: -0.80088615, y: 0, z: 2.32}
+  m_LocalPosition: {x: -5.35, y: -0, z: -2.42}
   m_LocalScale: {x: 0.76297593, y: 0.76297593, z: 0.76297593}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -913,14 +913,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6790872368604312336}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6717464, y: -0.22080952, z: -0.22080952, w: 0.6717463}
+  m_LocalRotation: {x: 0.47446108, y: -0.52429646, z: -0.5242964, w: -0.47446096}
   m_LocalPosition: {x: 1.9891138, y: 0, z: -1.46}
   m_LocalScale: {x: 0.76297593, y: 0.76297593, z: 0.76297593}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1365260403}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -264.287}
 --- !u!1 &4816308234589885661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,8 +1203,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _maxHpRock: 200
+  _maxHpRock: 10
   _hpRockText: {fileID: 521306788}
+  _stone: {fileID: 5505486754188867697, guid: 5031ff2f2567d1b478b1ef8fffee3831, type: 3}
 --- !u!114 &9066078226056274084
 MonoBehaviour:
   m_ObjectHideFlags: 0

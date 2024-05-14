@@ -1,15 +1,18 @@
 using System;
 using Mirror;
 using TMPro;
+using Unity.Mathematics;
 using UnityEditor.ShaderGraph.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Rock : NetworkBehaviour, IDamageable
+public class Rock : NetworkBehaviour, IExtractable
 {
     [SerializeField] private float _maxHpRock = 100;
-    [SyncVar] [SerializeField] private float _hpRock = 100f;
+    [SyncVar] private float _hpRock = 100f;
     [SerializeField] private TMP_Text _hpRockText;
+    
+    [SerializeField] private GameObject _stone;
     
     private void Start()
     {
@@ -23,24 +26,31 @@ public class Rock : NetworkBehaviour, IDamageable
         RpcTakeDamage(damage);
         if (_hpRock <= 0)
         {
-            DestroyTheRock();
+            Extract();
         }
     }
     [ClientRpc]
     private void RpcTakeDamage(float damage)
     {
-        //Debug.Log("hp rock = "+_hpRock);
         _hpRock -= damage;
         UpdateHpRockText();
     }
-
-    private void DestroyTheRock()
+    public void Extract()
     {
+        CmdSpawnStone();
+        Debug.Log("Drop stone");
         Destroy(gameObject);
-    } 
+    }
+    
+    private void CmdSpawnStone()
+    {
+        GameObject stone = Instantiate(_stone, gameObject.transform.position, quaternion.identity);
+        NetworkServer.Spawn(stone); 
+        Debug.Log("Spawn stone");
+    }
+    
     private void UpdateHpRockText() 
     {
         _hpRockText.text = ("hp = " + _hpRock);
-        Debug.Log("hp rock = " + _hpRock);
     }
 }

@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 7943495031821021550}
   - component: {fileID: 1789425151315429477}
   - component: {fileID: 7638432705726825198}
+  - component: {fileID: 4235589673146144539}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -151,8 +152,9 @@ MonoBehaviour:
   syncInterval: 0
   _inputHandler: {fileID: 9036743786096095527}
   _particle: {fileID: 671071452800251940, guid: 33e7726134d117441aa7c287b3e2bc79, type: 3}
-  _maxDistance: 1.5
+  _maxDistanceRaycast: 1.5
   _durationParticle: 1
+  _damagePicexe: 10
 --- !u!114 &1789425151315429477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +207,23 @@ MonoBehaviour:
   positionSensitivity: 0.01
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
+--- !u!114 &4235589673146144539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640777870725560245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b8664f8aef6b345b27d424c92fdc74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _inputHandler: {fileID: 9036743786096095527}
+  _maxDistanceRaycast: 1.5
 --- !u!1 &8568851772987572094
 GameObject:
   m_ObjectHideFlags: 0
