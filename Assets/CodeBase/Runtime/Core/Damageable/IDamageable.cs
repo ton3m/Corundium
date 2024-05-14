@@ -5,6 +5,6 @@ namespace UnityEditor.ShaderGraph.Drawing
     public interface IDamageable
 
     {
-    void ApplyDamage(int damage);
+    void ApplyDamage(float damage);
     }
 }

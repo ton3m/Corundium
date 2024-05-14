@@ -8,31 +8,39 @@ using UnityEngine.UI;
 public class Rock : NetworkBehaviour, IDamageable
 {
     [SerializeField] private float _maxHpRock = 100;
-    [SyncVar] [SerializeField] private float _hpRock;
-    //[SerializeField] private TMP_Text _hpRockText;
-
-    private void Awake()
+    [SyncVar] [SerializeField] private float _hpRock = 100f;
+    [SerializeField] private TMP_Text _hpRockText;
+    
+    private void Start()
     {
-        _hpRock = _maxHpRock;
-        //UpdateHpRockText();
+        if (isServer)
+            _hpRock = _maxHpRock;
+        UpdateHpRockText();
     }
-
-    // private void Start()
-    // {
-    //     
-    // }
-    [ClientRpc]
-    public void ApplyDamage(int damage)
+    
+    public void ApplyDamage(float damage)
     {
-        _hpRock -= damage;
-        Debug.Log("hp rock = "+_hpRock);
+        RpcTakeDamage(damage);
         if (_hpRock <= 0)
         {
-            Destroy(gameObject);
+            DestroyTheRock();
         }
     }
-    // private void UpdateHpRockText()
-    // {
-    //     _hpRockText.text = Convert.ToString(_hpRock);
-    // }
+    [ClientRpc]
+    private void RpcTakeDamage(float damage)
+    {
+        //Debug.Log("hp rock = "+_hpRock);
+        _hpRock -= damage;
+        UpdateHpRockText();
+    }
+
+    private void DestroyTheRock()
+    {
+        Destroy(gameObject);
+    } 
+    private void UpdateHpRockText() 
+    {
+        _hpRockText.text = ("hp = " + _hpRock);
+        Debug.Log("hp rock = " + _hpRock);
+    }
 }

@@ -152,6 +152,7 @@ MonoBehaviour:
   _inputHandler: {fileID: 9036743786096095527}
   _particle: {fileID: 671071452800251940, guid: 33e7726134d117441aa7c287b3e2bc79, type: 3}
   _maxDistance: 1.5
+  _durationParticle: 1
 --- !u!114 &1789425151315429477
 MonoBehaviour:
   m_ObjectHideFlags: 0

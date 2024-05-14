@@ -622,7 +622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1365260403
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1204,7 +1204,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _maxHpRock: 200
-  _hpRock: 0
+  _hpRockText: {fileID: 521306788}
 --- !u!114 &9066078226056274084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1261,9 +1261,9 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1281583233}
   - {fileID: 1000352720}
   - {fileID: 890975049}
-  - {fileID: 1281583233}
   - {fileID: 4516626109977385735}
   - {fileID: 2678477431235842644}
   - {fileID: 663763712642736370}
