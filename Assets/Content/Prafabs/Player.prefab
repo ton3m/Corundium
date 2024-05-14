@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 3628084237795590825}
   - component: {fileID: 5854086050888815473}
   - component: {fileID: 5379081759290336355}
+  - component: {fileID: 7943495031821021550}
   - component: {fileID: 1789425151315429477}
   - component: {fileID: 7638432705726825198}
   m_Layer: 0
@@ -133,6 +134,24 @@ MonoBehaviour:
   _moveSpeed: 9
   _rotateSpeed: 35
   _smoothMoveDeltaTime: 0.2
+--- !u!114 &7943495031821021550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640777870725560245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3670c9eb71749f4f951a0941f1994bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  _inputHandler: {fileID: 9036743786096095527}
+  _particle: {fileID: 671071452800251940, guid: 33e7726134d117441aa7c287b3e2bc79, type: 3}
+  _maxDistance: 1.5
 --- !u!114 &1789425151315429477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,21 +222,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6127930318598706518
-Transform:
+--- !u!224 &6127930318598706518
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8568851772987572094}
-  serializedVersion: 2
   m_LocalRotation: {x: -0.00000005960465, y: -0.7071068, z: 0.00000005960465, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.79, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3628084237795590825}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: -90}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1.79}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!20 &8885456892320347759
 Camera:
   m_ObjectHideFlags: 0
