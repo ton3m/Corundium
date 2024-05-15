@@ -1203,7 +1203,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _maxHpRock: 10
+  _maxHpRock: 200
   _hpRockText: {fileID: 521306788}
   _stone: {fileID: 5505486754188867697, guid: 5031ff2f2567d1b478b1ef8fffee3831, type: 3}
 --- !u!114 &9066078226056274084
