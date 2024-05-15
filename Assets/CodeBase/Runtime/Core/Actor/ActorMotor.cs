@@ -1,6 +1,6 @@
 using Mirror;
 using UnityEngine;
-using Mirror;
+
 
 public class ActorMotor : NetworkBehaviour
 {
@@ -29,6 +29,7 @@ public class ActorMotor : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+    
 
     private void Start()
     {
@@ -48,6 +49,7 @@ public class ActorMotor : NetworkBehaviour
         _inputHandler.MoveInputChanged -= SetMoveDirection;
         _inputHandler.JumpInputPressed -= SetJumpActive;
     }
+
 
     private void Update()
     {
