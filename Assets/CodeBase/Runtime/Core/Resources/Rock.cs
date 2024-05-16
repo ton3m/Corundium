@@ -17,11 +17,9 @@ public class Rock : NetworkBehaviour, IDamageable
 
         UpdateHpRockText();
     }
-
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
-
         if (_hpRock <= 0)
         {
             Extract();
@@ -44,9 +42,11 @@ public class Rock : NetworkBehaviour, IDamageable
 
     private void CmdSpawnStone()
     {
+        Debug.Log("Start spawn stone");
         GameObject stone = Instantiate(_stone, gameObject.transform.position, quaternion.identity);
-        NetworkServer.Spawn(stone); 
         Debug.Log("Spawn stone");
+        NetworkServer.Spawn(stone); 
+        Debug.Log("Spawn server stone");
     }
 
     private void UpdateHpRockText() 
