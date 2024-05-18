@@ -6,20 +6,19 @@ public class SaveLoadManager : MonoBehaviour
 {
     string filePath;
     int a = 100;
-   /* public GameObject Rock;
-    Rock hp;*/
+    public GameObject Rock;
+    Rock hp;
 
     void Start()
     {
         filePath = Application.persistentDataPath + "/save.gamesave";
         Debug.Log(filePath);
-        //hp.GetComponent<Rock>();
+        hp.GetComponent<Rock>();
     }
 
     public void Damage()
     {
-        //hp._maxHpRock -= 10;
-        a -=10;
+        hp._maxHpRock -= 10;
     }
 
     public void SaveGame()
@@ -28,9 +27,9 @@ public class SaveLoadManager : MonoBehaviour
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = new FileStream(filePath, FileMode.Create);
         Save save = new Save();
-        save.HealthStone = a; // ��������� ������� �������� a
+        save.HealthStone = hp._maxHpRock;
 
-        Debug.Log("Saving value: " + a);
+        Debug.Log("Saving value: " + hp._maxHpRock);
         binaryFormatter.Serialize(fileStream, save);
         fileStream.Close();
 
@@ -49,9 +48,9 @@ public class SaveLoadManager : MonoBehaviour
         FileStream fileStream = new FileStream(filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
-        a = save.HealthStone; // ��������� �������� � ���������� a
+        hp._maxHpRock = save.HealthStone;
 
-        Debug.Log("Loaded value: " + a);
+        Debug.Log("Loaded value: " + hp._maxHpRock);
         fileStream.Close();
     }
 }
@@ -59,6 +58,6 @@ public class SaveLoadManager : MonoBehaviour
 [System.Serializable]
 public class Save
 {
-    public int HealthStone; // ���� ��� �������� ��������
+    public int HealthStone;
 
 }

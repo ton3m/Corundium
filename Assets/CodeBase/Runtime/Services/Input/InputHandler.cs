@@ -13,7 +13,7 @@ public class InputHandler : NetworkBehaviour
 
     private Input _input;
     private Input Input => _input ??= new Input();
-
+    
     void Start()
     {
         Input.Gameplay.Rotate.performed += ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
@@ -24,7 +24,7 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
 
-        Input.Gameplay.Attack.performed -= ctx => AttackPerformed?.Invoke();
+        Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
         
         Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
 

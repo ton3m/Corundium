@@ -17,7 +17,8 @@ public class Rock : NetworkBehaviour, IDamageable
 
         UpdateHpRockText();
     }
-
+    private void LateUpdate() => UpdateHpRockText();
+    
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
@@ -49,8 +50,28 @@ public class Rock : NetworkBehaviour, IDamageable
         Debug.Log("Spawn stone");
     }
 
-    private void UpdateHpRockText() 
+    private void UpdateHpRockText()
     {
         _hpRockText.text = "hp = " + _hpRock;
+
+        ActorMotor target = GameObject.FindObjectOfType<ActorMotor>();
+        if (target != null)
+        {
+            Transform targetTransform = target.transform;
+
+            Vector3 directionToTarget = targetTransform.position - _hpRockText.transform.position;
+            directionToTarget.y = 0;
+
+            if (directionToTarget != Vector3.zero)
+            {
+                _hpRockText.transform.rotation = Quaternion.LookRotation(directionToTarget);
+
+                _hpRockText.transform.Rotate(0, 180, 0);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Target object not found!");
+        }
     }
 }
