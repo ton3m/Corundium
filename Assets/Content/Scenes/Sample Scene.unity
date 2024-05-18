@@ -1535,6 +1535,7 @@ GameObject:
   - component: {fileID: 9066078226056274083}
   - component: {fileID: 9066078226056274084}
   - component: {fileID: 9066078226056274085}
+  - component: {fileID: 9066078226056274086}
   m_Layer: 0
   m_Name: Stone1
   m_TagString: Untagged
@@ -1739,7 +1740,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -1814,6 +1815,29 @@ MonoBehaviour:
   positionSensitivity: 0.01
   rotationSensitivity: 0.01
   scaleSensitivity: 0.01
+--- !u!136 &9066078226056274086
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6790872368604312336}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2396502
+  m_Height: 2.0928547
+  m_Direction: 1
+  m_Center: {x: -0.21754444, y: 0.04642727, z: 0.7173743}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

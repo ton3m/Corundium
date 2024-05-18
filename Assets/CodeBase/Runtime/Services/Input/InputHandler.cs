@@ -24,23 +24,13 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
 
-        Input.Gameplay.Attack.performed -= ctx => AttackPerformed?.Invoke();
+        Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
         
         Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
 
         Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
 
         Input.Enable();
-    }
-
-    void SetMenuActive()
-    {
-
-    }
-
-    void  SetMenuUnActive()
-    {
-
     }
 
     private void OnDisable()
@@ -54,8 +44,7 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.canceled -= ctx => JumpInputPressed?.Invoke(false);
         
         Input.Gameplay.Attack.canceled -= ctx => AttackPerformed?.Invoke();
-        Input.Gameplay.Interact.canceled += ctx => InteractPerformed?.Invoke();
-
+        Input.Gameplay.Interact.canceled -= ctx => InteractPerformed?.Invoke();
     }
 
     private void OnRotateInputChanged(Vector2 direction)

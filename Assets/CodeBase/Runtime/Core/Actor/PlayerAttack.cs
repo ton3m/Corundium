@@ -32,6 +32,7 @@ public class PlayerAttack : NetworkBehaviour
             if (_hitInfo.transform.TryGetComponent(out IDamageable damageable))
             {
                 CmdApplyDamage(_hitInfo.transform.gameObject, _attackDamage);
+                // _hitInfo.transform.gameObject
             }
         }
     }
