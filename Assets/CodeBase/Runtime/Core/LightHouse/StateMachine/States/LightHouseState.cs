@@ -46,6 +46,7 @@ public class LightHouseState : ILightHouseState
     {
         // not yet
     }
+
     public LightHouseUpgradeLevelData GetLevelUpgradeData()
     {
         return _levelData.UpgradeData;
@@ -58,7 +59,7 @@ public class LightHouseState : ILightHouseState
 
     private bool IsCurrentUpgradeConditionsComplete()
     {
-        if(_levelData.UpgradeData.Items == null)
+        if (_levelData.UpgradeData.Items == null)
             return true;
 
         foreach (var item in _levelData.UpgradeData.Items)

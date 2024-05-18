@@ -7,5 +7,4 @@ public interface ILightHouseState
     LightHouseUpgradeLevelData GetLevelUpgradeData();
     void SetUpdatedData(LightHouseUpgradeLevelData updatedData);
     void SetUpdatedItem(LightHouseUpgradeLevelItem updatedItem);
-
 }

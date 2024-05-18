@@ -15,21 +15,17 @@ MonoBehaviour:
   <LevelsData>k__BackingField:
   - UpgradeData:
       Items: []
-    ForRadiusDispersion: 5
-    LightHouseMesh: {fileID: 2638182997433502899, guid: 7f1754c662d56cc4d9d36af616b0bd0c, type: 3}
+    ForRadiusDispersion: 0
+    LightHouseMesh: {fileID: 2638182997433502899, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
   - UpgradeData:
       Items: []
-    ForRadiusDispersion: 5
-    LightHouseMesh: {fileID: -3277707564911552074, guid: 7f1754c662d56cc4d9d36af616b0bd0c, type: 3}
+    ForRadiusDispersion: 0
+    LightHouseMesh: {fileID: -3277707564911552074, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
   - UpgradeData:
       Items: []
-    ForRadiusDispersion: 5
-    LightHouseMesh: {fileID: -5085023112384748973, guid: 7f1754c662d56cc4d9d36af616b0bd0c, type: 3}
+    ForRadiusDispersion: 0
+    LightHouseMesh: {fileID: -5085023112384748973, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
   - UpgradeData:
-      Items:
-      - ItemID: 13
-        CountToUpdate: 14
-      - ItemID: 443
-        CountToUpdate: 2
-    ForRadiusDispersion: 5
-    LightHouseMesh: {fileID: -7423539538941619181, guid: 7f1754c662d56cc4d9d36af616b0bd0c, type: 3}
+      Items: []
+    ForRadiusDispersion: 0
+    LightHouseMesh: {fileID: -7423539538941619181, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
