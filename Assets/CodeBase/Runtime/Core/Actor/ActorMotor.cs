@@ -24,8 +24,15 @@ public class ActorMotor : NetworkBehaviour
     private bool _isJumpActive = false;
     private Vector3 _currentVelocity;
 
+    //[SerializeField] private GameObject _model;
+
     private void Awake()
     {
+        // if(isLocalPlayer)
+        // {
+        //     _model.SetActive(false);
+        // }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

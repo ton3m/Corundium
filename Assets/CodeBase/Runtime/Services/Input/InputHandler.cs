@@ -9,6 +9,7 @@ public class InputHandler : NetworkBehaviour
     public event Action<bool> JumpInputPressed = delegate { };
     public event Action AttackPerformed = delegate { };
     public event Action InteractPerformed = delegate { };
+    public event Action EscPerformed = delegate { };
 
     private Input _input;
     private Input Input => _input ??= new Input();
@@ -23,11 +24,23 @@ public class InputHandler : NetworkBehaviour
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
 
-        Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
+        Input.Gameplay.Attack.performed -= ctx => AttackPerformed?.Invoke();
         
         Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
 
+        Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
+
         Input.Enable();
+    }
+
+    void SetMenuActive()
+    {
+
+    }
+
+    void  SetMenuUnActive()
+    {
+
     }
 
     private void OnDisable()
