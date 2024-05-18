@@ -24,11 +24,11 @@ public class SaveLoadManager : MonoBehaviour
 
     public void SaveGame()
     {
-        Debug.Log("Вызов метода Save Game");
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Save Game");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = new FileStream(filePath, FileMode.Create);
         Save save = new Save();
-        save.HealthStone = a; // Сохраняем текущее значение a
+        save.HealthStone = a; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ a
 
         Debug.Log("Saving value: " + a);
         binaryFormatter.Serialize(fileStream, save);
@@ -49,7 +49,7 @@ public class SaveLoadManager : MonoBehaviour
         FileStream fileStream = new FileStream(filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
-        a = save.HealthStone; // Загружаем значение в переменную a
+        a = save.HealthStone; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ a
 
         Debug.Log("Loaded value: " + a);
         fileStream.Close();
@@ -59,6 +59,6 @@ public class SaveLoadManager : MonoBehaviour
 [System.Serializable]
 public class Save
 {
-    public int HealthStone; // Поле для хранения значения
+    public int HealthStone; // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 }
