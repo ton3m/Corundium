@@ -7,7 +7,7 @@ public class Rock : NetworkBehaviour, IDamageable
 {
     [SerializeField] private GameObject _stone;
     [SerializeField] private TMP_Text _hpRockText;
-    [SerializeField] private float _maxHpRock = 100;
+    [SerializeField] public int _maxHpRock = 100;
     [SyncVar] private float _hpRock = 100f;
 
     private void Start()
@@ -36,10 +36,10 @@ public class Rock : NetworkBehaviour, IDamageable
     }
 
     public void Extract()
-    {
+    {   
+        Destroy(gameObject);
         CmdSpawnStone();
         Debug.Log("Drop stone");
-        Destroy(gameObject);
     }
 
     private void CmdSpawnStone()
