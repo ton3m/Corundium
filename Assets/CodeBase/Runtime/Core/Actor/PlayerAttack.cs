@@ -1,16 +1,25 @@
 using UnityEngine;
 using Mirror;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class PlayerAttack : NetworkBehaviour
 {
-    [SerializeField] private InputHandler _inputHandler;
     [SerializeField] private GameObject _particlePrefab;
     [SerializeField] private float _attackRaycastmaxDistance = 1.5f;
     [SerializeField] private float _particleDuration = 3f;
     [SerializeField] private float _attackDamage = 10f;
     private RaycastHit _hitInfo;
-    
+    private IInputHandler _inputHandler;
+    private ISaveLoadManager _saveLoadManager;
+
+    [Inject]
+    public void Construct(IInputHandler inputHandler, ISaveLoadManager saveLoadManager)
+    {
+        _inputHandler = inputHandler;
+        _saveLoadManager = saveLoadManager;
+    }
+
     private void Start()
     {
         if (!isLocalPlayer)
@@ -32,6 +41,11 @@ public class PlayerAttack : NetworkBehaviour
             if (_hitInfo.transform.TryGetComponent(out IDamageable damageable))
             {
                 CmdApplyDamage(_hitInfo.transform.gameObject, _attackDamage);
+
+                if(_hitInfo.transform.TryGetComponent(out Rock rock)) // for now, before we introduce things to save 
+                {
+                    _saveLoadManager.SaveGame(rock.HP);
+                }
             }
         }
     }

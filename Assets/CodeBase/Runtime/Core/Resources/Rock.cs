@@ -8,7 +8,9 @@ public class Rock : NetworkBehaviour, IDamageable
     [SerializeField] private GameObject _stone;
     [SerializeField] private TMP_Text _hpRockText;
     [SerializeField] public int _maxHpRock = 100;
-    [SyncVar] private float _hpRock = 100f;
+    [SyncVar] private float _hpRock = 100;
+
+    public int HP => (int)_hpRock;
 
     private void Start()
     {
@@ -22,7 +24,6 @@ public class Rock : NetworkBehaviour, IDamageable
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
-
         if (_hpRock <= 0)
         {
             Extract();
@@ -45,9 +46,11 @@ public class Rock : NetworkBehaviour, IDamageable
 
     private void CmdSpawnStone()
     {
+        Debug.Log("Start spawn stone");
         GameObject stone = Instantiate(_stone, gameObject.transform.position, quaternion.identity);
-        NetworkServer.Spawn(stone); 
         Debug.Log("Spawn stone");
+        NetworkServer.Spawn(stone); 
+        Debug.Log("Spawn server stone");
     }
 
     private void UpdateHpRockText()

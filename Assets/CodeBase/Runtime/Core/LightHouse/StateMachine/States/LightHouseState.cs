@@ -21,7 +21,7 @@ public class LightHouseState : ILightHouseState
         // set new model of LightHouse
         // etc
         _stateMachine.Filter.mesh = _levelData.LightHouseMesh;
-        Debug.Log("Enter New state, ID:  " + ID);
+        //Debug.Log("Enter New state, ID:  " + ID);
     }
 
     public void Exit()
@@ -46,6 +46,7 @@ public class LightHouseState : ILightHouseState
     {
         // not yet
     }
+
     public LightHouseUpgradeLevelData GetLevelUpgradeData()
     {
         return _levelData.UpgradeData;
@@ -58,7 +59,7 @@ public class LightHouseState : ILightHouseState
 
     private bool IsCurrentUpgradeConditionsComplete()
     {
-        if(_levelData.UpgradeData.Items == null)
+        if (_levelData.UpgradeData.Items == null)
             return true;
 
         foreach (var item in _levelData.UpgradeData.Items)
