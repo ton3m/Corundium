@@ -15,7 +15,7 @@ public class LightHouseStateMachine : ILightHouseStateMachine
         for (int i = 0; i < _lightHouseStates.Length - 1; i++)
         {
             _lightHouseStates[i] = new LightHouseState(this, lightHouseData.LevelsData[i], i);
-            Debug.Log("Created new state: " + _lightHouseStates[i].ID);
+            //Debug.Log("Created new state: " + _lightHouseStates[i].ID);
 
             if(i == 0)
             {

@@ -1,52 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4295414699993465578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2091592366477704374}
-  - component: {fileID: 9036743786096095527}
-  m_Layer: 0
-  m_Name: InputHandler
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2091592366477704374
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295414699993465578}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.007, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6476378383753839465}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9036743786096095527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295414699993465578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c699ac19504d5ff47993dd872ac7267b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
 --- !u!1 &6640777870725560245
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,6 +15,7 @@ GameObject:
   - component: {fileID: 1789425151315429477}
   - component: {fileID: 7638432705726825198}
   - component: {fileID: 4235589673146144539}
+  - component: {fileID: 6658880183571740753}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -129,7 +83,6 @@ MonoBehaviour:
   syncInterval: 0
   _controller: {fileID: 5854086050888815473}
   _camera: {fileID: 8885456892320347759}
-  _inputHandler: {fileID: 9036743786096095527}
   _gravity: -19.6
   _jumpHeight: 7
   _moveSpeed: 9
@@ -150,7 +103,6 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _inputHandler: {fileID: 9036743786096095527}
   _particlePrefab: {fileID: 100000, guid: 979632a27455af442bd2d8f36eb0ffce, type: 3}
   _attackRaycastmaxDistance: 1.5
   _particleDuration: 3
@@ -222,8 +174,20 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  _inputHandler: {fileID: 9036743786096095527}
   _maxDistanceRaycast: 1.5
+--- !u!114 &6658880183571740753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6640777870725560245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 0
 --- !u!1 &8568851772987572094
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,10 +354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 49585a4131cca1d43a18a5898f6930bb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2091592366477704374}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49585a4131cca1d43a18a5898f6930bb, type: 3}
 --- !u!4 &6476378383753839465 stripped

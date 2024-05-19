@@ -1,5 +1,6 @@
 using Mirror;
 using UnityEngine;
+using Zenject;
 
 
 public class ActorMotor : NetworkBehaviour
@@ -7,7 +8,6 @@ public class ActorMotor : NetworkBehaviour
     [Header("References")]
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Camera _camera;
-    [SerializeField] private InputHandler _inputHandler;
 
     [Header("Settings")]
     [SerializeField] private float _gravity;
@@ -16,6 +16,7 @@ public class ActorMotor : NetworkBehaviour
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _smoothMoveDeltaTime;
 
+    private IInputHandler _inputHandler;
     private float _yRotation;
     private Transform _motorObject;
     private Vector3 _currentMoveDirection;
@@ -25,6 +26,13 @@ public class ActorMotor : NetworkBehaviour
     private Vector3 _currentVelocity;
 
     //[SerializeField] private GameObject _model;
+
+    [Inject]
+    public void Construct(IInputHandler inputHandler)
+    {
+        Debug.Log(" Input in actor move: " + inputHandler);
+        _inputHandler = inputHandler;
+    }
 
     private void Awake()
     {

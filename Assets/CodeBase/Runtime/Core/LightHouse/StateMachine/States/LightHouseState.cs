@@ -21,7 +21,7 @@ public class LightHouseState : ILightHouseState
         // set new model of LightHouse
         // etc
         _stateMachine.Filter.mesh = _levelData.LightHouseMesh;
-        Debug.Log("Enter New state, ID:  " + ID);
+        //Debug.Log("Enter New state, ID:  " + ID);
     }
 
     public void Exit()

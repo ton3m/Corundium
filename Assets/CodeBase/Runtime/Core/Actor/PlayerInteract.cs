@@ -1,13 +1,20 @@
 using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class PlayerInteract : NetworkBehaviour
 {
-    [SerializeField] private InputHandler _inputHandler;
     [SerializeField] private float _maxDistanceRaycast = 1.5f;
+    private IInputHandler _inputHandler;
     private RaycastHit _hitInfo;
     private int _countStone; // временно, пока нет инвентаря
+
+    [Inject]
+    public void Construct(IInputHandler inputHandler)
+    {
+        _inputHandler = inputHandler;
+    }
 
     private void Start()
     {

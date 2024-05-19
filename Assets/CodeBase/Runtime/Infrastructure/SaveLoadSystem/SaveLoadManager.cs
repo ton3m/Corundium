@@ -2,35 +2,35 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveLoadManager : MonoBehaviour
+public class SaveLoadManager : ISaveLoadManager
 {
     string filePath;
     int a = 100;
-   /* public GameObject Rock;
-    Rock hp;*/
+    private GameObject Rock;
+    Rock hp;
 
-    void Start()
+    public SaveLoadManager()
     {
         filePath = Application.persistentDataPath + "/save.gamesave";
         Debug.Log(filePath);
-        //hp.GetComponent<Rock>();
+        //hp = Rock.GetComponent<Rock>();
     }
 
     public void Damage()
     {
         //hp._maxHpRock -= 10;
-        a -=10;
     }
 
-    public void SaveGame()
+    public void SaveGame(int rockHealth)
     {
         Debug.Log("����� ������ Save Game");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = new FileStream(filePath, FileMode.Create);
-        Save save = new Save();
-        save.HealthStone = a; // ��������� ������� �������� a
 
-        Debug.Log("Saving value: " + a);
+        Save save = new Save();
+        save.HealthStone = rockHealth; // Dan: I've changed saving to current rock Health from PlayerAttack script
+
+        Debug.Log("Saving value: " + rockHealth);
         binaryFormatter.Serialize(fileStream, save);
         fileStream.Close();
 
@@ -49,9 +49,9 @@ public class SaveLoadManager : MonoBehaviour
         FileStream fileStream = new FileStream(filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
-        a = save.HealthStone; // ��������� �������� � ���������� a
+        int loadedDamage = save.HealthStone;
 
-        Debug.Log("Loaded value: " + a);
+        Debug.Log("Loaded value: " + loadedDamage);
         fileStream.Close();
     }
 }
@@ -59,6 +59,6 @@ public class SaveLoadManager : MonoBehaviour
 [System.Serializable]
 public class Save
 {
-    public int HealthStone; // ���� ��� �������� ��������
+    public int HealthStone;
 
 }

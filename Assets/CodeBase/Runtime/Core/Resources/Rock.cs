@@ -8,7 +8,9 @@ public class Rock : NetworkBehaviour, IDamageable
     [SerializeField] private GameObject _stone;
     [SerializeField] private TMP_Text _hpRockText;
     [SerializeField] public int _maxHpRock = 100;
-    [SyncVar] private float _hpRock = 100f;
+    [SyncVar] private float _hpRock = 100;
+
+    public int HP => (int)_hpRock;
 
     private void Start()
     {
