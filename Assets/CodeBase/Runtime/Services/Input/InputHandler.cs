@@ -1,13 +1,15 @@
 using System;
 using UnityEngine;
 
-public class InputHandler : IInputHandler
+public class InputHandler : MonoBehaviour, IInputHandler
 {
     public event Action<Vector2> RotateInputChanged = delegate { };
     public event Action<Vector2> MoveInputChanged = delegate { };
     public event Action<bool> JumpInputPressed = delegate { };
     public event Action AttackPerformed = delegate { };
     public event Action InteractPerformed = delegate { };
+    public event Action OpenRadialMenuPerformed = delegate { };
+    public event Action OpenRadialMenuClosed = delegate { };
     public event Action EscPerformed = delegate { };
 
     private Input _input;
@@ -23,8 +25,12 @@ public class InputHandler : IInputHandler
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
 
+        //hui
         Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
         Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
+        
+        Input.Gameplay.OpenRadialMenu.performed += ctx => OpenRadialMenuPerformed?.Invoke();
+        Input.Gameplay.OpenRadialMenu.canceled += ctx => OpenRadialMenuClosed?.Invoke();
 
         Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
 
@@ -45,6 +51,9 @@ public class InputHandler : IInputHandler
         
         Input.Gameplay.Attack.canceled -= ctx => AttackPerformed?.Invoke();
         Input.Gameplay.Interact.canceled -= ctx => InteractPerformed?.Invoke();
+        
+        Input.Gameplay.OpenRadialMenu.performed -= ctx => OpenRadialMenuPerformed?.Invoke();
+        Input.Gameplay.OpenRadialMenu.canceled -= ctx => OpenRadialMenuClosed?.Invoke();
 
         Input.Gameplay.Esc.performed -= ctx => EscPerformed?.Invoke();
     }

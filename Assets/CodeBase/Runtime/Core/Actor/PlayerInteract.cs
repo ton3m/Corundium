@@ -22,6 +22,7 @@ public class PlayerInteract : NetworkBehaviour
             return;
         
         _inputHandler.InteractPerformed += OnInteractPerformed;
+        
     }
 
     private void OnDisable()
