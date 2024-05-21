@@ -1,19 +1,20 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveLoadManager : ISaveLoadManager
+public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
 {
-    string filePath;
-    int a = 100;
-    private GameObject Rock;
-    Rock hp;
-
-    public SaveLoadManager()
+    private string _filePath;
+    private GameObject _rock;
+    
+    //debug
+    private int _a = 100;
+    private Rock _hp;
+    
+    private void Start()
     {
-        filePath = Application.persistentDataPath + "/save.gamesave";
-        Debug.Log(filePath);
-        //hp = Rock.GetComponent<Rock>();
+        _filePath = Application.persistentDataPath + "/save.gamesave";
     }
 
     public void Damage()
@@ -25,7 +26,7 @@ public class SaveLoadManager : ISaveLoadManager
     {
         Debug.Log("����� ������ Save Game");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(filePath, FileMode.Create);
+        FileStream fileStream = new FileStream(_filePath, FileMode.Create);
 
         Save save = new Save();
         save.HealthStone = rockHealth; // Dan: I've changed saving to current rock Health from PlayerAttack script
@@ -34,19 +35,19 @@ public class SaveLoadManager : ISaveLoadManager
         binaryFormatter.Serialize(fileStream, save);
         fileStream.Close();
 
-        Debug.Log("Game saved at: " + filePath);
+        Debug.Log("Game saved at: " + _filePath);
     }
 
     public void LoadGame()
     {
-        if (!File.Exists(filePath))
+        if (!File.Exists(_filePath))
         {
             Debug.LogError("Save file not found!");
             return;
         }
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(filePath, FileMode.Open);
+        FileStream fileStream = new FileStream(_filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
         int loadedDamage = save.HealthStone;
@@ -60,5 +61,4 @@ public class SaveLoadManager : ISaveLoadManager
 public class Save
 {
     public int HealthStone;
-
 }

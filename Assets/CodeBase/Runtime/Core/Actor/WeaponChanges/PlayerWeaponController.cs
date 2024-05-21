@@ -14,16 +14,16 @@ public class PlayerWeaponController : NetworkBehaviour
     //
     // public bool IsToolInHandle => _isToolInHandle;
     //
-    // //private IInputHandler _inputHandler;
+    // private IInputHandler _inputHandler;
     // [Inject]
-    // public void Construct(IInputHander inputHandler) =>
+    // public void Construct(IInputHandler inputHandler) =>
     //     inputHandler.NumberPressed += OnNumberButtonPressed; // и не забыть отписку!
     //
     // private void Start()
     // {
     //     _baseTool = new DefaultTool(10);
     // }
-    // private void OnDisable(IInputHander inputHandler)
+    // private void OnDisable(IInputHandler inputHandler)
     // {
     //     inputHandler.NumberPressed -= OnNumberButtonPressed;
     // }
@@ -53,4 +53,6 @@ public class PlayerWeaponController : NetworkBehaviour
     //     _axeModelPart.SetActive(true);
     // }
 }
+
+
 

@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using Zenject;
 
-public class RadialMenuController : NetworkBehaviour
+public class RadialMenuController : MonoBehaviour
 {
     public Transform Center;
     public Transform SelectObject;
@@ -18,6 +18,7 @@ public class RadialMenuController : NetworkBehaviour
     private string [] _nameModule = new string[]{"key","pickaxe","axe"};
     
     private IInputHandler _inputHandler;
+    
     [Inject]
     public void Construct(IInputHandler inputHandler)
     {
@@ -26,8 +27,8 @@ public class RadialMenuController : NetworkBehaviour
 
     void Start()
     {
-        if (!isLocalPlayer)
-            return;
+        // if (!isLocalPlayer)
+        //     return;
         
         _inputHandler.OpenRadialMenuPerformed += OpenRadialMenu;
         _inputHandler.OpenRadialMenuClosed += CloseRadialMenu;

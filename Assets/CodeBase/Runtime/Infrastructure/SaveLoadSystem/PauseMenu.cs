@@ -37,7 +37,13 @@ public class PauseMenu : MonoBehaviour
         _loadButton.onClick.RemoveAllListeners();
         _damageButton.onClick.RemoveAllListeners();
     }
-
+    
+    private void BoolMenu()
+    {
+        SetMenuActive = !SetMenuActive;
+        SetMenu();
+    }
+    
     private void SetMenu()
     {
         if (SetMenuActive)
@@ -52,11 +58,5 @@ public class PauseMenu : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-
-    }
-    private void BoolMenu()
-    {
-        SetMenuActive = !SetMenuActive;
-        SetMenu();
     }
 }
