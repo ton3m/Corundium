@@ -1,5 +1,4 @@
 using Mirror;
-using System;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -10,8 +9,7 @@ public class Rock : NetworkBehaviour, IDamageable
     [SerializeField] private TMP_Text _hpRockText;
     [SerializeField] public int _maxHpRock = 100;
     [SyncVar] private float _hpRock = 100;
-    public Type Type { get; }
-    
+
     public int HP => (int)_hpRock;
 
     private void Start()

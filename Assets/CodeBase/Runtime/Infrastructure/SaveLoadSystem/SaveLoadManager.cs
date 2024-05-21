@@ -1,20 +1,19 @@
-using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
+public class SaveLoadManager : ISaveLoadManager
 {
-    private string _filePath;
-    private GameObject _rock;
-    
-    //debug
-    private int _a = 100;
-    private Rock _hp;
-    
-    private void Start()
+    string filePath;
+    int a = 100;
+    private GameObject Rock;
+    Rock hp;
+
+    public SaveLoadManager()
     {
-        _filePath = Application.persistentDataPath + "/save.gamesave";
+        filePath = Application.persistentDataPath + "/save.gamesave";
+        Debug.Log(filePath);
+        //hp = Rock.GetComponent<Rock>();
     }
 
     public void Damage()
@@ -26,7 +25,7 @@ public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
     {
         Debug.Log("����� ������ Save Game");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(_filePath, FileMode.Create);
+        FileStream fileStream = new FileStream(filePath, FileMode.Create);
 
         Save save = new Save();
         save.HealthStone = rockHealth; // Dan: I've changed saving to current rock Health from PlayerAttack script
@@ -35,19 +34,19 @@ public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
         binaryFormatter.Serialize(fileStream, save);
         fileStream.Close();
 
-        Debug.Log("Game saved at: " + _filePath);
+        Debug.Log("Game saved at: " + filePath);
     }
 
     public void LoadGame()
     {
-        if (!File.Exists(_filePath))
+        if (!File.Exists(filePath))
         {
             Debug.LogError("Save file not found!");
             return;
         }
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(_filePath, FileMode.Open);
+        FileStream fileStream = new FileStream(filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
         int loadedDamage = save.HealthStone;
@@ -61,4 +60,5 @@ public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
 public class Save
 {
     public int HealthStone;
+
 }
