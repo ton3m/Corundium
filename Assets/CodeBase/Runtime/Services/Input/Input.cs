@@ -89,6 +89,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GetTool"",
+                    ""type"": ""Button"",
+                    ""id"": ""3339cb78-920b-4555-87c7-29e88c4d3872"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""action"": ""OpenRadialMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9dc52c06-036c-4350-9e1f-8ea73f44df4f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""GetTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Esc = m_Gameplay.FindAction("Esc", throwIfNotFound: true);
         m_Gameplay_OpenRadialMenu = m_Gameplay.FindAction("OpenRadialMenu", throwIfNotFound: true);
+        m_Gameplay_GetTool = m_Gameplay.FindAction("GetTool", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +316,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Esc;
     private readonly InputAction m_Gameplay_OpenRadialMenu;
+    private readonly InputAction m_Gameplay_GetTool;
     public struct GameplayActions
     {
         private @Input m_Wrapper;
@@ -306,6 +328,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Esc => m_Wrapper.m_Gameplay_Esc;
         public InputAction @OpenRadialMenu => m_Wrapper.m_Gameplay_OpenRadialMenu;
+        public InputAction @GetTool => m_Wrapper.m_Gameplay_GetTool;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +359,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @OpenRadialMenu.started += instance.OnOpenRadialMenu;
             @OpenRadialMenu.performed += instance.OnOpenRadialMenu;
             @OpenRadialMenu.canceled += instance.OnOpenRadialMenu;
+            @GetTool.started += instance.OnGetTool;
+            @GetTool.performed += instance.OnGetTool;
+            @GetTool.canceled += instance.OnGetTool;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -361,6 +387,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @OpenRadialMenu.started -= instance.OnOpenRadialMenu;
             @OpenRadialMenu.performed -= instance.OnOpenRadialMenu;
             @OpenRadialMenu.canceled -= instance.OnOpenRadialMenu;
+            @GetTool.started -= instance.OnGetTool;
+            @GetTool.performed -= instance.OnGetTool;
+            @GetTool.canceled -= instance.OnGetTool;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -387,5 +416,6 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnEsc(InputAction.CallbackContext context);
         void OnOpenRadialMenu(InputAction.CallbackContext context);
+        void OnGetTool(InputAction.CallbackContext context);
     }
 }

@@ -3,55 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 public class PlayerWeaponController : NetworkBehaviour
 {
-    // [SerializeField] private GameObject _axeModelPart;
-    // private ITool _currentTool;
-    // private ITool _baseTool;
-    // private bool _isToolInHandle;
-    //
-    // public bool IsToolInHandle => _isToolInHandle;
-    //
-    // private IInputHandler _inputHandler;
-    // [Inject]
-    // public void Construct(IInputHandler inputHandler) =>
-    //     inputHandler.NumberPressed += OnNumberButtonPressed; // и не забыть отписку!
-    //
-    // private void Start()
-    // {
-    //     _baseTool = new DefaultTool(10);
-    // }
-    // private void OnDisable(IInputHandler inputHandler)
-    // {
-    //     inputHandler.NumberPressed -= OnNumberButtonPressed;
-    // }
-    //
-    // public int CalculateDamage(Type hitObjectType)
-    // {
-    //     _currentTool.CalculateDamage(hitObjectType);
-    // }
-    //
-    // private void OnNumberButtonPressed(int pressedNumberIndex)
-    // {
-    //     if(pressedNumberIndex == _currentTool.Index)
-    //     {
-    //         _isToolInHandle = !_isToolInHandle;
-    //         _tool.SetActive(_isToolInHandle);
-    //         return;
-    //     }
-    //         
-    //     if(pressedNumberIndex == 1)
-    //         ChangeWeaponToAxe();
-    // }
-    //
-    // private void ChangeWeaponToAxe() // если обобщить до одного метода который сам считает какой инструмент надо положить то будет круто
-    // {
-    //     // change Current Tool
-    //     _currentTool = new Axe(_baseTool);
-    //     _axeModelPart.SetActive(true);
-    // }
+    [SerializeField]private GameObject _ToolObject;
+    private Mesh _meshToolModule;
+    private bool _isToolInHandle = false;
+    
+    private ITool[] _availableModule;
+    private ITool _currentTool;
+    private ITool _baseTool;
+    private int _selectToolModuleId;
+    
+    
+    private IInputHandler _inputHandler;
+    [Inject]
+    public void Construct(IInputHandler inputHandler)
+    {
+        _inputHandler = inputHandler;
+    }
+    private void Start()
+    {
+        _baseTool = new DefaultTool(10);
+        _availableModule = new ITool [] { new Axe(_baseTool), new PickAxe(_baseTool), new Key(_baseTool) };
+        
+        _inputHandler.GetToolPerformed += GetTool; 
+    }
+    private void OnDisable(IInputHandler inputHandler)
+    {
+        inputHandler.GetToolPerformed -= GetTool;
+    }
+    public void SetToolModuleId(int id)
+    {
+        _selectToolModuleId = id;
+    }
+    private void GetTool()
+    {
+        _isToolInHandle = !_isToolInHandle;
+        _ToolObject.SetActive(_isToolInHandle);
+    }
+    public int CalculateDamage(Type hitObjectType)
+    {
+        return _currentTool.CalculateDamage(hitObjectType); 
+    }
+
+    private void ChangeModule(int selected)
+    {
+        _currentTool = _availableModule[selected - 1];
+        //_meshToolModule.Fil
+    }
+    
+    
 }
 
 

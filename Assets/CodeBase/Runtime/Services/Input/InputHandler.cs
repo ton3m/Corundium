@@ -7,6 +7,7 @@ public class InputHandler : MonoBehaviour, IInputHandler
     public event Action<Vector2> MoveInputChanged = delegate { };
     public event Action<bool> JumpInputPressed = delegate { };
     public event Action AttackPerformed = delegate { };
+    public event Action GetToolPerformed = delegate { };
     public event Action InteractPerformed = delegate { };
     public event Action RadialMenuPerformed = delegate { };
     public event Action RadialMenuClosed = delegate { };
@@ -27,6 +28,8 @@ public class InputHandler : MonoBehaviour, IInputHandler
 
         //hui
         Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
+        Input.Gameplay.GetTool.performed += ctx => GetToolPerformed?.Invoke();
+        
         Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
         
         Input.Gameplay.OpenRadialMenu.performed += ctx => RadialMenuPerformed?.Invoke();
@@ -50,6 +53,9 @@ public class InputHandler : MonoBehaviour, IInputHandler
         Input.Gameplay.Jump.canceled -= ctx => JumpInputPressed?.Invoke(false);
         
         Input.Gameplay.Attack.performed -= ctx => AttackPerformed?.Invoke();
+        
+        Input.Gameplay.GetTool.performed -= ctx => GetToolPerformed?.Invoke();
+        
         Input.Gameplay.Interact.performed -= ctx => InteractPerformed?.Invoke();
         
         Input.Gameplay.OpenRadialMenu.performed -= ctx => RadialMenuPerformed?.Invoke();

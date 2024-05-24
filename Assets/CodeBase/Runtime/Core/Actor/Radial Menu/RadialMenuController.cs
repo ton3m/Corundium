@@ -7,25 +7,24 @@ using UnityEngine.Serialization;
 using Zenject;
 
 public class RadialMenuController : MonoBehaviour
-{
-    public Transform Center;
-    public Transform SelectObject;
+{ 
+    [SerializeField]private GameObject _radialMenuRoot;
+    public List<RadialMenuElement> Elements = new();
     
-    public GameObject RadialMenuRoot;
+    public Vector2 NormalMousePos;
+    public float CurrentAngle;
+    public int Selection;
+    public int PrevSelection;
+    [SerializeField] private int _offSet = -30;
 
-    [SerializeField] private int _offSet = 30;
-    
-    //private ITool _moduleType;
-
-    private int _currentWeapon;
-    private string [] _nameModule = new string[]{"key","pickaxe","axe"};
-    
+    [SerializeField] private PlayerWeaponController _playerWeaponController;
     private IInputHandler _inputHandler;
     
     [Inject]
-    public void Construct(IInputHandler inputHandler)
+    public void Construct(IInputHandler inputHandler, PlayerWeaponController playerWeaponController)
     {
         _inputHandler = inputHandler;
+       // _playerWeaponController = playerWeaponController;
     }
 
     void Start()
@@ -45,61 +44,57 @@ public class RadialMenuController : MonoBehaviour
 
     private void OpenRadialMenu()
     {
-        RadialMenuRoot.SetActive(true);
-        
-        UnlockCursor();
+        _radialMenuRoot.SetActive(true);
+        LockCursor();
     }
     private void CloseRadialMenu()
     {
-        RadialMenuRoot.SetActive(false);
-        
+        _radialMenuRoot.SetActive(false);
+        LockCursor();
         SelectModule();
     }
 
     private void Update()
     {
-        CalculateAngle();
+        CalculateElement();
     }
 
-    private void CalculateAngle()
+    private void CalculateElement()
     {
-        int oneStep = 120;
-        
-        Debug.Log("Center = " + Center.position);
-        Vector2 delta = - Center.position + UnityEngine.Input.mousePosition;
-        float angle = Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg;
-        
-        angle += (angle < 0) ? 360 : 0;
-        //angle += _offSet;
-        
-        _currentWeapon = 0;
-        
-        for (int i = _offSet; i < _offSet + 360; i += oneStep)
-        {
-            if (angle >= i && angle < i + oneStep)
-            {
-                SelectObject.eulerAngles = new Vector3(0, 0, i-_offSet);
-                Debug.Log(angle);
-            }
-            _currentWeapon++; 
-        } 
-    }
+        NormalMousePos = new Vector2(UnityEngine.Input.mousePosition.x - Screen.width / 2,
+                                     UnityEngine.Input.mousePosition.y - Screen.height / 2);
+        CurrentAngle = Mathf.Atan2(NormalMousePos.y, NormalMousePos.x) * Mathf.Rad2Deg;
 
-    private void UnlockCursor()
+        CurrentAngle = (CurrentAngle + 360 + _offSet) % 360;
+        
+        Selection = (int)CurrentAngle / 120 ;
+        
+        //засунуть в отдельный метод и добавить в старт и проверить будет ли изначально выбираться что то
+        if (Selection != PrevSelection)
+        {
+            Elements[Selection].Selected();
+            Elements[PrevSelection].DeSeleted();
+            PrevSelection = Selection;
+        }
+    }
+    
+    private void SelectModule()
+    {
+        Debug.Log("Selected = " + Selection);
+        _playerWeaponController.SetToolModuleId(Selection);
+    }
+    
+    private void LockCursor()
     {
         if (Cursor.visible)
         {
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
-        Cursor.visible = !Cursor.visible;
-    }
-    private void SelectModule()
-    {
-        //_moduleType = new Axe();
-        //Debug.Log("Selected = " + _nameModule[_currentWeapon]);
     }
 }

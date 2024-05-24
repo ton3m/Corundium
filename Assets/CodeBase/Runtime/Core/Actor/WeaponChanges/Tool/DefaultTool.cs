@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DefaultTool: ITool
 {
-    // public int BaseDamage { get; }
-    //
-    // public DefaultTool(int baseDamage)
-    // {
-    //     BaseDamage = baseDamage;
-    // }
-    //
-    // public int CalculateDamage(Type hitObjectType)
-    // {
-    //     return BaseDamage;
-    // }
+    public int BaseDamage { get; }
+    
+    public DefaultTool(int baseDamage)
+    {
+        BaseDamage = baseDamage;
+    }
+    
+    public int CalculateDamage(Type hitObjectType)
+    {
+        return BaseDamage;
+    }
 }

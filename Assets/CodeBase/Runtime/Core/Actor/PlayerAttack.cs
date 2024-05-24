@@ -12,6 +12,7 @@ public class PlayerAttack : NetworkBehaviour
     private RaycastHit _hitInfo;
     private IInputHandler _inputHandler;
     private ISaveLoadManager _saveLoadManager;
+    
 
     [Inject]
     public void Construct(IInputHandler inputHandler, ISaveLoadManager saveLoadManager)
