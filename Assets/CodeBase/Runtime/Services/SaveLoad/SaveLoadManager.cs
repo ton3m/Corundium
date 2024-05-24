@@ -5,9 +5,6 @@ using UnityEngine;
 public class SaveLoadManager : ISaveLoadManager
 {
     string filePath;
-    int a = 100;
-    private GameObject Rock;
-    Rock hp;
 
     public SaveLoadManager()
     {

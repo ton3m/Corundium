@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Mirror;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,7 @@ public class PlayerInteract : NetworkBehaviour
     [SerializeField] private float _maxDistanceRaycast = 1.5f;
     private IInputHandler _inputHandler;
     private RaycastHit _hitInfo;
+    private LayerMask _layer;
     private int _countStone; // временно, пока нет инвентаря
 
     [Inject]

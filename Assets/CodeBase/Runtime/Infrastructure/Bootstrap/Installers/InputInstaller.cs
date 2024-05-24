@@ -1,3 +1,5 @@
+
+using UnityEngine;
 using Zenject;
 
 public class InputInstaller : MonoInstaller
@@ -6,6 +8,7 @@ public class InputInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        Debug.Log("Init Input");
         _inputHandler = new InputHandler();
         _inputHandler.Enable();
 
