@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
+using Mirror;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler : NetworkBehaviour
 {
     public event Action<Vector2> RotateInputChanged = delegate { };
     public event Action<Vector2> MoveInputChanged = delegate { };
@@ -12,6 +13,7 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
+        
         Input.Gameplay.Rotate.performed += ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
 
         Input.Gameplay.Move.performed += ctx => OnMoveInputChanged(ctx.ReadValue<Vector2>());
