@@ -62,7 +62,7 @@ public class PlayerAttack : NetworkBehaviour
     //     //target.GetComponent<IDamageable>().ApplyDamage(_weaponController._currentTool.CalculateDamage(damageable));
     //     RpcInstantiateParticle();
     // }
-    //
+    
     [ClientRpc]
     private void RpcInstantiateParticle()
     {
