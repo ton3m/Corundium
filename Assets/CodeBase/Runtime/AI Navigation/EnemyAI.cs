@@ -6,79 +6,89 @@ public class EnemyAI : MonoBehaviour
 {
     [SerializeField] private NavMeshSurface _surface;
     [SerializeField] private LayerMask _layerMask;
-    [SerializeField] private float _viewAngel;
+    [SerializeField] private float _viewAngle;
     [SerializeField] private float _viewRadius;
     [SerializeField] private float _stopDistance = 1.1f;
-    [SerializeField] private bool _isPlayerNoticed;
-    private bool _isEnemyMove=true;
+    [SerializeField] private bool _isPlayerVisibility=false;
+    private Collider[] _players=new Collider[1];
+    private Transform _playerTransform;
     private NavMeshAgent _navMeshAgent;
-    private Collider[] _players=new Collider[32];
-    void Start()
+
+    private void Start()
     {
         _surface.BuildNavMesh();
         InitComponentLinks();
         PickNewPatrolPoint();
-        _navMeshAgent.stoppingDistance = 0;
     }
-    void Update()
+    private void Update()
     {
-        NoticePlayerUpdate();
-        DistanceToPlayer();
-        PatrolUpdate();
+        PlayerVisibilityUpdate();
     }
-    void PickNewPatrolPoint()
+    private void PickNewPatrolPoint()
     {
         //_navMeshAgent.destination = patrolPoints[Random.Range(0, patrolPoints.Count)].position;
     }
-    void PatrolUpdate()
-    {
-
-        if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && !_isPlayerNoticed)
-        {
-            PickNewPatrolPoint();
-        }
-    }
-    void InitComponentLinks() => _navMeshAgent = GetComponent<NavMeshAgent>();
-    void NoticePlayerUpdate()
-    {
-        //var direction = player.transform.position - transform.position;
-        //_isPlayerNoticed = false;
-
-        //if (Vector3.Angle(transform.forward, direction) < viewAngel)
+    private void PatrolUpdate()
+    { 
+        _navMeshAgent.destination = Vector3.up * 10;
+        //if (_navMeshAgent.remainingDistance <= _navMeshAgent.stoppingDistance && !_isPlayerVisibility)
         //{
-        //    RaycastHit hit;
-        //    if (Physics.Raycast(transform.position + Vector3.up, direction, out hit))
-        //    {
-        //        if (hit.collider.gameObject == player.gameObject)
-        //        {
-        //            _isPlayerNoticed = true;
-        //        }
-        //        else
-        //    }
         //}
-
-        Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _players, _layerMask);
-        if (_players[0]!=null&&_isEnemyMove)
-        {
-            _navMeshAgent.destination = _players[0].transform.position;
-        }
-        
     }
-    void DistanceToPlayer()
+    private void InitComponentLinks() => _navMeshAgent = GetComponent<NavMeshAgent>();
+    private void PlayerVisibilityUpdate()
     {
-        if (_navMeshAgent.destination != null) return;
-        var distance = _navMeshAgent.destination-transform.position;
-        
-        if(distance.magnitude<=5)
+        Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _players, _layerMask);
+
+        if (_players[0] != null)
         {
-            _isEnemyMove = false;
+            FollowsThePlayer();
+        }
+        else if (_playerTransform != null)
+        {
+            NotFollowsThePlayer();
         }
         else
         {
-            _isEnemyMove = true;
+            PatrolUpdate();
         }
     }
-    void OnDrawGizmosSelected()
+   private void FollowsThePlayer()
+    {
+        _playerTransform = _players[0].transform;
+        var playerPosition = _playerTransform.position;
+        var direction = playerPosition - transform.position;
+
+        if (Vector3.Angle(transform.forward, direction) < _viewAngle)
+        {
+            _isPlayerVisibility = true;
+            float distanceToPlayer = Vector3.Distance(transform.position, playerPosition);
+            if (distanceToPlayer <= _stopDistance)
+            {
+                _navMeshAgent.destination = playerPosition;
+                _navMeshAgent.isStopped = false;
+            }
+            else
+            {
+                PatrolUpdate();
+            }
+
+        }
+        else
+        {
+            PatrolUpdate();
+        }
+    }
+    private void NotFollowsThePlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+        if (distanceToPlayer > _stopDistance)
+        {
+            PatrolUpdate();
+            _playerTransform = null;
+        }
+    }
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, _viewRadius);
