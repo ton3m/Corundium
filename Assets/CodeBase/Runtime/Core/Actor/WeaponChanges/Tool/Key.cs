@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 public class Key : ITool
 {
@@ -20,10 +22,10 @@ public class Key : ITool
     {
         int resultDamage = BaseDamage;
         
-        if(typeof(hitObjectType) == typeof(Enemy)) // условно
-        {
-            resultDamage *= 2;  
-        }
+        // if(typeof(hitObjectType) == typeof(Enemy)) // условно
+        // {
+        //     resultDamage *= 2;  
+        // }
         // other ifs
         
         return resultDamage;

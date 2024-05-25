@@ -2,14 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Zenject;
 
 public class RadialMenuController : MonoBehaviour
-{ 
-    [SerializeField]private GameObject _radialMenuRoot;
-    public List<RadialMenuElement> Elements = new();
+{
+    [SerializeField] private GameObject _radialMenuRoot;
+    public List<RadialMenuElements> Elements = new();
     
     public Vector2 NormalMousePos;
     public float CurrentAngle;
@@ -17,17 +18,20 @@ public class RadialMenuController : MonoBehaviour
     public int PrevSelection;
     [SerializeField] private int _offSet = -30;
 
+    [SerializeField]private MeshFilter _meshToolModule;
+    [SerializeField]private Mesh[] _availableMesh;
+    
     [SerializeField] private PlayerWeaponController _playerWeaponController;
     private IInputHandler _inputHandler;
-    
+
     [Inject]
-    public void Construct(IInputHandler inputHandler, PlayerWeaponController playerWeaponController)
+    public void Construct(IInputHandler inputHandler)
     {
         _inputHandler = inputHandler;
-       // _playerWeaponController = playerWeaponController;
+        // _playerWeaponController = playerWeaponController;
     }
 
-    void Start()
+    private void Start()
     {
         // if (!isLocalPlayer)
         //     return;
@@ -44,9 +48,13 @@ public class RadialMenuController : MonoBehaviour
 
     private void OpenRadialMenu()
     {
-        _radialMenuRoot.SetActive(true);
-        LockCursor();
+        if (_playerWeaponController._isToolInHandle)
+        {
+            _radialMenuRoot.SetActive(true);
+            LockCursor();
+        }
     }
+
     private void CloseRadialMenu()
     {
         _radialMenuRoot.SetActive(false);
@@ -62,13 +70,13 @@ public class RadialMenuController : MonoBehaviour
     private void CalculateElement()
     {
         NormalMousePos = new Vector2(UnityEngine.Input.mousePosition.x - Screen.width / 2,
-                                     UnityEngine.Input.mousePosition.y - Screen.height / 2);
+            UnityEngine.Input.mousePosition.y - Screen.height / 2);
         CurrentAngle = Mathf.Atan2(NormalMousePos.y, NormalMousePos.x) * Mathf.Rad2Deg;
 
         CurrentAngle = (CurrentAngle + 360 + _offSet) % 360;
-        
-        Selection = (int)CurrentAngle / 120 ;
-        
+
+        Selection = (int)CurrentAngle / 120;
+
         //засунуть в отдельный метод и добавить в старт и проверить будет ли изначально выбираться что то
         if (Selection != PrevSelection)
         {
@@ -77,13 +85,14 @@ public class RadialMenuController : MonoBehaviour
             PrevSelection = Selection;
         }
     }
-    
+
     private void SelectModule()
     {
-        Debug.Log("Selected = " + Selection);
         _playerWeaponController.SetToolModuleId(Selection);
+        _meshToolModule.mesh = _availableMesh[Selection];
+        //_playerWeaponController.SetToolModuleId(Selection);
     }
-    
+
     private void LockCursor()
     {
         if (Cursor.visible)

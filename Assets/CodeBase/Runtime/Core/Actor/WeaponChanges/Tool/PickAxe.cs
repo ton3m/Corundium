@@ -21,12 +21,14 @@ public class PickAxe : ITool
     {
         int resultDamage = BaseDamage;
         
-        if(typeof(hitObjectType) == typeof(Rock)) // условно
+        if (hitObjectType == typeof(Rock)) // условно
         {
             resultDamage *= 2;  
         }
-        // other ifs
-        
+        else if (hitObjectType == typeof(Tree)) 
+        {
+            resultDamage /= 2;  
+        }
         return resultDamage;
     }
 }

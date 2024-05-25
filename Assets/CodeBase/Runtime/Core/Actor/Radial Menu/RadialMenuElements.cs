@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RadialMenuElement : MonoBehaviour
+public class RadialMenuElements : MonoBehaviour
 {
     public GameObject SelectObject;
     void Start()
@@ -17,5 +15,4 @@ public class RadialMenuElement : MonoBehaviour
     {
         SelectObject.SetActive(false);
     }
-
 }

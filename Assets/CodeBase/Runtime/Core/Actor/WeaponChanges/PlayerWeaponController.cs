@@ -9,14 +9,11 @@ using Zenject;
 public class PlayerWeaponController : NetworkBehaviour
 {
     [SerializeField]private GameObject _ToolObject;
-    private Mesh _meshToolModule;
-    private bool _isToolInHandle = false;
+    public bool _isToolInHandle = false;
     
-    private ITool[] _availableModule;
-    private ITool _currentTool;
     private ITool _baseTool;
-    private int _selectToolModuleId;
-    
+    public ITool _currentTool;
+    private ITool[] _availableModule;
     
     private IInputHandler _inputHandler;
     [Inject]
@@ -27,35 +24,31 @@ public class PlayerWeaponController : NetworkBehaviour
     private void Start()
     {
         _baseTool = new DefaultTool(10);
-        _availableModule = new ITool [] { new Axe(_baseTool), new PickAxe(_baseTool), new Key(_baseTool) };
         
+        _availableModule = new ITool [] {new Key(_baseTool), new PickAxe(_baseTool), new Axe(_baseTool)};
         _inputHandler.GetToolPerformed += GetTool; 
     }
-    private void OnDisable(IInputHandler inputHandler)
+
+    private void OnDisable()
     {
-        inputHandler.GetToolPerformed -= GetTool;
-    }
-    public void SetToolModuleId(int id)
-    {
-        _selectToolModuleId = id;
+        _inputHandler.GetToolPerformed -= GetTool;
     }
     private void GetTool()
     {
         _isToolInHandle = !_isToolInHandle;
         _ToolObject.SetActive(_isToolInHandle);
+        //SetToolModuleId(_radialMenuController.Selection);
     }
+    public void SetToolModuleId(int selected)
+    {
+        _currentTool = _availableModule[selected];
+        Debug.Log(_currentTool);
+    }
+    
     public int CalculateDamage(Type hitObjectType)
     {
         return _currentTool.CalculateDamage(hitObjectType); 
     }
-
-    private void ChangeModule(int selected)
-    {
-        _currentTool = _availableModule[selected - 1];
-        //_meshToolModule.Fil
-    }
-    
-    
 }
 
 
