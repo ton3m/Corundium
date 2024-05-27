@@ -28,13 +28,16 @@ public class EnemyAI : MonoBehaviour
         SetRandomPatrolPoint();
         PickNewPatrolPoint();
     }
-
+    
     private void Update()
     {
         PlayerVisibilityUpdate();
         PatrolUpdate();
     }
-
+    private void InitComponentLinks()
+    {
+        _navMeshAgent = GetComponent<NavMeshAgent>();
+    }
     private void SetRandomPatrolPoint()
     {
         _randomRotation = Random.Range(0, 100);
@@ -66,10 +69,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    private void InitComponentLinks()
-    {
-        _navMeshAgent = GetComponent<NavMeshAgent>();
-    }
+    
 
     private void PlayerVisibilityUpdate()
     {

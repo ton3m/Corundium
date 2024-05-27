@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4637376, g: 0.596585, b: 0.6766376, a: 1}
+  m_IndirectSpecularColor: {r: 0.4637376, g: 0.5965853, b: 0.67663753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -787,6 +787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: shield_wood
       objectReference: {fileID: 0}
+    - target: {fileID: 7481487113836053001, guid: 8533b4b7d25cfea40a34848f200ce0e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -896,19 +900,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149611079954}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a0fb333c1de7cde4288da4258fb8dac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _surface: {fileID: 990510876}
-  _layerMask:
+  _layerMaskPlayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
+  _layerMaskAll:
+    serializedVersion: 2
+    m_Bits: 0
   _viewAngle: 90
   _viewRadius: 30
-  _stopDistance: 30
-  _isPlayerVisibility: 0
+  _stopDistanceToPlayers: 0
+  _stopDistanceToPoint: 0
 --- !u!4 &749279075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 211060118000718597, guid: a8cc610235c43164cb7d9665673d0322, type: 3}
@@ -2151,6 +2158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sword_wood
       objectReference: {fileID: 0}
+    - target: {fileID: 2037921496895444295, guid: a8cc610235c43164cb7d9665673d0322, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2793,6 +2804,7 @@ GameObject:
   - component: {fileID: 5866666021459864018}
   - component: {fileID: 740162427}
   - component: {fileID: 740162430}
+  - component: {fileID: 5866666021459864019}
   m_Layer: 0
   m_Name: mini simple skeleton demo
   m_TagString: Untagged
@@ -3947,6 +3959,29 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5866666021459864019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149611079954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21bb5f9451f6c64458d8afd13c8afcdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _surface: {fileID: 990510876}
+  _layerMaskPlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _layerMaskAll:
+    serializedVersion: 2
+    m_Bits: 0
+  _viewAngle: 90
+  _viewRadius: 30
+  _stopDistanceToPlayers: 0
+  _stopDistanceToPoint: 0
 --- !u!1 &6043818805084008310
 GameObject:
   m_ObjectHideFlags: 0
