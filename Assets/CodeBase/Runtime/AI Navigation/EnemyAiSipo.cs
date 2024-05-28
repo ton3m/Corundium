@@ -45,4 +45,61 @@ public class EnemyAiSipo : MonoBehaviour
         _navMeshAgent.SetDestination(randomVector + transform.position);
         _repeatRate = Random.Range(2, 8);
     }
+    
+    private void PlayerVisibilityUpdate()
+    {
+        Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _players, _layerMaskPlayer);
+
+        if (_players[0] != null)
+        {
+            FollowsThePlayer();
+        }
+        else
+        {
+            NotFollowsThePlayer();
+        }
+    }
+
+    private void FollowsThePlayer()
+    {
+        _playerTransform = _players[0].transform;
+        var playerPosition = _playerTransform.position;
+        var direction = playerPosition - transform.position;
+
+        if (Vector3.Angle(transform.forward, direction) < _viewAngle)
+        {
+            _isPlayerVisible = true;
+            float distanceToPlayer = Vector3.Distance(transform.position, playerPosition);
+            if (distanceToPlayer <= _viewRadius)
+            {
+                _navMeshAgent.destination = playerPosition;
+                _navMeshAgent.isStopped = false;
+            }
+            else
+            {
+                _isPlayerVisible = false;
+            }
+        }
+        else
+        {
+            _isPlayerVisible = false;
+        }
+    }
+
+    private void NotFollowsThePlayer()
+    {
+        if (_playerTransform != null)
+        {
+            float distanceToPlayer = Vector3.Distance(transform.position, _playerTransform.position);
+            if (distanceToPlayer > _viewRadius)
+            {
+                _isPlayerVisible = false;
+                _playerTransform = null;
+                _navMeshAgent.isStopped = true;
+                //PatrolUpdate();
+            }
+        }
+    }
+
+    
 }
