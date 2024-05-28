@@ -8,5 +8,7 @@ public interface IInputHandler
     event Action<bool> JumpInputPressed;
     event Action AttackPerformed;
     event Action InteractPerformed;
+    event Action OpenRadialMenuPerformed;
+    event Action OpenRadialMenuClosed;
     event Action EscPerformed;
 }

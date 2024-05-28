@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class Rock : NetworkBehaviour, IDamageable
     [SerializeField] private TMP_Text _hpRockText;
     [SerializeField] public int _maxHpRock = 100;
     [SyncVar] private float _hpRock = 100;
-
+    public Type Type { get; }
+    
     public int HP => (int)_hpRock;
 
     private void Start()
@@ -19,6 +21,8 @@ public class Rock : NetworkBehaviour, IDamageable
 
         UpdateHpRockText();
     }
+    private void LateUpdate() => UpdateHpRockText();
+    
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
@@ -51,8 +55,28 @@ public class Rock : NetworkBehaviour, IDamageable
         Debug.Log("Spawn server stone");
     }
 
-    private void UpdateHpRockText() 
+    private void UpdateHpRockText()
     {
         _hpRockText.text = "hp = " + _hpRock;
+
+        ActorMotor target = GameObject.FindObjectOfType<ActorMotor>();
+        if (target != null)
+        {
+            Transform targetTransform = target.transform;
+
+            Vector3 directionToTarget = targetTransform.position - _hpRockText.transform.position;
+            directionToTarget.y = 0;
+
+            if (directionToTarget != Vector3.zero)
+            {
+                _hpRockText.transform.rotation = Quaternion.LookRotation(directionToTarget);
+
+                _hpRockText.transform.Rotate(0, 180, 0);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Target object not found!");
+        }
     }
 }
