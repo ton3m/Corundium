@@ -1,8 +1,9 @@
+using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class SaveLoadManager : ISaveLoadManager
+public class SaveLoadManager : MonoBehaviour, ISaveLoadManager
 {
     string _filePath;
 
