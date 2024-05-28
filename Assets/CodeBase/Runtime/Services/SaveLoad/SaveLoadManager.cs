@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class SaveLoadManager : ISaveLoadManager
 {
-    string filePath;
+    string _filePath;
 
     public SaveLoadManager()
     {
-        filePath = Application.persistentDataPath + "/save.gamesave";
-        Debug.Log(filePath);
-        //hp = Rock.GetComponent<Rock>();
+        _filePath = Application.persistentDataPath + "/save.gamesave";
     }
 
     public void Damage()
@@ -21,7 +19,7 @@ public class SaveLoadManager : ISaveLoadManager
     public void SaveData(int rockHealth)
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(filePath, FileMode.Create);
+        FileStream fileStream = new FileStream(_filePath, FileMode.Create);
 
         Save save = new Save();
         save.HealthStone = rockHealth; // Dan: I've changed saving to current rock Health from PlayerAttack script
@@ -30,19 +28,19 @@ public class SaveLoadManager : ISaveLoadManager
         binaryFormatter.Serialize(fileStream, save);
         fileStream.Close();
 
-        Debug.Log("Game saved at: " + filePath);
+        Debug.Log("Game saved at: " + _filePath);
     }
 
     public void LoadData()
     {
-        if (!File.Exists(filePath))
+        if (!File.Exists(_filePath))
         {
             Debug.LogError("Save file not found!");
             return;
         }
 
         BinaryFormatter binaryFormatter = new BinaryFormatter();
-        FileStream fileStream = new FileStream(filePath, FileMode.Open);
+        FileStream fileStream = new FileStream(_filePath, FileMode.Open);
 
         Save save = (Save)binaryFormatter.Deserialize(fileStream);
         int loadedDamage = save.HealthStone;
@@ -56,5 +54,4 @@ public class SaveLoadManager : ISaveLoadManager
 public class Save
 {
     public int HealthStone;
-
 }
