@@ -18,9 +18,8 @@ public class SaveLoadManager : ISaveLoadManager
         //hp._maxHpRock -= 10;
     }
 
-    public void SaveGame(int rockHealth)
+    public void SaveData(int rockHealth)
     {
-        Debug.Log("����� ������ Save Game");
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream = new FileStream(filePath, FileMode.Create);
 
@@ -34,7 +33,7 @@ public class SaveLoadManager : ISaveLoadManager
         Debug.Log("Game saved at: " + filePath);
     }
 
-    public void LoadGame()
+    public void LoadData()
     {
         if (!File.Exists(filePath))
         {

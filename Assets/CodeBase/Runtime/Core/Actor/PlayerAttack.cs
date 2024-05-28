@@ -44,7 +44,7 @@ public class PlayerAttack : NetworkBehaviour
 
                 if(_hitInfo.transform.TryGetComponent(out Rock rock)) // for now, before we introduce things to save 
                 {
-                    _saveLoadManager.SaveGame(rock.HP);
+                    _saveLoadManager.SaveData(rock.HP);
                 }
             }
         }

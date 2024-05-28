@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class InputHandler : IInputHandler
 {
-    public event Action<Vector2> RotateInputChanged = delegate { };
-    public event Action<Vector2> MoveInputChanged = delegate { };
-    public event Action<bool> JumpInputPressed = delegate { };
-    public event Action AttackPerformed = delegate { };
-    public event Action InteractPerformed = delegate { };
-    public event Action EscPerformed = delegate { };
+    public event Action<Vector2> RotateInputChanged;
+    public event Action<Vector2> MoveInputChanged;
+    public event Action<bool> JumpInputPressed;
+    public event Action AttackPerformed;
+    public event Action InteractPerformed;
+    public event Action EscPerformed;
 
     private Input _input;
     private Input Input => _input ??= new Input();

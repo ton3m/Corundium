@@ -1,6 +1,6 @@
 public interface ISaveLoadManager 
 {
-    void SaveGame(int rockHealth);
-    void LoadGame();
+    void SaveData(int rockHealth);
+    void LoadData();
     void Damage();
 }

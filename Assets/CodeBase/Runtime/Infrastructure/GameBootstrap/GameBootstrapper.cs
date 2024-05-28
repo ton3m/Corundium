@@ -13,10 +13,11 @@ public class GameBootstrapper : MonoBehaviour
         _stateFactory = stateFactory;
     }
 
-    void Awake()
+    private void Start()
     {
         _gameStateMachine.RegisterState(_stateFactory.Create<GameBootstrapState>());
         _gameStateMachine.RegisterState(_stateFactory.Create<GameMenuState>());
+        _gameStateMachine.RegisterState(_stateFactory.Create<GamePlayLoopState>());
 
         _gameStateMachine.EnterIn<GameBootstrapState>();
 

@@ -1,9 +1,19 @@
-using UnityEngine;
+using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
 public class AssetProvider : IAssetProvider
 {
-    public T Load<T>(string path) where T : Object
+    public async Task<TAsset> Load<TAsset>(string path) where TAsset : class
     {
-        return Resources.Load<T>(path); // in time, change for Addressables load 
+        var handle = Addressables.LoadAssetAsync<TAsset>(path);
+        await handle.Task;
+        return handle.Result; 
+    }
+
+    public async Task<TAsset> Load<TAsset>(AssetReference key) where TAsset : class
+    {
+        var handle = Addressables.LoadAssetAsync<TAsset>(key);
+        await handle.Task;
+        return handle.Result;
     }
 }

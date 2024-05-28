@@ -12,7 +12,7 @@ public class LightHouseStateMachine : ILightHouseStateMachine
         _lightHouseStates = new ILightHouseState[lightHouseData.LevelsData.Length];
         Filter = filter;
 
-        for (int i = 0; i < _lightHouseStates.Length - 1; i++)
+        for (int i = 0; i < _lightHouseStates.Length; i++)
         {
             _lightHouseStates[i] = new LightHouseState(this, lightHouseData.LevelsData[i], i);
             //Debug.Log("Created new state: " + _lightHouseStates[i].ID);
@@ -25,7 +25,7 @@ public class LightHouseStateMachine : ILightHouseStateMachine
 
         }
 
-        for (int i = 0; i < _lightHouseStates.Length - 2; i++)
+        for (int i = 0; i < _lightHouseStates.Length - 1; i++)
         {
             _lightHouseStates[i].SetNextStateID(_lightHouseStates[i+1].ID);
         }
@@ -37,6 +37,7 @@ public class LightHouseStateMachine : ILightHouseStateMachine
         {
             if(state.ID == newStateID)
             {
+                // Debug.Log("Enter new state: " + state.ID);
                 _currentState?.Exit();
                 _currentState = state;
                 _currentState.Enter();

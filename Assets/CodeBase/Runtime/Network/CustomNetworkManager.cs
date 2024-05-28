@@ -1,6 +1,7 @@
 using System;
 using Mirror;
 using UnityEngine;
+using Zenject;
 using Random = UnityEngine.Random;
 
 public struct PlayerID : NetworkMessage
@@ -10,6 +11,14 @@ public struct PlayerID : NetworkMessage
 
 public class CustomNetworkManager : NetworkManager
 {
+    private GameStateMachine _stateMachine;
+
+    [Inject]
+    public void Construct(GameStateMachine  stateMachine)
+    {
+        _stateMachine = stateMachine;
+    }
+
     public override void Start()
     {
         base.Start();
@@ -32,6 +41,7 @@ public class CustomNetworkManager : NetworkManager
         };
 
         NetworkClient.Send(randomPlayerID);
+        _stateMachine.EnterIn<GamePlayLoopState>();
     }
 
     void OnCreateCharacter(NetworkConnectionToClient conn, PlayerID id)

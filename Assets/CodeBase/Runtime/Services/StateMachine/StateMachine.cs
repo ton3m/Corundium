@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 public class StateMachine : IStateMachine
 {
-    private Dictionary<System.Type, IState> _states;
+    private Dictionary<Type, IState> _states;
     private IState _currentState;
 
     public StateMachine()
@@ -22,6 +23,9 @@ public class StateMachine : IStateMachine
 
     public void RegisterState<TState>(TState state) where TState : IState
     {
+        if(_states.ContainsKey(typeof(TState)))
+            throw new ArgumentException("State already existing in States Map: " + typeof(TState));
+
         _states.Add(typeof(TState), state);
     }
 }

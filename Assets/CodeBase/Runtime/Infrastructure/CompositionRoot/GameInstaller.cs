@@ -25,7 +25,8 @@ public class GameInstaller : MonoInstaller
     
     private void BindGameStateMachine()
     {
-        Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+        //Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+        Container.Bind<StateFactory>().AsSingle();
         Container.Bind<GameStateMachine>().AsSingle();
     }
 }
