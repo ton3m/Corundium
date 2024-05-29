@@ -15,7 +15,10 @@ EditorBuildSettings:
     path: Assets/Content/Scenes/VB_TestScene.unity
     guid: d82399bc4e33ff4429599acb7bf987d1
   - enabled: 1
-    path: Assets/Content/Scenes/Sample Scene.unity
+    path: Assets/Content/Scenes/EnemyScene.unity
     guid: 9becf07424541244a9ca0a8a736bd9fb
+  - enabled: 1
+    path: Assets/Content/Scenes/Sample Scene.unity
+    guid: 650d21454641e36489089176c4064a01
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b42fbb8bb0faea34499eedf2bc14f954, type: 2}
