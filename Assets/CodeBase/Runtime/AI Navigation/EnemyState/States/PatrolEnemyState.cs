@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using System.Collections;
 using UnityEngine.AI;
 using Random = UnityEngine.Random;
@@ -37,7 +36,7 @@ public class PatrolEnemyState : IEnemyState
             yield return new WaitForSeconds(_timeBeetweenWalk);
         }
     }
-    public void Patrol()
+    private void Patrol()
     {
         Vector3 randomVector = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
         _enemyStateMachine.NavMeshAgent.SetDestination(randomVector + _enemyInstance.transform.position);

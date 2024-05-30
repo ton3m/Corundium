@@ -4283,8 +4283,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7b118049a4b4b836357b1e97bb7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _viewRadius: 10
   _surface: {fileID: 990510876}
-  _viewRadius: 6
+  _layerMaskPlayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6043818805084008310
 GameObject:
   m_ObjectHideFlags: 0
