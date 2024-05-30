@@ -4,7 +4,8 @@ using UnityEngine.AI;
 public class ChasePlayerState : IEnemyState
 {
     private readonly EnemyStateMachine _enemyStateMachine;
-
+    private Vector3 _playerPosition;
+    private NavMeshAgent _navMeshAgent;
     public ChasePlayerState(EnemyStateMachine enemyStateMachine)
     {
         _enemyStateMachine = enemyStateMachine;
@@ -17,14 +18,14 @@ public class ChasePlayerState : IEnemyState
     
     private void ChasePlayer()
     {
-        NavMeshAgent navMeshAgent = _enemyStateMachine.NavMeshAgent;
-        Vector3 playerPosition = _enemyStateMachine.TargetEnemy.position;
+        _navMeshAgent = _enemyStateMachine.NavMeshAgent;
+        _playerPosition = _enemyStateMachine.TargetEnemy.position;
         
-        navMeshAgent.SetDestination(playerPosition);
+        _navMeshAgent.SetDestination(_playerPosition);
     }
 
     public void ExitState()
     {
-        
+        _navMeshAgent.ResetPath();
     }
 }

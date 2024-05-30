@@ -28,9 +28,9 @@ public class EnemyStateMachine
     {
         if (_enemyStates.TryGetValue(typeof(TState), out IEnemyState state) && _currentEnemyState != state)
         {
-            Debug.Log("_currentEnemyState = " + _currentEnemyState);
             _currentEnemyState?.ExitState();
             _currentEnemyState = state;
+            Debug.Log(_currentEnemyState);
             _currentEnemyState.EnterState();
         }
     }

@@ -1,4 +1,5 @@
 using Unity.AI.Navigation;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,6 +10,7 @@ public class EnemyInstance: MonoBehaviour
     private EnemyStateMachine _enemyStateMachine;
     private NavMeshAgent _navMeshAgent;
     private Transform _target;
+    
     
     [SerializeField] private LayerMask _layerMaskPlayer;
     private Collider[] _noticedTarget = new Collider[1];
@@ -32,7 +34,7 @@ public class EnemyInstance: MonoBehaviour
         
         if (_noticedTarget[0] is null)
         {
-            _enemyStateMachine.EnterIn<PatrolEnemyState>();
+            _enemyStateMachine.EnterIn<PatrolEnemyState>(); 
             _isPlayerVisible = false;
             return;
         }
@@ -40,6 +42,13 @@ public class EnemyInstance: MonoBehaviour
         _target = _noticedTarget[0].transform;
         Vector3 playerPosition = _target.position;
         Vector3 direction = playerPosition - transform.position;
+
+        float distanceToThePlayer = Vector3.Distance(playerPosition, transform.position);
+        if (distanceToThePlayer >= _viewRadius)
+        {
+            _noticedTarget[0] = null;
+            _isPlayerVisible = false;
+        }
         
         float angle = Vector3.Angle(transform.forward, direction);
         
@@ -52,10 +61,6 @@ public class EnemyInstance: MonoBehaviour
         {
             _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, _target, this);
             _enemyStateMachine.EnterIn<ChasePlayerState>();
-        }
-        else
-        {
-            _enemyStateMachine.EnterIn<PatrolEnemyState>();
         }
     }
     void OnDrawGizmosSelected()
