@@ -23,5 +23,6 @@ public class GameMenuState : IState
 
     public void Exit()
     {
+        Debug.Log("Exit Menu  State");
     }
 }

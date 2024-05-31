@@ -8,7 +8,7 @@ public class StateMachine : IStateMachine
 
     public StateMachine()
     {
-        _states = new();
+        _states = new Dictionary<Type, IState>();
     }
 
     public void EnterIn<TState>() where TState : IState

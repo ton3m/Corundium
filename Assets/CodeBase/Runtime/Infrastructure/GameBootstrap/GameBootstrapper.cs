@@ -23,5 +23,4 @@ public class GameBootstrapper : MonoBehaviour
 
         DontDestroyOnLoad(this);
     }
-
 }
