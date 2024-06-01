@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4637376, g: 0.596585, b: 0.6766376, a: 1}
+  m_IndirectSpecularColor: {r: 0.4637376, g: 0.5965853, b: 0.67663753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4465,15 +4465,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69e7b118049a4b4b836357b1e97bb7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _surface: {fileID: 990510876}
+  _navMeshSurface: {fileID: 990510876}
   _layerMaskPlayer:
     serializedVersion: 2
     m_Bits: 8
   _viewRadius: 10
-  distance: 0
-  angle: 0
-  _isPlayerVisible: 0
-  _playerIsWithinRange: 0
+  DoChase: 0
 --- !u!114 &5866666021459864021
 MonoBehaviour:
   m_ObjectHideFlags: 0

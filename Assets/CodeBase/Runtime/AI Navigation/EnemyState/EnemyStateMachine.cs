@@ -6,20 +6,18 @@ using UnityEngine.AI;
 public class EnemyStateMachine
 {
     public NavMeshAgent NavMeshAgent { get; }
-    public Transform TargetEnemy { get; }
     
     private Dictionary<Type, IEnemyState> _enemyStates;
     private IEnemyState _currentEnemyState;
     
-    public EnemyStateMachine(NavMeshAgent navMeshAgent, Transform targetEnemy, EnemyInstance enemyInstance)
+    public EnemyStateMachine(NavMeshAgent navMeshAgent, EnemyInstance enemyInstance)
     {
         NavMeshAgent = navMeshAgent;
-        TargetEnemy = targetEnemy;
         
         _enemyStates = new Dictionary<Type, IEnemyState>()
         {
             [typeof(PatrolEnemyState)] = new PatrolEnemyState(this, enemyInstance),
-            [typeof(ChasePlayerState)] = new ChasePlayerState(this),
+            [typeof(ChasePlayerState)] = new ChasePlayerState(enemyInstance),
             [typeof(AttackPlayer)] = new AttackPlayer(this)
         };
     }
@@ -29,9 +27,7 @@ public class EnemyStateMachine
         if (_enemyStates.TryGetValue(typeof(TState), out IEnemyState state) && _currentEnemyState != state)
         {
             _currentEnemyState?.ExitState();
-            Debug.Log("_currentEnemyState = " + _currentEnemyState);
             _currentEnemyState = state;
-            Debug.Log(_currentEnemyState);
             _currentEnemyState.EnterState();
         }
     }

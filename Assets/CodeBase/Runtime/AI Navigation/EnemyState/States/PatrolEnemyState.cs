@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
 public class PatrolEnemyState : IEnemyState
@@ -11,7 +12,7 @@ public class PatrolEnemyState : IEnemyState
 
     private IEnumerator _corutine;
     private float _timeBeetweenWalk;
-
+    
     public PatrolEnemyState(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
         _enemyStateMachine = enemyStateMachine;
@@ -24,7 +25,7 @@ public class PatrolEnemyState : IEnemyState
         _corutine = PatrolCoroutine();
         _enemyInstance.StartCoroutine(_corutine);
     }
-
+    
     public void ExitState()
     {
         Debug.Log("Stop Patrol");

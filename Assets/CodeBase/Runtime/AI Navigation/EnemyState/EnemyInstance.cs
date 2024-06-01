@@ -1,80 +1,99 @@
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof (NavMeshAgent))]
 public class EnemyInstance: MonoBehaviour
 {
-    [SerializeField] private NavMeshSurface _surface;
+    [SerializeField] private NavMeshSurface _navMeshSurface;
     private EnemyStateMachine _enemyStateMachine;
     private NavMeshAgent _navMeshAgent;
     private Transform _target;
+    private Vector3 _playerPosition;
     
     [SerializeField] private LayerMask _layerMaskPlayer;
-    private Collider[] _noticedTarget = new Collider[1];
     [SerializeField] private float _viewRadius = 6f;
-    private float _viewAngle = 90f;
-
-    public float distance;
-    public float angle;
-    private float _distancePlayersToEnemyX, _distancePlayersToEnemyZ;
-    public bool _isPlayerVisible;
-    public bool _playerIsWithinRange=false;
+    private bool _isPlayerVisible;
+    private Collider[] _noticedTarget = new Collider[1];
+    private readonly float _viewAngle = 90f;
+    public bool DoChase;
 
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, _target, this);
+        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, this);
         
-        _surface.BuildNavMesh();
+        _navMeshSurface.BuildNavMesh();
         
         _enemyStateMachine.EnterIn<PatrolEnemyState>();
     }
 
     private void FixedUpdate()
     {
-        Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _noticedTarget, _layerMaskPlayer);
-        _target = _noticedTarget[0]?.transform;
+        OverlapSphereCheck();
 
-        if (_noticedTarget[0] is null)
+        if (_target is not null)
         {
+            VisibilityCheck();
+        }
+        else
+        {
+            SetDefaultState();
+            return;
+        }
+
+        if (_isPlayerVisible)
+        {
+            _enemyStateMachine.EnterIn<ChasePlayerState>();
+        }
+        if (DoChase)
+        {
+            ChasePlayer();
+        }
+    }
+    private void OverlapSphereCheck()
+    {
+        if (_target is null)
+        {
+            Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _noticedTarget, _layerMaskPlayer);
+        }
+
+        _target = _noticedTarget[0]?.transform;
+    }
+    private void VisibilityCheck()
+    {
+        _playerPosition= _target.position;
+        Vector3 direction = _playerPosition - transform.position;
+        
+        float distanceToThePlayer = Vector3.Distance(_playerPosition, transform.position);
+        if (distanceToThePlayer >= _viewRadius)
+        {
+            _target = null;
+            _noticedTarget[0] = null;
             _isPlayerVisible = false;
         }
-        if (_noticedTarget[0] is not null)
+        
+        float angle = Vector3.Angle(transform.forward, direction);
+        
+        if (!_isPlayerVisible && angle < _viewAngle)
         {
-            Vector3 playerPosition = _target.position;
-            Vector3 direction = playerPosition - transform.position;
-            angle = Vector3.Angle(transform.forward, direction);
-
-            if (angle < _viewAngle)
-            {
-                _isPlayerVisible = true;
-                distance = Vector3.Distance(transform.position, playerPosition);
-            }
-            else
-            {
-                _isPlayerVisible = false;
-            }
-            if (distance < _viewRadius && !_isPlayerVisible)
-            {
-                _playerIsWithinRange = true;
-            }
-            else if (distance > _viewRadius)
-            {
-                _noticedTarget[0] = null;
-                _playerIsWithinRange = false;
-            }
-
-            if (_isPlayerVisible || _playerIsWithinRange)
-            {
-                _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, _target, this);
-                _enemyStateMachine.EnterIn<ChasePlayerState>();
-            }
-            else
-            {
-                _enemyStateMachine.EnterIn<PatrolEnemyState>();
-            }
+            _isPlayerVisible = true;
         }
+    }
+
+    private void SetDefaultState()
+    {
+        _enemyStateMachine.EnterIn<PatrolEnemyState>(); 
+        _isPlayerVisible = false;
+    }
+
+   
+
+    private void ChasePlayer()
+    {
+        _navMeshAgent.SetDestination(_playerPosition);
     }
     void OnDrawGizmosSelected()
     {

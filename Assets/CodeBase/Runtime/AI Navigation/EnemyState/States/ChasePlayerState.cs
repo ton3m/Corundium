@@ -1,31 +1,33 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 
 public class ChasePlayerState : IEnemyState
 {
-    private readonly EnemyStateMachine _enemyStateMachine;
+    private readonly EnemyInstance _enemyInstance;
     private Vector3 _playerPosition;
     private NavMeshAgent _navMeshAgent;
-    public ChasePlayerState(EnemyStateMachine enemyStateMachine)
+    private bool _isState;
+    public ChasePlayerState(EnemyInstance enemyInstance)
     {
-        _enemyStateMachine = enemyStateMachine;
+        _enemyInstance = enemyInstance;
     }
 
     public void EnterState()
     {
-        ChasePlayer();
+        StartChase();
     }
-    
-    private void ChasePlayer()
-    {
-        _navMeshAgent = _enemyStateMachine.NavMeshAgent;
-        _playerPosition = _enemyStateMachine.TargetEnemy.position;
-        
-        _navMeshAgent.SetDestination(_playerPosition);
-    }
-
     public void ExitState()
     {
-        _navMeshAgent.ResetPath();
+        StopChase();
+    }
+    
+    private void StartChase()
+    {
+        _enemyInstance.DoChase = true;
+    }
+    private void StopChase()
+    {
+        _enemyInstance.DoChase = false;
     }
 }
