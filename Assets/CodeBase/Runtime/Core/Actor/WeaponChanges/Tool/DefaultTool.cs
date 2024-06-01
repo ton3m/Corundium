@@ -5,14 +5,14 @@ using System;
 
 public class DefaultTool: ITool
 {
-    public int BaseDamage { get; }
+    public float BaseDamage { get; }
     
-    public DefaultTool(int baseDamage)
+    public DefaultTool(float baseDamage)
     {
         BaseDamage = baseDamage;
     }
     
-    public int CalculateDamage(Type hitObjectType)
+    public float CalculateDamage(Type hitObjectType)
     {
         return BaseDamage;
     }

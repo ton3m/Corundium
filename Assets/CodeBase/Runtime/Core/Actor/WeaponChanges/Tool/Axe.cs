@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Axe : ITool
 {
-    public int BaseDamage { get; }
+    public float BaseDamage { get; }
     
     // other things
     
@@ -14,17 +12,19 @@ public class Axe : ITool
         BaseDamage = baseTool.BaseDamage + baseDamageUpgrade;
     }
     
-    public int CalculateDamage(Type hitObjectType)
+    public float CalculateDamage(Type hitObjectType)
     {
         Debug.Log(hitObjectType);
-        int resultDamage = BaseDamage;
-        if(hitObjectType == typeof(Rock)) // условно
+        float resultDamage = BaseDamage;
+        if(hitObjectType == typeof(Tree)) // условно
         {
              resultDamage *= 2; 
              Debug.Log("Its rock");
         }
-        
-        
+        else if (hitObjectType == typeof(Rock))
+        {
+            resultDamage /= 2;
+        }
         return resultDamage;
     }
 }
