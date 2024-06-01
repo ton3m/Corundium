@@ -7,7 +7,7 @@ public class Axe : ITool
     
     // other things
     
-    public Axe(ITool baseTool, int baseDamageUpgrade = 0)
+    public Axe(ITool baseTool, float baseDamageUpgrade = 0)
     {
         BaseDamage = baseTool.BaseDamage + baseDamageUpgrade;
     }
