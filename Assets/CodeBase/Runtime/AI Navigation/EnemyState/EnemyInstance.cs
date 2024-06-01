@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyInstance: MonoBehaviour
 {
     [SerializeField] private NavMeshSurface _navMeshSurface;
+    [SerializeField] private Animator _animator;
     private EnemyStateMachine _enemyStateMachine;
     private NavMeshAgent _navMeshAgent;
     private Transform _target;
@@ -21,15 +22,18 @@ public class EnemyInstance: MonoBehaviour
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, this);
+        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent,_animator, this);
         
         _navMeshSurface.BuildNavMesh();
-        
+        _animator.SetBool(1,true);
         _enemyStateMachine.EnterIn<PatrolEnemyState>();
     }
 
     private void FixedUpdate()
     {
+        float currentVelocity = _navMeshAgent.velocity.magnitude;
+        _animator.SetFloat("Speed", currentVelocity);
+        
         OverlapSphereCheck();
 
         if (_target is not null)

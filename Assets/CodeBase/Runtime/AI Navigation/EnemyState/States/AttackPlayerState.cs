@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackPlayer : MonoBehaviour, IEnemyState
+public class AttackPlayer : IEnemyState
 {
     private readonly EnemyStateMachine _enemyStateMachine;
 
