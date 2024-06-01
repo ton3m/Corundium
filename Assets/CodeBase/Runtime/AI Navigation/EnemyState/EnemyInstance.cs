@@ -1,8 +1,6 @@
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.PlayerLoop;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof (NavMeshAgent))]
 public class EnemyInstance: MonoBehaviour
@@ -82,20 +80,16 @@ public class EnemyInstance: MonoBehaviour
             _isPlayerVisible = true;
         }
     }
-
     private void SetDefaultState()
     {
-        _enemyStateMachine.EnterIn<PatrolEnemyState>(); 
+        _enemyStateMachine.EnterIn<PatrolEnemyState>();
         _isPlayerVisible = false;
     }
-
-   
-
     private void ChasePlayer()
     {
         _navMeshAgent.SetDestination(_playerPosition);
     }
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawSphere(transform.position, _viewRadius);
