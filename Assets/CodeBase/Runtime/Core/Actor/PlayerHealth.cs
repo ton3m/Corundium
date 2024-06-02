@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerHelths : NetworkBehaviour, IDamageable
 {
     [SerializeField] public int _maxHpPlayer = 100;
     [SyncVar] private float _hpPlayer = 100;
-    [SerializeField] private Slider _hpSlider;
+    [SerializeField] private Slider _healthSlider;
     public Type Type { get; }
     
     private void Start()
@@ -36,7 +37,7 @@ public class PlayerHelths : NetworkBehaviour, IDamageable
 
     private void SliderUpdate()
     {
-        _hpSlider.value = _hpPlayer / _maxHpPlayer;
+        _healthSlider.value = _hpPlayer / _maxHpPlayer;
     }
 
     public void Extract()

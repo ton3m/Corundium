@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthAi : NetworkBehaviour, IDamageable
 {
-    [SerializeField] private Image _healthImage;
+    [SerializeField] private Slider _healthSlider;
     [SerializeField] public int _maxHpEnemy = 100;
     [SyncVar] private float _hpEnemy = 100;
     public Type Type { get; }
@@ -35,36 +35,38 @@ public class EnemyHealthAi : NetworkBehaviour, IDamageable
     private void RpcTakeDamage(float damage)
     {
         _hpEnemy -= damage;
-        UpdateHpEnemyImage();
+        SliderUpdate();
     }
 
     public void Extract()
     {
         Destroy(gameObject);
     }
-
+    private void SliderUpdate()
+    {
+        _healthSlider.value = _hpEnemy / _maxHpEnemy;
+    }
     private void UpdateHpEnemyImage()
     {
-        _healthImage.fillAmount =_hpEnemy/100;
-
-        ActorMotor target = GameObject.FindObjectOfType<ActorMotor>();
-        if (target != null)
-        {
-            Transform targetTransform = target.transform;
-
-            Vector3 directionToTarget = targetTransform.position - _healthImage.transform.position;
-            directionToTarget.y = 0;
-
-            if (directionToTarget != Vector3.zero)
-            {
-                _healthImage.transform.rotation = Quaternion.LookRotation(directionToTarget);
-
-                _healthImage.transform.Rotate(0, 180, 0);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Target object not found!");
-        }
+        ActorMotor target = FindObjectOfType<ActorMotor>();
+        _healthSlider.transform.LookAt(target.transform);
+        // if (target != null)
+        // {
+        //     Transform targetTransform = target.transform;
+        //
+        //     Vector3 directionToTarget = targetTransform.position - _healthImage.transform.position;
+        //     directionToTarget.y = 0;
+        //
+        //     if (directionToTarget != Vector3.zero)
+        //     {
+        //         _healthImage.transform.rotation = Quaternion.LookRotation(directionToTarget);
+        //
+        //         _healthImage.transform.Rotate(0, 180, 0);
+        //     }
+        // }
+        // else
+        // {
+        //     Debug.LogWarning("Target object not found!");
+        // }
     }
 }
