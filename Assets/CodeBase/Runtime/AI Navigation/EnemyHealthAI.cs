@@ -17,9 +17,9 @@ public class EnemyHealthAi : NetworkBehaviour, IDamageable
         if (isServer)
             _hpEnemy = _maxHpEnemy;
 
-        UpdateHpEnemyImage();
+        UpdateHpEnemySlider();
     }
-    private void LateUpdate() => UpdateHpEnemyImage();
+    private void LateUpdate() => UpdateHpEnemySlider();
 
     public void ApplyDamage(float damage)
     {
@@ -46,27 +46,11 @@ public class EnemyHealthAi : NetworkBehaviour, IDamageable
     {
         _healthSlider.value = _hpEnemy / _maxHpEnemy;
     }
-    private void UpdateHpEnemyImage()
+    private void UpdateHpEnemySlider()
     {
+        //надо переделать
         ActorMotor target = FindObjectOfType<ActorMotor>();
         _healthSlider.transform.LookAt(target.transform);
-        // if (target != null)
-        // {
-        //     Transform targetTransform = target.transform;
-        //
-        //     Vector3 directionToTarget = targetTransform.position - _healthImage.transform.position;
-        //     directionToTarget.y = 0;
-        //
-        //     if (directionToTarget != Vector3.zero)
-        //     {
-        //         _healthImage.transform.rotation = Quaternion.LookRotation(directionToTarget);
-        //
-        //         _healthImage.transform.Rotate(0, 180, 0);
-        //     }
-        // }
-        // else
-        // {
-        //     Debug.LogWarning("Target object not found!");
-        // }
+        
     }
 }
