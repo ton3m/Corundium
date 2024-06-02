@@ -9,7 +9,7 @@ public class ChasePlayerState : IEnemyState
     private Vector3 _playerPosition;
     private NavMeshAgent _navMeshAgent;
     private bool _isState;
-    public ChasePlayerState(EnemyStateMachine enemyStateMachine,EnemyInstance enemyInstance)
+    public ChasePlayerState(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
         _enemyInstance = enemyInstance;
         _enemyStateMachine = enemyStateMachine;
@@ -17,7 +17,6 @@ public class ChasePlayerState : IEnemyState
 
     public void EnterState()
     {
-        _enemyStateMachine.Animator.SetBool("ChaseEnemy", true);
         StartChase();
     }
     public void ExitState()
@@ -29,9 +28,16 @@ public class ChasePlayerState : IEnemyState
     private void StartChase()
     {
         _enemyInstance.DoChase = true;
+        SetAnimation();
     }
     private void StopChase()
     {
         _enemyInstance.DoChase = false;
+        SetAnimation();
+    }
+
+    private void SetAnimation()
+    {
+        _enemyStateMachine.Animator.SetBool("ChaseEnemy", _enemyInstance.DoChase);
     }
 }

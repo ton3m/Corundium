@@ -1,3 +1,4 @@
+using System;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
@@ -6,6 +7,7 @@ using UnityEngine.AI;
 public class EnemyInstance: MonoBehaviour
 {
     [SerializeField] private NavMeshSurface _navMeshSurface;
+    private Collider[] _noticedTarget = new Collider[1];
     [SerializeField] private Animator _animator;
     private EnemyStateMachine _enemyStateMachine;
     private NavMeshAgent _navMeshAgent;
@@ -15,9 +17,12 @@ public class EnemyInstance: MonoBehaviour
     [SerializeField] private LayerMask _layerMaskPlayer;
     [SerializeField] private float _viewRadius = 6f;
     private bool _isPlayerVisible;
-    private Collider[] _noticedTarget = new Collider[1];
+    private float _distanceToThePlayer;
     private readonly float _viewAngle = 90f;
+    
     public bool DoChase;
+    public bool IsCanAttack;
+    private float _angle;
 
     private void Awake()
     {
@@ -54,7 +59,13 @@ public class EnemyInstance: MonoBehaviour
         {
             ChasePlayer();
         }
+        if (_distanceToThePlayer <= 4 && _distanceToThePlayer != 0 && _isPlayerVisible)
+        {
+            transform.LookAt(_target);
+            _enemyStateMachine.EnterIn<AttackPlayer>();
+        }
     }
+
     private void OverlapSphereCheck()
     {
         if (_target is null)
@@ -69,17 +80,19 @@ public class EnemyInstance: MonoBehaviour
         _playerPosition= _target.position;
         Vector3 direction = _playerPosition - transform.position;
         
-        float distanceToThePlayer = Vector3.Distance(_playerPosition, transform.position);
-        if (distanceToThePlayer >= _viewRadius)
+        _distanceToThePlayer = Vector3.Distance(_playerPosition, transform.position);
+        Debug.Log(_distanceToThePlayer);
+        if (_distanceToThePlayer >= _viewRadius)
         {
             _target = null;
             _noticedTarget[0] = null;
             _isPlayerVisible = false;
+            _distanceToThePlayer = 0;
         }
         
-        float angle = Vector3.Angle(transform.forward, direction);
+        _angle = Vector3.Angle(transform.forward, direction);
         
-        if (!_isPlayerVisible && angle < _viewAngle)
+        if (!_isPlayerVisible && _angle < _viewAngle)
         {
             _isPlayerVisible = true;
         }

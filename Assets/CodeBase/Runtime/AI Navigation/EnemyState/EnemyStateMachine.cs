@@ -20,7 +20,7 @@ public class EnemyStateMachine
         {
             [typeof(PatrolEnemyState)] = new PatrolEnemyState(this, enemyInstance),
             [typeof(ChasePlayerState)] = new ChasePlayerState(this, enemyInstance),
-            [typeof(AttackPlayer)] = new AttackPlayer(this)
+            [typeof(AttackPlayer)] = new AttackPlayer(this, enemyInstance)
         };
     }
 
@@ -30,6 +30,7 @@ public class EnemyStateMachine
         {
             _currentEnemyState?.ExitState();
             _currentEnemyState = state;
+            Debug.Log(_currentEnemyState);
             _currentEnemyState.EnterState();
         }
     }
