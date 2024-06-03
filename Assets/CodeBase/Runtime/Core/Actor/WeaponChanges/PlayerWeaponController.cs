@@ -11,6 +11,7 @@ public class PlayerWeaponController : NetworkBehaviour
     [SerializeField]private GameObject _ToolObject;
     public bool _isToolInHandle = false;
     
+    
     private ITool _baseTool;
     public ITool _currentTool;
     private ITool[] _availableModule;
@@ -26,7 +27,8 @@ public class PlayerWeaponController : NetworkBehaviour
         _baseTool = new DefaultTool(10);
         
         _availableModule = new ITool [] {new Key(_baseTool), new PickAxe(_baseTool), new Axe(_baseTool)};
-        _inputHandler.GetToolPerformed += GetTool; 
+        _inputHandler.GetToolPerformed += GetTool;
+        
     }
 
     private void OnDisable()

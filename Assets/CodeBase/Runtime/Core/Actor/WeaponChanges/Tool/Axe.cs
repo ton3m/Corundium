@@ -2,19 +2,20 @@ using System;
 using System.Data;
 using Unity.VisualScripting;
 using UnityEngine;
+using MySql.Data.MySqlClient;
 
 public class Axe : ITool
 {
     public float BaseDamage { get; }
+    private ConnectDb _db;
     
     // other things
     
     public Axe(ITool baseTool, float baseDamageUpgrade = 0)
     {
-        //BaseDamage = baseTool.BaseDamage + baseDamageUpgrade;
-        BaseDamage = 0;
-
-        ConnectDb.DataBase.SelectQuery("select damage_module from ToolModule where name_module = 'Axe'", out DataTable dataTable);
+        _db = new ConnectDb();
+        BaseDamage = _db.GetDamage("Axe");
+        Debug.Log(BaseDamage);
     }
     
     public float CalculateDamage(Type hitObjectType)
@@ -24,7 +25,7 @@ public class Axe : ITool
         if(hitObjectType == typeof(Tree)) // условно
         {
              resultDamage *= 2; 
-             Debug.Log("Its rock");
+             Debug.Log("Its Tree");
         }
         else if (hitObjectType == typeof(Rock))
         {

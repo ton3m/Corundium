@@ -24,7 +24,7 @@ public class Rock : NetworkBehaviour, IDamageable
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
-        if (_hpRock <= 0)
+        if (_hpRock <= 1)
         {
             Extract();
         }
