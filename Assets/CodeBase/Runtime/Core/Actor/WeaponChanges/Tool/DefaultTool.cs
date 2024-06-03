@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class DefaultTool: ITool
+public class DefaultTool : ITool
 {
     public float BaseDamage { get; }
     
