@@ -14,13 +14,18 @@ public class GamePrefabsInstaller : MonoInstaller
 
     private void BindNetworkManager()
     {
-        CustomNetworkManager networkManager = Container.InstantiatePrefabForComponent<CustomNetworkManager>(_networkManagerPrefab);
-        Container.Bind<CustomNetworkManager>().FromInstance(networkManager).AsSingle();
+        Container
+            .Bind<CustomNetworkManager>()
+            .FromComponentInNewPrefab(_networkManagerPrefab)
+            .AsSingle()
+            .NonLazy();
     }
 
     private void BindLoadingCurtain()
     {
-        var curtainObject = Container.InstantiatePrefabForComponent<Curtain>(_loadingCurtain);
-        Container.Bind<ILoadingCurtain>().To<Curtain>().FromInstance(curtainObject).AsSingle();
+        Container
+            .BindInterfacesAndSelfTo<Curtain>()
+            .FromComponentInNewPrefab(_loadingCurtain)
+            .AsSingle();
     }
 }

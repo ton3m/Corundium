@@ -49,7 +49,14 @@ public class CustomNetworkManager : NetworkManager
         if (playerPrefab == null)
             throw new NullReferenceException("PLAYER prefab is empty");
 
-        GameObject playerObject = Instantiate(playerPrefab); 
+        var t = FindObjectOfType<NetworkStartPosition>(); // костыль
+        GameObject playerObject;
+        
+        if(t != null)
+            playerObject = Instantiate(playerPrefab, t.transform.position, Quaternion.identity); 
+        else
+            playerObject = Instantiate(playerPrefab); 
+
 
         NetworkServer.AddPlayerForConnection(conn, playerObject);
     }

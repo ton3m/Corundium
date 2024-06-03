@@ -1,7 +1,7 @@
 using UnityEngine;
-using System;
 using System.Collections;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 using Random = UnityEngine.Random;
 
 public class PatrolEnemyState : IEnemyState
@@ -9,9 +9,10 @@ public class PatrolEnemyState : IEnemyState
     private readonly EnemyInstance _enemyInstance;
     private readonly EnemyStateMachine _enemyStateMachine;
     private NavMeshAgent _navMeshAgent;
-    
-    private float _timeBeetweenWalk = 0f;
 
+    private IEnumerator _corutine;
+    private float _timeBeetweenWalk;
+    
     public PatrolEnemyState(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
         _enemyStateMachine = enemyStateMachine;
@@ -21,27 +22,29 @@ public class PatrolEnemyState : IEnemyState
     public void EnterState()
     {
         Debug.Log("Start Patrol");
-        _enemyInstance.StartCoroutine(PatrolCoroutine());
+        _corutine = PatrolCoroutine();
+        _enemyInstance.StartCoroutine(_corutine);
     }
-
+    
     public void ExitState()
     {
         Debug.Log("Stop Patrol");
-        _enemyInstance.StopCoroutine(PatrolCoroutine());
+        _enemyInstance.StopCoroutine(_corutine);
     }
     IEnumerator PatrolCoroutine()
     {
         while(true)
         {
             Patrol();
+            _timeBeetweenWalk = Random.Range(3,10);
             yield return new WaitForSeconds(_timeBeetweenWalk);
         }
     }
-    public void Patrol()
+    private void Patrol()
     {
         Vector3 randomVector = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
         _enemyStateMachine.NavMeshAgent.SetDestination(randomVector + _enemyInstance.transform.position);
-        _timeBeetweenWalk = Random.Range(2,8);
+        
     }
 
     

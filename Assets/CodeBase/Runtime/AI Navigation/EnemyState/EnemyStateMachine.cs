@@ -6,27 +6,31 @@ using UnityEngine.AI;
 public class EnemyStateMachine
 {
     public NavMeshAgent NavMeshAgent { get; }
-    private Dictionary<Type, IEnemyState> _enemyStates;
+    public Animator Animator { get; }
+    
+    private readonly Dictionary<Type, IEnemyState> _enemyStates;
     private IEnemyState _currentEnemyState;
     
-    public EnemyStateMachine(NavMeshAgent navMeshAgent, EnemyInstance enemyInstance)
+    public EnemyStateMachine(NavMeshAgent navMeshAgent, Animator animator, EnemyInstance enemyInstance)
     {
         NavMeshAgent = navMeshAgent;
-        
+        Animator = animator;
+
         _enemyStates = new Dictionary<Type, IEnemyState>()
         {
             [typeof(PatrolEnemyState)] = new PatrolEnemyState(this, enemyInstance),
-            [typeof(ChasePlayer)] = new ChasePlayer(this),
-            [typeof(AttackPlayer)] = new AttackPlayer(this)
+            [typeof(ChasePlayerState)] = new ChasePlayerState(this, enemyInstance),
+            [typeof(AttackPlayer)] = new AttackPlayer(this, enemyInstance)
         };
     }
 
     public void EnterIn<TState>() where TState : IEnemyState
     {
-        if (_enemyStates.TryGetValue(typeof(TState), out IEnemyState state))
+        if (_enemyStates.TryGetValue(typeof(TState), out IEnemyState state) && _currentEnemyState != state)
         {
             _currentEnemyState?.ExitState();
             _currentEnemyState = state;
+            Debug.Log(_currentEnemyState);
             _currentEnemyState.EnterState();
         }
     }
