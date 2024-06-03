@@ -7,7 +7,7 @@ public class PickAxe : ITool
 {
     private ITool _baseTool;
     
-    public int BaseDamage { get; }
+    public float BaseDamage { get; }
     
     // other things
     
@@ -17,9 +17,9 @@ public class PickAxe : ITool
         BaseDamage = _baseTool.BaseDamage + baseDamageUpgrade;
     }
     
-    public int CalculateDamage(Type hitObjectType)
+    public float CalculateDamage(Type hitObjectType)
     {
-        int resultDamage = BaseDamage;
+        float resultDamage = BaseDamage;
         
         if (hitObjectType == typeof(Rock)) // условно
         {

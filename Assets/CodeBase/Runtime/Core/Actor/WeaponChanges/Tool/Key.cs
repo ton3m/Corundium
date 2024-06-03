@@ -8,7 +8,7 @@ public class Key : ITool
 {
     private ITool _baseTool;
     
-    public int BaseDamage { get; }
+    public float BaseDamage { get; }
     
     // other things
     
@@ -18,15 +18,18 @@ public class Key : ITool
         BaseDamage = _baseTool.BaseDamage + baseDamageUpgrade;
     }
     
-    public int CalculateDamage(Type hitObjectType)
+    public float CalculateDamage(Type hitObjectType)
     {
-        int resultDamage = BaseDamage;
+        float resultDamage = BaseDamage;
         
-        // if(typeof(hitObjectType) == typeof(Enemy)) // условно
+        //if(hitObjectType == typeof(Enemy))// условно
         // {
         //     resultDamage *= 2;  
         // }
-        // other ifs
+        // else
+        // {
+        //     resultDamage /= 2;
+        // }
         
         return resultDamage;
     }

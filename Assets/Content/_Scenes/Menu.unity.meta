@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Content/_Scenes/Menu.unity.meta
 guid: 273c98271f854e84992576036403b4b8
+========
+guid: 8b4513d42e8b2464abc19708fdb0211d
+>>>>>>>> origin/Sipo-dev-:Assets/Content/_Scenes/DiplomScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

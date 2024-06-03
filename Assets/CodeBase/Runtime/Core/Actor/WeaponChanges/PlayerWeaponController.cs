@@ -45,7 +45,7 @@ public class PlayerWeaponController : NetworkBehaviour
         Debug.Log(_currentTool);
     }
     
-    public int CalculateDamage(Type hitObjectType)
+    public float CalculateDamage(Type hitObjectType)
     {
         return _currentTool.CalculateDamage(hitObjectType); 
     }
