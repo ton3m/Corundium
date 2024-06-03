@@ -1,41 +1,43 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.PlayerLoop;
 
 public class ChasePlayerState : IEnemyState
 {
     private readonly EnemyInstance _enemyInstance;
     private readonly EnemyStateMachine _enemyStateMachine;
-    private Transform _targetEnemy;
-    private bool _isPlayerVisible;
-    private float _viewAngle;
-    private float _vievRadius;
-
-
+    private Vector3 _playerPosition;
+    private NavMeshAgent _navMeshAgent;
+    private bool _isState;
     public ChasePlayerState(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
-        _enemyStateMachine = enemyStateMachine;
         _enemyInstance = enemyInstance;
+        _enemyStateMachine = enemyStateMachine;
     }
 
     public void EnterState()
     {
-        ChasePlayer();
+        StartChase();
     }
-
-    private void ChasePlayer()
-    {
-        NavMeshAgent navMeshAgent = _enemyStateMachine.NavMeshAgent;
-        Vector3 targetEnemyPosition = _enemyStateMachine.TargetEnemy.position;
-
-        Vector3 playerPosition = targetEnemyPosition;
-
-        navMeshAgent.destination = targetEnemyPosition;
-    }
-
     public void ExitState()
     {
-        
+        _enemyStateMachine.Animator.SetBool("ChaseEnemy", false);
+        StopChase();
+    }
+    
+    private void StartChase()
+    {
+        _enemyInstance.DoChase = true;
+        SetAnimation();
+    }
+    private void StopChase()
+    {
+        _enemyInstance.DoChase = false;
+        SetAnimation();
+    }
+
+    private void SetAnimation()
+    {
+        _enemyStateMachine.Animator.SetBool("ChaseEnemy", _enemyInstance.DoChase);
     }
 }

@@ -6,57 +6,109 @@ using UnityEngine.AI;
 [RequireComponent(typeof (NavMeshAgent))]
 public class EnemyInstance: MonoBehaviour
 {
-    private NavMeshAgent _navMeshAgent;
-    private EnemyStateMachine _enemyStateMachine;
-    private Transform _target;
-    [SerializeField] private float _viewRadius = 6f;
-    
-    [SerializeField] private NavMeshSurface _surface;
+    [SerializeField] private NavMeshSurface _navMeshSurface;
     private Collider[] _noticedTarget = new Collider[1];
+    [SerializeField] private Animator _animator;
+    private EnemyStateMachine _enemyStateMachine;
+    private NavMeshAgent _navMeshAgent;
+    private Transform _target;
+    private Vector3 _playerPosition;
+    
     [SerializeField] private LayerMask _layerMaskPlayer;
-    private double _viewAngle;
+    [SerializeField] private float _viewRadius = 6f;
     private bool _isPlayerVisible;
+    private float _distanceToThePlayer;
+    private readonly float _viewAngle = 90f;
+    
+    public bool DoChase;
+    public bool IsCanAttack;
+    private float _angle;
 
     private void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent, _target, this);
+        _enemyStateMachine = new EnemyStateMachine(_navMeshAgent,_animator, this);
         
-        _surface.BuildNavMesh();
-        
+        _navMeshSurface.BuildNavMesh();
+        _animator.SetBool(1,true);
         _enemyStateMachine.EnterIn<PatrolEnemyState>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _noticedTarget, _layerMaskPlayer);
+        float currentVelocity = _navMeshAgent.velocity.magnitude;
+        _animator.SetFloat("Speed", currentVelocity);
         
-        //добавить проверку на то что бы нельзя было входить в одно состояние несколько раз
-        //да, нихуя не работает еще и ломается все, состояние дрочится
-        if (_noticedTarget[0] == null)
+        OverlapSphereCheck();
+
+        if (_target is not null)
         {
-            //_enemyStateMachine.EnterIn<PatrolEnemyState>();
-            _isPlayerVisible = false;
+            VisibilityCheck();
+        }
+        else
+        {
+            SetDefaultState();
             return;
         }
-        //досюда даже не доходит без переключения, не обрабатывает от иф сверху
-        Debug.Log("player is sphere");
-        _target = _noticedTarget[0].transform;
-        Vector3 playerPosition = _target.position;
-        Vector3 direction = playerPosition  - transform.position;
-        
-        float angle = Vector3.Angle(_enemyStateMachine.TargetEnemy.forward, direction);
-        
-        _isPlayerVisible = angle < _viewAngle;
 
         if (_isPlayerVisible)
         {
             _enemyStateMachine.EnterIn<ChasePlayerState>();
         }
-        else
+        if (DoChase)
         {
-            _enemyStateMachine.EnterIn<PatrolEnemyState>();
+            ChasePlayer();
+        }
+        if (_distanceToThePlayer <= 4 && _distanceToThePlayer != 0 && _isPlayerVisible)
+        {
+            transform.LookAt(_target);
+            _enemyStateMachine.EnterIn<AttackPlayer>();
+        }
+    }
+
+    private void OverlapSphereCheck()
+    {
+        if (_target is null)
+        {
+            Physics.OverlapSphereNonAlloc(transform.position, _viewRadius, _noticedTarget, _layerMaskPlayer);
+        }
+
+        _target = _noticedTarget[0]?.transform;
+    }
+    private void VisibilityCheck()
+    {
+        _playerPosition= _target.position;
+        Vector3 direction = _playerPosition - transform.position;
+        
+        _distanceToThePlayer = Vector3.Distance(_playerPosition, transform.position);
+        Debug.Log(_distanceToThePlayer);
+        if (_distanceToThePlayer >= _viewRadius)
+        {
+            _target = null;
+            _noticedTarget[0] = null;
+            _isPlayerVisible = false;
+            _distanceToThePlayer = 0;
         }
         
+        _angle = Vector3.Angle(transform.forward, direction);
+        
+        if (!_isPlayerVisible && _angle < _viewAngle)
+        {
+            _isPlayerVisible = true;
+        }
+    }
+    private void SetDefaultState()
+    {
+        _enemyStateMachine.EnterIn<PatrolEnemyState>();
+        _isPlayerVisible = false;
+    }
+    private void ChasePlayer()
+    {
+        _navMeshAgent.SetDestination(_playerPosition);
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawSphere(transform.position, _viewRadius);
     }
 }
