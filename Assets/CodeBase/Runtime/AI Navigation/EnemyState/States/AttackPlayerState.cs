@@ -6,6 +6,7 @@ public class AttackPlayer : IEnemyState
 {
     private readonly EnemyInstance _enemyInstance;
     private readonly EnemyStateMachine _enemyStateMachine;
+    
 
     public AttackPlayer(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
@@ -16,7 +17,6 @@ public class AttackPlayer : IEnemyState
     public void EnterState()
     {
         StartAttack();
-       
     }
     
     public void ExitState()

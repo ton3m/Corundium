@@ -42,7 +42,7 @@ public class PatrolEnemyState : IEnemyState
     }
     private void Patrol()
     {
-        Vector3 randomVector = new Vector3(Random.Range(-10f, 10f), Random.Range(-10f, 10f), Random.Range(-10f, 10f));
+        Vector3 randomVector = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
         _enemyStateMachine.NavMeshAgent.SetDestination(randomVector + _enemyInstance.transform.position);
         
     }

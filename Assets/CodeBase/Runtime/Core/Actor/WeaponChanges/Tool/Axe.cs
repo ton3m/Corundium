@@ -19,7 +19,7 @@ public class Axe : ITool
         if(hitObjectType == typeof(Tree)) // условно
         {
              resultDamage *= 2; 
-             Debug.Log("Its rock");
+             Debug.Log("Its Tree");
         }
         else if (hitObjectType == typeof(Rock))
         {

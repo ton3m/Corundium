@@ -23,6 +23,13 @@ public class Rock : NetworkBehaviour, IDamageable
     }
     private void LateUpdate() => UpdateHpRockText();
     
+    private void Update()
+    {
+        if (_hpRock <= 0)
+        {
+            Extract();
+        }
+    }
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
@@ -49,7 +56,7 @@ public class Rock : NetworkBehaviour, IDamageable
     private void CmdSpawnStone()
     {
         GameObject stone = Instantiate(_stone, gameObject.transform.position, quaternion.identity);
-        NetworkServer.Spawn(stone); 
+        //NetworkServer.Spawn(stone); 
     }
 
     private void UpdateHpRockText()

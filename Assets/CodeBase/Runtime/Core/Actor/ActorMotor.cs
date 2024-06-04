@@ -1,4 +1,5 @@
 using Mirror;
+using Unity.VisualScripting;
 using UnityEngine;
 using Zenject;
 
@@ -8,6 +9,8 @@ public class ActorMotor : NetworkBehaviour
     [Header("References")]
     [SerializeField] private CharacterController _controller;
     [SerializeField] private Camera _camera;
+    [SerializeField] private Renderer _model;
+    [SerializeField] private Animator _animator;
 
     [Header("Settings")]
     [SerializeField] private float _gravity;
@@ -48,6 +51,7 @@ public class ActorMotor : NetworkBehaviour
 
     private void Start()
     {
+        
         _motorObject = transform;
 
         _inputHandler.RotateInputChanged += SetRotationDirection;
@@ -55,7 +59,15 @@ public class ActorMotor : NetworkBehaviour
         _inputHandler.JumpInputPressed += SetJumpActive;
 
         if (!isLocalPlayer)
+        {
             _camera.gameObject.SetActive(false);
+        }
+        if (isLocalPlayer)
+        {
+            _model.enabled = false;
+        }
+        
+        
     }
 
     private void OnDisable()
@@ -70,11 +82,18 @@ public class ActorMotor : NetworkBehaviour
     {
         if (!isLocalPlayer)
             return;
-
+        
+        float velocity = _controller.velocity.magnitude;
+        Debug.Log(velocity);
+        _animator.SetFloat("Velocity", velocity);
+        
         UpdateGravity();
 
-        if(_isJumpActive)
+        if (_isJumpActive)
+        {
             AddJumpForce();
+            
+        }
 
         Vector3 moveVector = transform.TransformDirection(new Vector3(_newMoveDirection.x, 0, _newMoveDirection.y)).normalized;
 
@@ -115,9 +134,14 @@ public class ActorMotor : NetworkBehaviour
 
     private void UpdateGravity()
     {
-        if(_jumpForce > _gravity)
+        if (_jumpForce > _gravity)
         {
+            _animator.SetBool("IsnotGrounded", true);
             _jumpForce += _gravity * Time.deltaTime;
-        } 
+        }
+        else
+        {
+            _animator.SetBool("IsnotGrounded", false);
+        }
     }
 }

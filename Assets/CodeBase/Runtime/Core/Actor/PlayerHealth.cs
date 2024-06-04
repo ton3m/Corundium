@@ -44,5 +44,4 @@ public class PlayerHelths : NetworkBehaviour, IDamageable
     {   
         Debug.Log("YOU DIED");
     }
-    
 }

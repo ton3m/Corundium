@@ -11,6 +11,8 @@ public class PlayerAttack : NetworkBehaviour
     [SerializeField] private float _attackDamage = 10f;
     private RaycastHit _hitInfo;
     
+    [SerializeField] private Animator _animator;
+    
     private IInputHandler _inputHandler;
     private ISaveLoadManager _saveLoadManager;
     [SerializeField]private PlayerWeaponController _weaponController;
@@ -19,17 +21,15 @@ public class PlayerAttack : NetworkBehaviour
     {
         _inputHandler = inputHandler;
         _saveLoadManager = saveLoadManager;
-        
     }
 
     private void Start()
     {
         if (!isLocalPlayer)
             return;
-        //if (_weaponController._isToolInHandle)
-        //{
-            _inputHandler.AttackPerformed += OnAttackPerformed;
-        //}
+        
+        _inputHandler.AttackPerformed += OnAttackPerformed;
+        
     }
 
     private void OnDisable()
@@ -39,6 +39,8 @@ public class PlayerAttack : NetworkBehaviour
     
     private void OnAttackPerformed()
     {
+        _animator.SetTrigger("Attacked");
+        
         Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         if (Physics.Raycast(ray, out _hitInfo, _attackRaycastmaxDistance))
         {
@@ -46,6 +48,7 @@ public class PlayerAttack : NetworkBehaviour
             {
                 damageable.ApplyDamage(_weaponController._currentTool.CalculateDamage(damageable.GetType()));
                 RpcInstantiateParticle();
+                //_animator.SetBool("Attacked", false);
                 //CmdApplyDamage(_hitInfo.transform.gameObject, _attackDamage);
 
                 if(_hitInfo.transform.TryGetComponent(out Rock rock)) // for now, before we introduce things to save 
@@ -54,6 +57,7 @@ public class PlayerAttack : NetworkBehaviour
                 }
             }
         }
+        
     }
 
     //[Command]
