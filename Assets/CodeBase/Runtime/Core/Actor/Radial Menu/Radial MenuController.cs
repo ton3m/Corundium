@@ -14,7 +14,7 @@ public class RadialMenuController : MonoBehaviour
     
     public Vector2 NormalMousePos;
     public float CurrentAngle;
-    public int Selection;
+    public int Selection = 0;
     public int PrevSelection;
     [SerializeField] private int _offSet = -30;
 
@@ -28,7 +28,7 @@ public class RadialMenuController : MonoBehaviour
     public void Construct(IInputHandler inputHandler)
     {
         _inputHandler = inputHandler;
-        // _playerWeaponController = playerWeaponController;
+        
     }
 
     private void Start()
@@ -36,8 +36,13 @@ public class RadialMenuController : MonoBehaviour
         // if (!isLocalPlayer)
         //     return;
         
-        _inputHandler.RadialMenuPerformed += OpenRadialMenu;
+        //Selection = (int)CurrentAngle / 120;
+        Elements[Selection].Selected();
+        PrevSelection = Selection;
+        
+        _inputHandler.RadialMenuPerformed += OpenRadialMenu; 
         _inputHandler.RadialMenuClosed += CloseRadialMenu;
+        
     }
 
     private void OnDisable()
@@ -48,10 +53,10 @@ public class RadialMenuController : MonoBehaviour
 
     private void OpenRadialMenu()
     {
-        if (_playerWeaponController._isToolInHandle)
+        if (_playerWeaponController._isToolInHand)
         {
             _radialMenuRoot.SetActive(true);
-            LockCursor();
+            UnLockCursor();
         }
     }
 
@@ -64,20 +69,28 @@ public class RadialMenuController : MonoBehaviour
 
     private void Update()
     {
-        CalculateElement();
+        SetElement();
     }
 
-    private void CalculateElement()
+    private void SetElement()
+    {
+        CalculateAngle();
+        SetSelection();
+    }
+
+    private void CalculateAngle()
     {
         NormalMousePos = new Vector2(UnityEngine.Input.mousePosition.x - Screen.width / 2,
             UnityEngine.Input.mousePosition.y - Screen.height / 2);
         CurrentAngle = Mathf.Atan2(NormalMousePos.y, NormalMousePos.x) * Mathf.Rad2Deg;
 
         CurrentAngle = (CurrentAngle + 360 + _offSet) % 360;
+    }
 
+    private void SetSelection()
+    {
         Selection = (int)CurrentAngle / 120;
-
-        //засунуть в отдельный метод и добавить в старт и проверить будет ли изначально выбираться что то
+        
         if (Selection != PrevSelection)
         {
             Elements[Selection].Selected();
@@ -93,17 +106,14 @@ public class RadialMenuController : MonoBehaviour
         //_playerWeaponController.SetToolModuleId(Selection);
     }
 
+    private void UnLockCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     private void LockCursor()
     {
-        if (Cursor.visible)
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

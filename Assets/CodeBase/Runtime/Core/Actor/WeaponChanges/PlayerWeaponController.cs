@@ -9,7 +9,7 @@ using Zenject;
 public class PlayerWeaponController : NetworkBehaviour
 {
     [SerializeField]private GameObject _ToolObject;
-    public bool _isToolInHandle = false;
+    public bool _isToolInHand = false;
     
     private ITool _baseTool;
     public ITool _currentTool;
@@ -35,8 +35,8 @@ public class PlayerWeaponController : NetworkBehaviour
     }
     private void GetTool()
     {
-        _isToolInHandle = !_isToolInHandle;
-        _ToolObject.SetActive(_isToolInHandle);
+        _isToolInHand = !_isToolInHand;
+        _ToolObject.SetActive(_isToolInHand);
         //SetToolModuleId(_radialMenuController.Selection);
     }
     public void SetToolModuleId(int selected)

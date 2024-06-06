@@ -1645,7 +1645,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   _ToolObject: {fileID: 3890260413891590077}
-  _isToolInHandle: 0
+  _isToolInHand: 0
 --- !u!114 &4684874135160541171
 MonoBehaviour:
   m_ObjectHideFlags: 0

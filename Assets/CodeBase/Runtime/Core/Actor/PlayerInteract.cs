@@ -6,7 +6,7 @@ using Zenject;
 
 public class PlayerInteract : NetworkBehaviour
 {
-    [SerializeField] private float _maxDistanceRaycast = 1.5f;
+    [SerializeField] private float _maxDistanceRaycast = 3f;
     private IInputHandler _inputHandler;
     private RaycastHit _hitInfo;
     private LayerMask _layer;
