@@ -6,9 +6,7 @@ public class ChasePlayerState : IEnemyState
 {
     private readonly EnemyInstance _enemyInstance;
     private readonly EnemyStateMachine _enemyStateMachine;
-    private Vector3 _playerPosition;
-    private NavMeshAgent _navMeshAgent;
-    private bool _isState;
+    
     public ChasePlayerState(EnemyStateMachine enemyStateMachine, EnemyInstance enemyInstance)
     {
         _enemyInstance = enemyInstance;

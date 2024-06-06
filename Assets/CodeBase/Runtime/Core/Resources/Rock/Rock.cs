@@ -6,16 +6,21 @@ using UnityEngine;
 
 public class Rock : NetworkBehaviour, IDamageable
 {
+    private ConnectDb _db;
+    
     [SerializeField] private GameObject _stone;
     [SerializeField] private TMP_Text _hpRockText;
-    [SerializeField] public int _maxHpRock = 100;
-    [SyncVar] private float _hpRock = 100;
+    [SerializeField] public float _maxHpRock;
+    [SyncVar] private float _hpRock;
     public Type Type { get; }
     
     public int HP => (int)_hpRock;
 
     private void Start()
     {
+        _db = FindObjectOfType<ConnectDb>();
+        _maxHpRock = _db.GetHPRes("Rock");
+        
         if (isServer)
             _hpRock = _maxHpRock;
 

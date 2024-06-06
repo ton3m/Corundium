@@ -10,7 +10,7 @@ public class PlayerInteract : NetworkBehaviour
     private IInputHandler _inputHandler;
     private RaycastHit _hitInfo;
     private LayerMask _layer;
-    private int _countStone; // временно, пока нет инвентаря
+    
 
     [Inject]
     public void Construct(IInputHandler inputHandler)
@@ -40,7 +40,7 @@ public class PlayerInteract : NetworkBehaviour
             if (_hitInfo.transform.TryGetComponent(out IResource resource))
             {
                 // Update Inventory
-                _countStone += resource.Quantity; // временно
+                
                 Destroy(_hitInfo.transform.gameObject);
             }
 

@@ -48,8 +48,6 @@ public class PlayerAttack : NetworkBehaviour
             {
                 damageable.ApplyDamage(_weaponController._currentTool.CalculateDamage(damageable.GetType()));
                 RpcInstantiateParticle();
-                //_animator.SetBool("Attacked", false);
-                //CmdApplyDamage(_hitInfo.transform.gameObject, _attackDamage);
 
                 if(_hitInfo.transform.TryGetComponent(out Rock rock)) // for now, before we introduce things to save 
                 {

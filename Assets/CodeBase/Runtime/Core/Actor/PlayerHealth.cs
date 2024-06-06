@@ -8,13 +8,18 @@ using UnityEngine.UI;
 
 public class PlayerHelths : NetworkBehaviour, IDamageable
 {
-    [SerializeField] public int _maxHpPlayer = 100;
+    private ConnectDb _db;
+    
+    [SerializeField] public float _maxHpPlayer = 100;
     [SyncVar] private float _hpPlayer = 100;
     [SerializeField] private Slider _healthSlider;
     public Type Type { get; }
     
     private void Start()
     {
+        _db = FindObjectOfType<ConnectDb>();
+        _maxHpPlayer = _db.GetHPPlayer();
+        
         if (isServer)
             _hpPlayer = _maxHpPlayer;
         

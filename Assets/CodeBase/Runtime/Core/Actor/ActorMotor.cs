@@ -84,7 +84,7 @@ public class ActorMotor : NetworkBehaviour
             return;
         
         float velocity = _controller.velocity.magnitude;
-        Debug.Log(velocity);
+        
         _animator.SetFloat("Velocity", velocity);
         
         UpdateGravity();

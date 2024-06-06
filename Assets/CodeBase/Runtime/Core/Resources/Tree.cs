@@ -7,16 +7,21 @@ using UnityEngine.Serialization;
 
 public class Tree : NetworkBehaviour, IDamageable
 {
+    private ConnectDb _db;
+    
     [SerializeField] private GameObject _wood;
     [SerializeField] private TMP_Text _hpTreeText;
-    [SerializeField] public int _maxHpTree = 100;
-    [SyncVar] private float _hpTree = 100;
+    [SerializeField] public float _maxHpTree;
+    [SyncVar] private float _hpTree;
     public Type Type { get; }
     
     public int HP => (int)_hpTree;
 
     private void Start()
     {
+        _db = FindObjectOfType<ConnectDb>();
+        _maxHpTree = _db.GetHPRes("Tree");
+        
         if (isServer)
             _hpTree = _maxHpTree;
 

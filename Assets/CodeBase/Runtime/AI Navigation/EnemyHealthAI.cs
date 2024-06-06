@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class EnemyHealthAi : NetworkBehaviour, IDamageable
 {
+    private ConnectDb _db;
+    
     [SerializeField] private Slider _healthSlider;
-    [SerializeField] public int _maxHpEnemy = 100;
+    [SerializeField] public float _maxHpEnemy = 100;
     [SyncVar] private float _hpEnemy = 100;
     public Type Type { get; }
 
@@ -14,6 +16,9 @@ public class EnemyHealthAi : NetworkBehaviour, IDamageable
 
     private void Start()
     {
+        _db = FindObjectOfType<ConnectDb>();
+        _maxHpEnemy = _db.GetHPEnemy(1);
+        
         if (isServer)
             _hpEnemy = _maxHpEnemy;
 
