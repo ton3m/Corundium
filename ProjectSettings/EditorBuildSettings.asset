@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Content/_Scenes/DiplomScene.unity
     guid: 78f8ed4354d7c024fb69d475c2828d7b
+  - enabled: 1
+    path: Assets/Content/_Scenes/DiplomGameScene.unity
+    guid: e00f67709f0e6764781bd1c956cd0a56
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: b42fbb8bb0faea34499eedf2bc14f954, type: 2}
