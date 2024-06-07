@@ -11,7 +11,8 @@ public class PlayerInteract : NetworkBehaviour
     private RaycastHit _hitInfo;
     private LayerMask _layer;
     
-
+    [SerializeField] private PlayerWeaponController _playerWeaponController;
+    
     [Inject]
     public void Construct(IInputHandler inputHandler)
     {
@@ -42,6 +43,15 @@ public class PlayerInteract : NetworkBehaviour
                 // Update Inventory
                 
                 Destroy(_hitInfo.transform.gameObject);
+            }
+
+            if (_hitInfo.transform.TryGetComponent(out IItemsTool itemsTool))
+            {
+                bool check = _playerWeaponController.SetToolAvailable(itemsTool.GetType());
+                if (check)
+                {
+                    Destroy(_hitInfo.transform.gameObject);
+                }
             }
 
             if (_hitInfo.transform.TryGetComponent(out IInteractable interactable))

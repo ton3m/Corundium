@@ -23,12 +23,17 @@ public class PickAxe : ITool
         
         if (hitObjectType == typeof(Rock)) // условно
         {
-            resultDamage *= 2;  
+             resultDamage *= 2;  
         }
-        else if (hitObjectType == typeof(Tree)) 
+        else
         {
-            resultDamage /= 2;  
+            resultDamage = 0;
         }
+        // else if (hitObjectType == typeof(Tree)) 
+        // {
+        //     resultDamage /= 2;  
+        // }
+        
         return resultDamage;
     }
 }

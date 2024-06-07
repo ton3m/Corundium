@@ -10,7 +10,7 @@ public class Tree : NetworkBehaviour, IDamageable
     private ConnectDb _db;
     
     [SerializeField] private GameObject _wood;
-    [SerializeField] private TMP_Text _hpTreeText;
+    //[SerializeField] private TMP_Text _hpTreeText;
     [SerializeField] public float _maxHpTree;
     [SyncVar] private float _hpTree;
     public Type Type { get; }
@@ -25,7 +25,7 @@ public class Tree : NetworkBehaviour, IDamageable
         if (isServer)
             _hpTree = _maxHpTree;
 
-        UpdateHpRockText();
+        //UpdateHpRockText();
     }
 
     private void Update()
@@ -36,12 +36,12 @@ public class Tree : NetworkBehaviour, IDamageable
         }
     }
 
-    private void LateUpdate() => UpdateHpRockText();
+    //private void LateUpdate() => UpdateHpRockText();
     
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
-        UpdateHpRockText();
+        //UpdateHpRockText();
     }
 
     [ClientRpc]
@@ -60,31 +60,31 @@ public class Tree : NetworkBehaviour, IDamageable
     private void CmdSpawnStone()
     {
         GameObject stone = Instantiate(_wood, gameObject.transform.position, quaternion.identity);
-        NetworkServer.Spawn(stone); 
+        //NetworkServer.Spawn(stone); 
     }
 
-    private void UpdateHpRockText()
-    {
-        _hpTreeText.text = "hp = " + _hpTree;
-
-        ActorMotor target = GameObject.FindObjectOfType<ActorMotor>();
-        if (target != null)
-        {
-            Transform targetTransform = target.transform;
-
-            Vector3 directionToTarget = targetTransform.position - _hpTreeText.transform.position;
-            directionToTarget.y = 0;
-
-            if (directionToTarget != Vector3.zero)
-            {
-                _hpTreeText.transform.rotation = Quaternion.LookRotation(directionToTarget);
-
-                _hpTreeText.transform.Rotate(0, 180, 0);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Target object not found!");
-        }
-    }
+    // private void UpdateHpRockText()
+    // {
+    //     _hpTreeText.text = "hp = " + _hpTree;
+    //
+    //     ActorMotor target = GameObject.FindObjectOfType<ActorMotor>();
+    //     if (target != null)
+    //     {
+    //         Transform targetTransform = target.transform;
+    //
+    //         Vector3 directionToTarget = targetTransform.position - _hpTreeText.transform.position;
+    //         directionToTarget.y = 0;
+    //
+    //         if (directionToTarget != Vector3.zero)
+    //         {
+    //             _hpTreeText.transform.rotation = Quaternion.LookRotation(directionToTarget);
+    //
+    //             _hpTreeText.transform.Rotate(0, 180, 0);
+    //         }
+    //     }
+    //     else
+    //     {
+    //         Debug.LogWarning("Target object not found!");
+    //     }
+    // }
 }

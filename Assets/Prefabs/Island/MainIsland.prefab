@@ -1309,6 +1309,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6895394276311384769, guid: 8b5aa74fb994cf8458a0f4542d95b50c, type: 3}
+      propertyPath: _assetId
+      value: 3554279688
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1702,6 +1706,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5606101354504596232}
     m_Modifications:
+    - target: {fileID: 335626150254585680, guid: c92313b69d8c51b4a92da8e2eb4fd4da, type: 3}
+      propertyPath: _assetId
+      value: 3554279688
+      objectReference: {fileID: 0}
     - target: {fileID: 5160999001073715608, guid: c92313b69d8c51b4a92da8e2eb4fd4da, type: 3}
       propertyPath: m_Name
       value: tree
@@ -1826,6 +1834,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5606101354504596232}
     m_Modifications:
+    - target: {fileID: -3525351954414251408, guid: ff3a9461171c8c6418fb9a9ac2cef532, type: 3}
+      propertyPath: _assetId
+      value: 3554279688
+      objectReference: {fileID: 0}
     - target: {fileID: 2452886302436883572, guid: ff3a9461171c8c6418fb9a9ac2cef532, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.148483

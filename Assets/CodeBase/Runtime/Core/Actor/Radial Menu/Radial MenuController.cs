@@ -14,7 +14,7 @@ public class RadialMenuController : MonoBehaviour
     
     public Vector2 NormalMousePos;
     public float CurrentAngle;
-    public int Selection = 0;
+    public int Selection=2;
     public int PrevSelection;
     [SerializeField] private int _offSet = -30;
 
@@ -38,11 +38,25 @@ public class RadialMenuController : MonoBehaviour
         
         //Selection = (int)CurrentAngle / 120;
         Elements[Selection].Selected();
-        PrevSelection = Selection;
+        //PrevSelection = Selection;
         
         _inputHandler.RadialMenuPerformed += OpenRadialMenu; 
         _inputHandler.RadialMenuClosed += CloseRadialMenu;
         
+    }
+    
+    private void Update()
+    {
+        
+        if (!_playerWeaponController.IsHavePickAxe)
+        {
+            Elements[1].DeSeleted();
+        }
+        if (!_playerWeaponController.IsHaveSword)
+        {
+            Elements[0].DeSeleted();
+        }
+        SetElement();
     }
 
     private void OnDisable()
@@ -53,7 +67,7 @@ public class RadialMenuController : MonoBehaviour
 
     private void OpenRadialMenu()
     {
-        if (_playerWeaponController._isToolInHand)
+        if (_playerWeaponController.IsToolInHand && _playerWeaponController.IsHaveAxe)
         {
             _radialMenuRoot.SetActive(true);
             UnLockCursor();
@@ -64,17 +78,26 @@ public class RadialMenuController : MonoBehaviour
     {
         _radialMenuRoot.SetActive(false);
         LockCursor();
-        SelectModule();
+        if (!_playerWeaponController.IsHaveSword && Selection == 0)
+        {
+            Elements[PrevSelection].Selected();
+        }
+        else if (!_playerWeaponController.IsHavePickAxe && Selection == 1)
+        {
+            Elements[PrevSelection].Selected();
+        }
+        else
+        {
+            SelectModule();
+        }
     }
 
-    private void Update()
-    {
-        SetElement();
-    }
+    
 
     private void SetElement()
     {
         CalculateAngle();
+        
         SetSelection();
     }
 
@@ -85,11 +108,12 @@ public class RadialMenuController : MonoBehaviour
         CurrentAngle = Mathf.Atan2(NormalMousePos.y, NormalMousePos.x) * Mathf.Rad2Deg;
 
         CurrentAngle = (CurrentAngle + 360 + _offSet) % 360;
+        
+        Selection = (int)CurrentAngle / 120;
     }
 
     private void SetSelection()
     {
-        Selection = (int)CurrentAngle / 120;
         
         if (Selection != PrevSelection)
         {
@@ -116,4 +140,6 @@ public class RadialMenuController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    
 }

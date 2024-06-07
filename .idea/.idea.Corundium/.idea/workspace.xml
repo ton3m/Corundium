@@ -9,8 +9,20 @@
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/Radial Menu/Radial MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/Radial Menu/Radial MenuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Axe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Key.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Key.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/PickAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/PickAxe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Rock/Rock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Rock/Rock.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Tree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/rocks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/rocks.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +159,7 @@
       <workItem from="1716124492387" duration="3987000" />
       <workItem from="1717574261390" duration="7439000" />
       <workItem from="1717679891138" duration="3090000" />
+      <workItem from="1717766918197" duration="10325000" />
     </task>
     <servers />
   </component>

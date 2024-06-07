@@ -22,14 +22,14 @@ public class Key : ITool
     {
         float resultDamage = BaseDamage;
         
-        //if(hitObjectType == typeof(Enemy))// условно
-        // {
-        //     resultDamage *= 2;  
-        // }
-        // else
-        // {
-        //     resultDamage /= 2;
-        // }
+        if(hitObjectType == typeof(EnemyHealthAi))// условно
+         {
+             resultDamage *= 2;  
+         }
+         else
+         {
+             resultDamage = 0;
+         }
         
         return resultDamage;
     }

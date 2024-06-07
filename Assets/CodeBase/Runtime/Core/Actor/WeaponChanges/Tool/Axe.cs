@@ -14,17 +14,21 @@ public class Axe : ITool
     
     public float CalculateDamage(Type hitObjectType)
     {
-        Debug.Log(hitObjectType);
         float resultDamage = BaseDamage;
         if(hitObjectType == typeof(Tree)) // условно
         {
-             resultDamage *= 2; 
-             Debug.Log("Its Tree");
+              resultDamage *= 2; 
+              Debug.Log("Its Tree");
         }
-        else if (hitObjectType == typeof(Rock))
+        else
         {
-            resultDamage /= 2;
+            resultDamage = 0;
         }
+        // else if (hitObjectType == typeof(Rock))
+        // {
+        //     resultDamage /= 2;
+        // }
+        
         return resultDamage;
     }
 }
