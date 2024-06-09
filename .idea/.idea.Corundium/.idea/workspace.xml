@@ -6,23 +6,72 @@
   <component name="ChangeListManager">
     <list default="true" id="e6de5dc7-9752-41fe-85c9-d537fe8c02a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/Radial Menu/Radial MenuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/Radial Menu/Radial MenuController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Axe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Key.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/Key.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/PickAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/Tool/PickAxe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Rock/Rock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Rock/Rock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Tree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Tree.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/rocks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/rocks.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures/colormap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures/colormap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow-standing.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow-standing.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fan.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fan.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fishing-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fishing-small.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-d.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-d.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-large.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-large.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-small.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-d.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-d.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-e.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-e.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-f.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-f.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-g.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-g.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-h.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-h.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-i.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-i.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-j.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-j.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy-flag.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy-flag.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate-finish.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate-finish.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp-wide.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp-wide.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-a.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-b.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-c.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-large.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-large.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner-small.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small-ghost.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small-ghost.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/lightpost-double.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/lightpost-double.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures/colormap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures/colormap.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-large.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-large.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-small.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-small.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy-flag.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy-flag.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/hui.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/hui.mat.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,6 +209,7 @@
       <workItem from="1717574261390" duration="7439000" />
       <workItem from="1717679891138" duration="3090000" />
       <workItem from="1717766918197" duration="10325000" />
+      <workItem from="1717838637932" duration="3352000" />
     </task>
     <servers />
   </component>
