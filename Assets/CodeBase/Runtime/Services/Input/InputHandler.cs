@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Zenject;
 
 public class InputHandler : IInputHandler
 {
@@ -15,9 +16,19 @@ public class InputHandler : IInputHandler
 
     private Input _input;
     private Input Input => _input ??= new Input();
+    private IPauseService _pauseService;
+
+    [Inject]
+    public void Construct(IPauseService pauseService)
+    {
+        _pauseService = pauseService;
+    }
 
     public void Enable()
     {
+        _pauseService.PauseActivated += Input.Disable;
+        _pauseService.PauseDeActivated += Input.Enable;
+
         Input.Gameplay.Rotate.performed += ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
 
         Input.Gameplay.Move.performed += ctx => OnMoveInputChanged(ctx.ReadValue<Vector2>());
@@ -43,6 +54,9 @@ public class InputHandler : IInputHandler
     public void Disable()
     {
         Input.Disable();
+
+        _pauseService.PauseActivated -= Input.Disable;
+        _pauseService.PauseDeActivated -= Input.Enable;
 
         Input.Gameplay.Rotate.performed -= ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
 
