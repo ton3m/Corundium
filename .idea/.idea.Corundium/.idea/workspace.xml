@@ -6,72 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e6de5dc7-9752-41fe-85c9-d537fe8c02a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures/colormap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/Textures/colormap.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow-standing.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow-standing.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/arrow.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fan.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fan.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fishing-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-fishing-small.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-d.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-house-d.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-large.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-large.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-row-small.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-sail-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-d.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-d.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-e.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-e.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-f.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-f.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-g.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-g.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-h.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-h.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-i.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-i.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-j.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-speed-j.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tow-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/boat-tug-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy-flag.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy-flag.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/buoy.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-container-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/cargo-pile-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate-finish.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate-finish.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/gate.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp-wide.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp-wide.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ramp.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-a.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-a.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-b.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-b.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-c.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-cargo-c.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-large.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-large.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner-small.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-ocean-liner.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small-ghost.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small-ghost.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/FBX format/ship-small.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/lightpost-double.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/lightpost-double.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures/colormap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/Textures/colormap.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-large.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-large.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-small.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/boat-row-small.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy-flag.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy-flag.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/boat/buoy.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/hui.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/hui.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameBootstrap/GameRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameBootstrap/GameRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,26 +61,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Siponik-Dev&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Ton3m-Dev",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Sipo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Sipo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Sipo\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\tonem\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\tonem\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\tonem\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:/CorundiumBuild/Corundium.exe" />
@@ -153,7 +92,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity\Editor\2022.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\01 MyProgramms\02 Dev\Unity\2022.3.28f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Corundium -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Corundium" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -161,7 +100,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Unity\Editor\2022.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\01 MyProgramms\02 Dev\Unity\2022.3.28f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Corundium -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Corundium" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -210,6 +149,7 @@
       <workItem from="1717679891138" duration="3090000" />
       <workItem from="1717766918197" duration="10325000" />
       <workItem from="1717838637932" duration="3352000" />
+      <workItem from="1718046698074" duration="505000" />
     </task>
     <servers />
   </component>
