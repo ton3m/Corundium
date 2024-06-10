@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Curtain
+  m_EditorClassIdentifier: 
+  m_GroupName: Curtain
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d9f571d0b0c07704a99e1cccaa46f09b
+  m_SerializeEntries:
+  - m_GUID: a7e17897ae1ce9848a84761d744c5254
+    m_Address: Curtain
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 9ece884d00a453e499e27773d01c5927, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3f0bd2d552039ff41b8bebec8d1400c4, type: 2}
+    - {fileID: 11400000, guid: cb8f32e6cff5ca740b272b0890f19101, type: 2}
