@@ -6,10 +6,33 @@
   <component name="ChangeListManager">
     <list default="true" id="e6de5dc7-9752-41fe-85c9-d537fe8c02a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameBootstrap/GameRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameBootstrap/GameRunner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/IItemsTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/IItemsTool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemAxe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemPickAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemPickAxe.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemSword.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IResource.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/Quests.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/Quests.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Dropstone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Dropstone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Cursor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Cursor.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/DED.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/DED.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/Stone1.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/Stone1.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/rocks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/rocks.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,17 +55,10 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/bf/d40337a6/MeshFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f3096c279764abca290fd1cada0c4692800/ea/838eb905/SqlDataBase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/29/4e0db12d/InjectAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameplaySceneBootstrap/TipShowerInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/mainMenu/Authorization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ai.navigation@1.1.5/Runtime/NavMeshSurface.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
@@ -61,27 +77,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Ton3m-Dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CodeLensConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Siponik-Dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CodeLensConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\tonem\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\tonem\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\tonem\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Sipo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Sipo\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Sipo\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:/CorundiumBuild/Corundium.exe" />
@@ -92,7 +108,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\01 MyProgramms\02 Dev\Unity\2022.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\2022.3.28f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Corundium -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Corundium" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -100,7 +116,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\01 MyProgramms\02 Dev\Unity\2022.3.28f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Unity\Editor\2022.3.28f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Corundium -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Corundium" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -150,6 +166,8 @@
       <workItem from="1717766918197" duration="10325000" />
       <workItem from="1717838637932" duration="3352000" />
       <workItem from="1718046698074" duration="505000" />
+      <workItem from="1718178766920" duration="10245000" />
+      <workItem from="1718273431349" duration="9029000" />
     </task>
     <servers />
   </component>

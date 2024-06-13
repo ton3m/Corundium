@@ -1543,7 +1543,7 @@ CharacterController:
   m_Height: 2
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.5
+  m_StepOffset: 0.55
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.1, z: 0}
@@ -1630,6 +1630,7 @@ MonoBehaviour:
   syncInterval: 0
   _maxDistanceRaycast: 3
   _playerWeaponController: {fileID: 767854523656576483}
+  mainCamera: {fileID: 8885456892320347759}
 --- !u!114 &767854523656576483
 MonoBehaviour:
   m_ObjectHideFlags: 0

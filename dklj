@@ -1,0 +1,281 @@
+[33mcommit 59ae9d033a6495618cd4b2889300b80b35370f59[m[33m ([m[1;36mHEAD -> [m[1;32mSiponik-Dev[m[33m, [m[1;31morigin/Siponik-Dev[m[33m)[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 10 10:24:44 2024 +0300
+
+    Create .gitignore
+
+[33mcommit 5dae7b0d0fdd62dd0a45431cd56c408583f9a5bf[m
+Merge: bf266cc a142773
+Author: Tonem Gade <104393441+ton3m@users.noreply.github.com>
+Date:   Sun Jun 9 21:55:21 2024 +0300
+
+    Merge pull request #42 from ton3m/Ton3m-Dev
+    
+    Ton3m dev - Items system
+
+[33mcommit bf266ccc32673d7e07ebde8a723e01ce1017d8c0[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 9 12:34:25 2024 +0400
+
+    Commit 09.06
+
+[33mcommit 5a4d328929b40e0fc3c23248b416392a1b4d1f17[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sat Jun 8 00:17:53 2024 +0400
+
+    Tool taked
+
+[33mcommit a142773e2d550314bf845a63ba02c5146f137906[m
+Merge: 111035e d346cd1
+Author: Tonem Gade <timofeikolesnichenko1@gmail.com>
+Date:   Fri Jun 7 11:34:49 2024 +0300
+
+    Merge branch 'Siponik-Dev' into Ton3m-Dev
+
+[33mcommit d346cd1b64c199048d46a2c7cf4782a042fa88fe[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Fri Jun 7 02:07:03 2024 +0400
+
+    commit 07.06
+
+[33mcommit 111035e4a100a3307f8d6ef19e63bd29b27112bc[m
+Author: Tonem Gade <timofeikolesnichenko1@gmail.com>
+Date:   Fri Jun 7 01:05:28 2024 +0300
+
+    Fully-Clear
+
+[33mcommit bb5933a025a2d138f53df14b7646efdf0dfc9749[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Fri Jun 7 00:43:07 2024 +0400
+
+    commit 07.06
+
+[33mcommit 89d1edd0e69d4612b4d907e15f4c7415e1947926[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Thu Jun 6 17:17:25 2024 +0400
+
+    Commit for diplom
+
+[33mcommit bf6b540106cb5418a0cd14695baa8287a1150545[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Tue Jun 4 04:13:23 2024 +0400
+
+    hui
+
+[33mcommit fdc7df4d6159e4b11f8867103afdd725827dae54[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Tue Jun 4 04:12:26 2024 +0400
+
+    hui
+
+[33mcommit 047096734289bcb6ec9dc23ff5f22d64a008a99e[m[33m ([m[1;31morigin/VolumeBlez-Dev[m[33m, [m[1;32mVolumeBlez-Dev[m[33m)[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 3 19:22:51 2024 +0300
+
+    after merge fix
+
+[33mcommit 353d55b9ee5a5bbca287079edc60dc207793631c[m
+Merge: 90b31c4 988b126
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 3 19:06:00 2024 +0300
+
+    Merge remote-tracking branch 'origin/Sipo-dev-' into VolumeBlez-Dev
+
+[33mcommit 90b31c4cac934cf5f577cf6ff478ca447f0f7395[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 3 18:28:00 2024 +0300
+
+    after merge fix
+
+[33mcommit be35b2f355fef7e983ff08abe1ed32e7f4b7d149[m
+Merge: 3dfaf58 b89a6f5
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 3 18:09:20 2024 +0300
+
+    Merge branch 'tttllliiinnn' into VolumeBlez-Dev
+
+[33mcommit 3dfaf5884fa9eee0ca23b37f26229f5162a1dcba[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Mon Jun 3 17:48:47 2024 +0300
+
+    prefabs refactor
+
+[33mcommit 988b126d1fb88c87d51780dca8767b53c6780378[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Mon Jun 3 02:00:27 2024 +0400
+
+    DiplomScene
+
+[33mcommit b89a6f5b960f8638c1d8fd04c25fc9c4b6edcbdb[m[33m ([m[1;31morigin/tttllliiinnn[m[33m, [m[1;32mtttllliiinnn[m[33m)[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 2 23:38:43 2024 +0400
+
+    Refactoring and added prefab skelet
+
+[33mcommit 1f134700be77be7a70b8cd725fd9095e4f8801fe[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 2 23:04:43 2024 +0400
+
+    Update EnemyHealthAI.cs
+
+[33mcommit 1a615d72c6820e2591ff48434141898aae7c26f7[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 2 23:03:08 2024 +0400
+
+    healphbar
+
+[33mcommit 98aca52d106b12d6063d267539140d93dc9ea9b1[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 2 22:44:21 2024 +0400
+
+    Added AttackEnemy
+
+[33mcommit f05ddf88ae42d165b0c3df24d791bdc832837add[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sun Jun 2 02:22:25 2024 +0400
+
+    Added animation
+
+[33mcommit d781823a52e9b7a2093f68828dc2f4984cc77cab[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sat Jun 1 20:47:19 2024 +0400
+
+    pohui
+
+[33mcommit 099774b3fe2483fa40db5440cf431c5e21e5ee69[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sat Jun 1 18:07:39 2024 +0400
+
+    Chase BaseDamage type to float
+
+[33mcommit bda2cb5247c179719b203959edf73a2c2981c004[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sat Jun 1 17:48:42 2024 +0400
+
+    da
+
+[33mcommit 6a0dcbe980f9534527416afa4e32954a647e22fd[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Sat Jun 1 17:43:46 2024 +0400
+
+    Perfect chase system
+
+[33mcommit a36a99ae034b6830e12430db53dc948c0657db07[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Fri May 31 16:55:35 2024 +0300
+
+    chooseLevel auto set build scenes + infrastructure prefabs
+
+[33mcommit 99ea913bb55d24d26c60a704faa23a2805d00f84[m
+Merge: 121c567 8e72061
+Author: tttllliiinnn <qirillsssss18@gmail.com>
+Date:   Fri May 31 13:43:55 2024 +0300
+
+    Merge branch 'tttllliiinnn' of https://github.com/ton3m/Corundium into tttllliiinnn
+
+[33mcommit 121c5678a977b666b1fa7a95ff2feaee81ad352b[m
+Author: tttllliiinnn <qirillsssss18@gmail.com>
+Date:   Fri May 31 13:41:52 2024 +0300
+
+    Create EnemyHealthAI and PlayersAttack
+
+[33mcommit 8e7206137490c3dcbaee9e1eae3da7a5f24598d6[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Fri May 31 02:05:44 2024 +0400
+
+    Attempts to perfect the chase state
+
+[33mcommit 92fd065f34a5a497e1a4ef8ff3eec8c5ba8e3f0a[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Thu May 30 19:39:54 2024 +0400
+
+    Fixed chase state enemy
+
+[33mcommit 0a37c2d894ac0fcc1953fdcde3a5a52828fc9cc3[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Wed May 29 15:16:23 2024 +0300
+
+    update Enemy AI from tttllliiinnn
+
+[33mcommit 1d459cbbcd393628488693c66d47e9c805b0630d[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Wed May 29 15:07:19 2024 +0300
+
+    Set up scenes with new Bootstrap and infrastructure
+
+[33mcommit f2df5273875b8473e350feb31827f2fc90864e23[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Wed May 29 00:45:38 2024 +0400
+
+    held mini test, added comments
+
+[33mcommit d48cbbcf076149479866742c5e7410fcb1534a68[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Wed May 29 00:35:21 2024 +0400
+
+    Added chaseEnemyState
+    
+    not tested
+
+[33mcommit 871c846deb3f317bcfb8f6c7334722264e69760d[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Tue May 28 22:26:59 2024 +0300
+
+    fix-dependencies
+
+[33mcommit 29ce5c9c882472e01f779109282be66725ba597d[m
+Merge: 094fbfa 3184054
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Tue May 28 22:21:54 2024 +0300
+
+    Merge remote-tracking branch 'origin/Sipo-dev-' into VolumeBlez-Dev
+
+[33mcommit 3184054a7173ad68988ed6d4223382d2d9639ee0[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Tue May 28 21:38:08 2024 +0400
+
+    Refactoring folder
+
+[33mcommit 094fbfa03fc385f91763c3d7716778f910677565[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Tue May 28 20:17:26 2024 +0300
+
+    Merge branch 'tttllliiinnn' + Fix scripts*
+
+[33mcommit 78a3bd43673b4af1388a625f00b016b6b3574865[m
+Author: VolumeBlez <dchinicalov@gmail.com>
+Date:   Tue May 28 19:07:24 2024 +0300
+
+    Bootstrap System 0.2 + fix bugs
+
+[33mcommit 3dff26371bdddd2a0361e5dc0a2ec22201b962c4[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Tue May 28 17:19:19 2024 +0400
+
+    mini refactoring
+
+[33mcommit 923bcd8e71430486025bc38563c649644938f8a4[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Tue May 28 16:59:42 2024 +0400
+
+    Added statte machine for enemy, adapted patrol state
+
+[33mcommit 2e12c64e3fbadc0e09a7082a2dc0e4b671d2c380[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Mon May 27 21:32:48 2024 +0400
+
+    Added enemy patrol
+
+[33mcommit 1bd18b5582a8f804f10349a7b76f1a1fdc0642c2[m
+Author: Siponik <semenpopov505@gmail.com>
+Date:   Mon May 27 18:48:05 2024 +0400
+
+    Added new scene
+
+[33mcommit 2946310cf903796f4c6931970d6b84e817db4988[m
+Author: tttllliiinnn <qirillsssss18@gmail.com>
+Date:   Sun May 26 23:25:14 2024 +0300
+
+    +EnemyScene -SampleScene
+
+[33mcommit 5892da9abb6e283d7dba1634
