@@ -7,7 +7,7 @@ using Zenject;
 public class QuestDealer : MonoBehaviour, IInteractable
 {
     [SerializeField] private Transform _questRewardItemSpawnPoint;
-
+    [field: SerializeField] public Transform PointForTip { get; private set; }
     [Header("UI")]
     [SerializeField] private CanvasGroup _ui;
     [SerializeField] private Button _exitButton;
@@ -37,6 +37,8 @@ public class QuestDealer : MonoBehaviour, IInteractable
 
         _currentQuestIndex = 0;
     }
+
+    
 
     public void Interact()
     {

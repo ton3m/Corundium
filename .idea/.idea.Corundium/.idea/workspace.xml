@@ -6,33 +6,109 @@
   <component name="ChangeListManager">
     <list default="true" id="e6de5dc7-9752-41fe-85c9-d537fe8c02a1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyAiSipo.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyAiSipo.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyState/States/PatrolEnemyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyState/States/PatrolEnemyState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/SkeletAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/SkeletAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerInteract.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/IItemsTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/IItemsTool.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemAxe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemPickAxe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemPickAxe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemSword.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/ItemsTool/ItemSword.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IResource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IResource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/Quests.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/Quests.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Dropstone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Resources/Dropstone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Cursor.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Cursor.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/DED.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/DED.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/WeaponChanges/PlayerWeaponController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IInteractable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Interfaces/IInteractable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/LightHouse/LightHouseView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/LightHouse/LightHouseView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/QuestDealer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Quest System/QuestDealer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/IInventoryViewFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/IInventoryViewFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/IObjectFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/IObjectFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoriesController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoriesController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoriesEntryPoint.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoriesEntryPoint.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoryContentFabric.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoryContentFabric.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoryWindowFabric.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/InventoryWindowFabric.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/ObjectFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Architecture/ObjectFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Cell.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Cell.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/ButtonEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/ButtonEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/IButtonPressedHandler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/IButtonPressedHandler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/ItemsIdentifierEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/Editors/ItemsIdentifierEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemDataSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemDataSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsDataProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsDataProvider.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsIdentifierSO.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsIdentifierSO.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsSorter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Data/ItemsSorter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor/ReadOnlyInspectorDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Editor/ReadOnlyInspectorDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Identifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/Identifier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/ReadOnlyInspectorAttribute.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Global/ReadOnlyInspectorAttribute.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Inventory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Inventory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/InventoryEntry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/InventoryEntry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/ItemsIdentifierSO.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/ItemsIdentifierSO.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/CellHolder.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/CellHolder.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/DragCell.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/DragCell.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/Inventory .prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/Inventory .prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/~EntryPoint~.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Prefabs/~EntryPoint~.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/Test.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/CellDragger.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/CellDragger.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/CellDraggerController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/CellDraggerController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/IInventoryView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/IInventoryView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/IUpdatable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/IUpdatable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/InventoryView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/InventoryView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellHolder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellHolder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellIndexed.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellIndexed.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/CellView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/DragCellView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Inventory/View/Parts/DragCellView.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/ui-pack/PNG/red_cross.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/ui-pack/PNG/red_cross.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/DiplomGameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/Stone1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/Stone1.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/rocks.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/rocks.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Resourses/wood.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +176,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:/CorundiumBuild/Corundium.exe" />
+      <option name="EXE_PATH" value="$USER_HOME$/Desktop/Corundium\Corundium.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="F:\Corundium" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -167,7 +243,12 @@
       <workItem from="1717838637932" duration="3352000" />
       <workItem from="1718046698074" duration="505000" />
       <workItem from="1718178766920" duration="10245000" />
-      <workItem from="1718273431349" duration="9029000" />
+      <workItem from="1718273431349" duration="10224000" />
+      <workItem from="1718311313018" duration="1975000" />
+      <workItem from="1718649673000" duration="86000" />
+      <workItem from="1718744202854" duration="2844000" />
+      <workItem from="1718802030195" duration="838000" />
+      <workItem from="1718820475929" duration="533000" />
     </task>
     <servers />
   </component>

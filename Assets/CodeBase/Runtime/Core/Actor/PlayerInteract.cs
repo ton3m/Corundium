@@ -46,6 +46,10 @@ public class PlayerInteract : NetworkBehaviour
             {
                 _tipsShower.ShowTip(itemsTool.PointForTip, mainCamera.transform);
             }
+            else if (_hitInfo.transform.TryGetComponent(out IInteractable interact))
+            {
+                _tipsShower.ShowTip(interact.PointForTip, mainCamera.transform);
+            }
             else
             {
                 _tipsShower.CloseTip();

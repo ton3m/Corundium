@@ -3,12 +3,12 @@ using UnityEngine;
 public class LightHouseView : MonoBehaviour, IInteractable
 {
     private LightHousePresenter _presenter;
-
+    public Transform PointForTip { get; }
     public void Init(LightHousePresenter presenter)
     {
         _presenter = presenter;
     }
-
+    
     public void Interact()
     {
         // as we don't have an inventory, we will use that!
