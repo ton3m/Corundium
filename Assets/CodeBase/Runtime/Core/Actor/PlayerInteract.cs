@@ -2,6 +2,7 @@ using Mirror;
 using UnityEngine;
 using System;
 using System.Reflection;
+using CodeBase.Runtime.Core.Inventory;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -15,10 +16,12 @@ public class PlayerInteract : NetworkBehaviour
     
     private TipsShower _tipsShower;
     [SerializeField]private Camera mainCamera;
+    private IInventory _inventory;
     
     [Inject]
-    public void Construct(IInputHandler inputHandler, TipsShower tipsShower)
+    public void Construct(IInputHandler inputHandler, TipsShower tipsShower, IInventory inventory)
     {
+        _inventory = inventory;
         _inputHandler = inputHandler;
         _tipsShower = tipsShower;
     }
@@ -73,6 +76,7 @@ public class PlayerInteract : NetworkBehaviour
             if (_hitInfo.transform.TryGetComponent(out IResource resource))
             {
                 // Update Inventory
+                _inventory.TryAdd(resource.Item);
                 
                 Destroy(_hitInfo.transform.gameObject);
             }

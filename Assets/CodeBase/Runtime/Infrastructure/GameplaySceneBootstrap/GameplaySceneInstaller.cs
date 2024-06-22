@@ -1,3 +1,4 @@
+using CodeBase.Runtime.Core.Inventory;
 using Zenject;
 
 public class GameplaySceneInstaller : MonoInstaller
@@ -6,6 +7,7 @@ public class GameplaySceneInstaller : MonoInstaller
     {
         BindSceneStateMachine();    
         BindStateFactory();  // i don't have a clue why i need to register this shit twice, please shoot me
+        BindInventory();
     }
 
     private void BindSceneStateMachine() => 
@@ -13,4 +15,7 @@ public class GameplaySceneInstaller : MonoInstaller
 
     private void BindStateFactory() =>
         Container.BindInterfacesAndSelfTo<StateFactory>().AsSingle();
+
+    private void BindInventory() =>
+        Container.BindInterfacesTo<Inventory>().AsSingle();
 }

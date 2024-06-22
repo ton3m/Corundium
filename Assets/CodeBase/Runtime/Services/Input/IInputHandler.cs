@@ -11,6 +11,7 @@ public interface IInputHandler
     event Action InteractPerformed;
     event Action RadialMenuPerformed;
     event Action RadialMenuClosed;
+    event Action InventoryPerformed;
     
     
     event Action EscPerformed;

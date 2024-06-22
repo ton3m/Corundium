@@ -13,6 +13,8 @@ public class InputHandler : IInputHandler
     public event Action RadialMenuPerformed = delegate { };
     public event Action RadialMenuClosed = delegate { };
     public event Action EscPerformed = delegate { };
+    public event Action InventoryPerformed = delegate { };
+
 
     private Input _input;
     private Input Input => _input ??= new Input();
@@ -48,6 +50,8 @@ public class InputHandler : IInputHandler
 
         Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
 
+        Input.Gameplay.Inventory.performed += ctx => InventoryPerformed?.Invoke();
+
         Input.Enable();
     }
 
@@ -76,6 +80,8 @@ public class InputHandler : IInputHandler
         Input.Gameplay.OpenRadialMenu.canceled -= ctx => RadialMenuClosed?.Invoke();
 
         Input.Gameplay.Esc.performed -= ctx => EscPerformed?.Invoke();
+        
+        Input.Gameplay.Inventory.performed -= ctx => InventoryPerformed?.Invoke();
     }
 
     private void OnRotateInputChanged(Vector2 direction)

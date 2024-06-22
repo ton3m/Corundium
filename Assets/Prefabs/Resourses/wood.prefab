@@ -145,6 +145,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
+  <Item>k__BackingField: {fileID: 11400000, guid: 1ea8d09bc1b279442b7cb246362f0ae7, type: 2}
   <PointForTip>k__BackingField: {fileID: 4788554262585876654}
 --- !u!114 &1508396455863920195
 MonoBehaviour:
