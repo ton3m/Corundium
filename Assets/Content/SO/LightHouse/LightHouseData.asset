@@ -15,17 +15,9 @@ MonoBehaviour:
   <LevelsData>k__BackingField:
   - UpgradeData:
       Items: []
-    ForRadiusDispersion: 0
-    LightHouseMesh: {fileID: 2638182997433502899, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
-  - UpgradeData:
-      Items: []
-    ForRadiusDispersion: 0
-    LightHouseMesh: {fileID: -3277707564911552074, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
-  - UpgradeData:
-      Items: []
-    ForRadiusDispersion: 0
-    LightHouseMesh: {fileID: -5085023112384748973, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
-  - UpgradeData:
-      Items: []
-    ForRadiusDispersion: 0
+    ForRadiusDispersion: 1
     LightHouseMesh: {fileID: -7423539538941619181, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
+  - UpgradeData:
+      Items: []
+    ForRadiusDispersion: 1
+    LightHouseMesh: {fileID: -3800697525520575676, guid: 9b357a93e5155d649a3460a6b387cf69, type: 3}

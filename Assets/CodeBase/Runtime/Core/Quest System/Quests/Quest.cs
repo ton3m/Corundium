@@ -1,60 +1,67 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class RewardItem 
+namespace CodeBase.Runtime.Core.Quest_System.Quests
 {
-    public GameObject Prefab;
-    public int Count;
-}
-
-[Serializable]
-public class DialogueLine
-{
-    [TextArea]
-    public string Text;
-    public string Answer;
-}
-
-public class Quest : ScriptableObject
-{
-    public event Action Completed = delegate { };
-    public bool IsCompleted { get; private set; }
-
-    [field: SerializeField] public DialogueLine[] DialogueBeforeQuest { get; private set; }
-    [field: SerializeField] public string QuestTextLine { get; private set; }
-    [field: SerializeField] public string QuestAnswerLine { get; private set; }
-    [field: SerializeField] public string AfterQuestTextLine { get; private set; }
-    [field: SerializeField] public RewardItem[] RewardItems { get; private set; }
-    protected Transform RewardItemSpawnPoint { get; private set; }
-    private int _currentDialogueLineIndex;
-
-    public void Init(Transform rewardItemSpawnPoint)
+    [Serializable]
+    public class DialogueLine
     {
-        RewardItemSpawnPoint = rewardItemSpawnPoint;
-
-        IsCompleted = false;
-        _currentDialogueLineIndex = 0;
+        [TextArea]
+        public string Text;
+        public string Answer;
     }
 
-    public virtual void CheckComplete()
+    public abstract class Quest : MonoBehaviour
     {
-        Completed?.Invoke();
-        IsCompleted = true;
-    }
+        public event Action Completed = delegate { };
+        public bool IsCompleted { get; private set; }
 
-    public DialogueLine GetDialogueLine()
-    {
-        if (DialogueBeforeQuest.Length - 1 < _currentDialogueLineIndex)
-            return null;
+        [field: SerializeField] public DialogueLine[] DialogueBeforeQuest { get; private set; }
+        [field: SerializeField] public string QuestTextLine { get; private set; }
+        [field: SerializeField] public string QuestAnswerLine { get; private set; }
+        [field: SerializeField] public string NoCompleteQuestLine { get; private set; }
+        [field: SerializeField] public string CompleteQuestLine { get; private set; }
+        private int _currentDialogueLineIndex;
 
-        try
+        public void Init()
         {
-            return DialogueBeforeQuest[_currentDialogueLineIndex];
+            IsCompleted = false;
+            _currentDialogueLineIndex = 0;
         }
-        finally
+
+        public virtual void SetUpUI()
         {
-            _currentDialogueLineIndex++;
+        }
+        
+        private void OnDisable()
+        {
+            Completed = null;
+        }
+
+        public virtual void CheckComplete()
+        {
+            Completed?.Invoke();
+            IsCompleted = true;
+        }
+
+        public string AfterQuestTextLine()
+        {
+            return IsCompleted ? CompleteQuestLine : NoCompleteQuestLine;
+        }
+        
+        public DialogueLine GetDialogueLine()
+        {
+            if (DialogueBeforeQuest.Length - 1 < _currentDialogueLineIndex)
+                return null;
+
+            try
+            {
+                return DialogueBeforeQuest[_currentDialogueLineIndex];
+            }
+            finally
+            {
+                _currentDialogueLineIndex++;
+            }
         }
     }
 }
