@@ -1,8 +1,9 @@
 using System;
+using CodeBase.Runtime.Core.Inventory;
 
 [Serializable]
 public class LightHouseUpgradeLevelItem
 {
-    public long ItemID;
+    public Item Item;
     public int CountToUpdate;
 }

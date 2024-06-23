@@ -17,7 +17,6 @@ public class SkeletAttack : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         StartCoroutine("DeActiveCollide");
-        Debug.Log("БAM");
         if (collision.gameObject.GetComponent<CharacterController>() != null)
         {
             collision.gameObject.GetComponent<IDamageable>().ApplyDamage(_daseDamage);

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class LightHouseStateMachine : ILightHouseStateMachine
@@ -15,7 +16,6 @@ public class LightHouseStateMachine : ILightHouseStateMachine
         for (int i = 0; i < _lightHouseStates.Length; i++)
         {
             _lightHouseStates[i] = new LightHouseState(this, lightHouseData.LevelsData[i], i);
-            //Debug.Log("Created new state: " + _lightHouseStates[i].ID);
 
             if(i == 0)
             {
@@ -37,7 +37,6 @@ public class LightHouseStateMachine : ILightHouseStateMachine
         {
             if(state.ID == newStateID)
             {
-                // Debug.Log("Enter new state: " + state.ID);
                 _currentState?.Exit();
                 _currentState = state;
                 _currentState.Enter();

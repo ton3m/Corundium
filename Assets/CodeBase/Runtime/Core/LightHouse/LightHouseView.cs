@@ -1,27 +1,21 @@
+using System.Runtime.InteropServices;
+using CodeBase.Runtime.Core.Inventory;
 using UnityEngine;
+using Zenject;
 
-public class LightHouseView : MonoBehaviour, IInteractable
+public class LightHouseView : MonoBehaviour
 {
-    private LightHousePresenter _presenter;
-
-    public void Init(LightHousePresenter presenter)
+    private LightHouseStateMachine _model;
+    
+    
+    public void Init(LightHouseStateMachine model)
     {
-        _presenter = presenter;
+        _model = model;
     }
 
-    public void Interact()
+    public void Repair()
     {
-        // as we don't have an inventory, we will use that!
-        _presenter.UpdateCurrentUpgradeLevelData(_presenter.GetCurrentLevelUpgradeData()); 
-    }
-
-    public void UpdateCurrentLevelData()
-    {
-        // changes from UI
-    }
-
-    private void UpdateUIPanel()
-    {
-        // reaction on model changes
+        Debug.Log("REPAIR LIGHTHOUSE");
+        _model.SetNewStateByID(1); // 1 - id for second state of lighthouse, where 1 is not repaired and 2 - repaired
     }
 }

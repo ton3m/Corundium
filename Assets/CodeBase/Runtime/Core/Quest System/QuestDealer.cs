@@ -1,4 +1,5 @@
 
+using CodeBase.Runtime.Core.Quest_System.Quests;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,8 +7,8 @@ using Zenject;
 
 public class QuestDealer : MonoBehaviour, IInteractable
 {
-    [SerializeField] private Transform _questRewardItemSpawnPoint;
-
+    [field: SerializeField] public Transform PointForTip { get; private set; }
+    
     [Header("UI")]
     [SerializeField] private CanvasGroup _ui;
     [SerializeField] private Button _exitButton;
@@ -17,7 +18,6 @@ public class QuestDealer : MonoBehaviour, IInteractable
 
     [Header("QUEST Settings")]
     [SerializeField] private Quest[] _quests;
-    [SerializeField] private QuestItemsProgressUIController _itemsProgressUIController;
     private IPauseService _pauseService;
     private ICursorService _cursorService;
     private int _currentQuestIndex;
@@ -33,9 +33,17 @@ public class QuestDealer : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        InitQuests();
-
         _currentQuestIndex = 0;
+        _quests[_currentQuestIndex].Init();
+        //InitQuests();
+    }
+
+    private void InitQuests()
+    {
+        foreach (var quest in _quests)
+        {
+            quest.Init();
+        }
     }
 
     public void Interact()
@@ -46,11 +54,22 @@ public class QuestDealer : MonoBehaviour, IInteractable
         _cursorService.SetCursorVisible();
         _pauseService.PauseActivated?.Invoke();
 
-        _exitButton.onClick.AddListener(HideDialogue);
+        _exitButton.onClick.AddListener(DisableDilogue);
         _answerButton.onClick.AddListener(UpdateDialogueWindow);
         
         UpdateDialogueWindow();
-        ShowDialogueWindow();
+        SetDialogueWindow(visibleMode: true);
+    }
+
+    private void DisableDilogue()
+    {
+        _cursorService.SetCursorInvisible();
+        _pauseService.PauseDeActivated?.Invoke();
+
+        _exitButton.onClick.RemoveAllListeners();
+        _answerButton.onClick.RemoveAllListeners();
+        
+        SetDialogueWindow(visibleMode: false);
     }
 
 
@@ -60,40 +79,20 @@ public class QuestDealer : MonoBehaviour, IInteractable
         _answerButton.onClick.RemoveAllListeners();
     }
 
-    private void InitQuests()
-    {
-        foreach (var quest in _quests)
-        {
-            quest.Init(_questRewardItemSpawnPoint);
-        }
-    }
-
     private void UpdateDialogueWindow()
     {
         DialogueLine line = _quests[_currentQuestIndex].GetDialogueLine();
-
+        
         if(line == null)
             ShowQuest();
-        else if(line != null)
+        else
             ShowNextLine(line);
     }
 
-    private void ShowDialogueWindow()
+    private void SetDialogueWindow(bool visibleMode)
     {
-        _isDialogueActive = true;
-        _ui.gameObject.SetActive(true);
-    }
-
-    private void HideDialogue()
-    {
-        _cursorService.SetCursorInvisible();
-        _pauseService.PauseDeActivated?.Invoke();
-
-        _isDialogueActive = false;
-        _ui.gameObject.SetActive(false);
-
-        _exitButton.onClick.RemoveAllListeners();
-        _answerButton.onClick.RemoveAllListeners();
+        _isDialogueActive = visibleMode;
+        _ui.gameObject.SetActive(visibleMode);
     }
 
     private void ShowNextLine(DialogueLine line)
@@ -102,18 +101,25 @@ public class QuestDealer : MonoBehaviour, IInteractable
         _answerButtonText.text = line.Answer;
     }
 
+    private void CheckQuest(Quest quest)
+    {
+        quest.CheckComplete();
+        _dialogueText.text = quest.AfterQuestTextLine();
+        
+        _answerButton.onClick.RemoveAllListeners();
+        _answerButton.onClick.AddListener(DisableDilogue);
+    }
+    
     private void ShowQuest()
     {
         Quest currentQuest = _quests[_currentQuestIndex];
-        // set up ui text above ded
-        _itemsProgressUIController.SetUp();
+        currentQuest.SetUpUI();
         
         _dialogueText.text = currentQuest.QuestTextLine;
         _answerButtonText.text = currentQuest.QuestAnswerLine;
 
         _answerButton.onClick.RemoveAllListeners();
-        _answerButton.onClick.AddListener(currentQuest.CheckComplete);
-        _answerButton.onClick.AddListener(() => _dialogueText.text = currentQuest.AfterQuestTextLine);
+        _answerButton.onClick.AddListener(() => CheckQuest(currentQuest));
 
         // if complete переходить на след квест
         _quests[_currentQuestIndex].Completed += SetNextQuest;
@@ -125,7 +131,7 @@ public class QuestDealer : MonoBehaviour, IInteractable
         _quests[_currentQuestIndex].Completed -= SetNextQuest;
 
         _answerButton.onClick.RemoveAllListeners();
-        _answerButton.onClick.AddListener(HideDialogue);
+        _answerButton.onClick.AddListener(DisableDilogue);
 
         if(_quests.Length - 1 < _currentQuestIndex + 1)
         {
