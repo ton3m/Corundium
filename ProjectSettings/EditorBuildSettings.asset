@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Content/_Scenes/Sample Scene.unity
     guid: 650d21454641e36489089176c4064a01
-  - enabled: 0
+  - enabled: 1
     path: Assets/Content/_Scenes/DiplomScene.unity
     guid: 78f8ed4354d7c024fb69d475c2828d7b
   - enabled: 1
