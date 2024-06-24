@@ -35,15 +35,6 @@ public class QuestDealer : MonoBehaviour, IInteractable
     {
         _currentQuestIndex = 0;
         _quests[_currentQuestIndex].Init();
-        //InitQuests();
-    }
-
-    private void InitQuests()
-    {
-        foreach (var quest in _quests)
-        {
-            quest.Init();
-        }
     }
 
     public void Interact()
@@ -120,10 +111,8 @@ public class QuestDealer : MonoBehaviour, IInteractable
 
         _answerButton.onClick.RemoveAllListeners();
         _answerButton.onClick.AddListener(() => CheckQuest(currentQuest));
-
-        // if complete переходить на след квест
-        _quests[_currentQuestIndex].Completed += SetNextQuest;
         
+        _quests[_currentQuestIndex].Completed += SetNextQuest;
     }
 
     private void SetNextQuest()

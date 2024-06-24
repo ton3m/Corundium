@@ -19,8 +19,7 @@ namespace CodeBase.Runtime.Core.Quest_System.Quests
 
         public override void SetUpUI()
         {
-            _uiController.SetUp();
-            _uiController.UpdateView(_questItems);
+            _uiController.SetUp(_questItems);
         }
 
         public override void CheckComplete()
@@ -52,8 +51,6 @@ namespace CodeBase.Runtime.Core.Quest_System.Quests
                 _lightHouseView.Repair();
                 base.CheckComplete();
             }
-            
-            _uiController.UpdateView(_questItems);
         }
 
         private bool CheckAllQuestItemsContained()
