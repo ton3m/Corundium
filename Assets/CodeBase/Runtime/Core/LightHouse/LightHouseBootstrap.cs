@@ -26,6 +26,7 @@ public class LightHouseBootstrap : MonoBehaviour
     private async void Start()
     {
         _data = await _assetProvider.Load<LightHouseData>(_lightHouseDataReference);
+ 
         LightHouseStateMachine stateMachine = new(_data, _filter);
     
         _view.Init(stateMachine);

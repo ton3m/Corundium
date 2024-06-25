@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SkeletAttack : MonoBehaviour
+public class SkeletonAttack : MonoBehaviour
 {
     [SerializeField] private Collider _collider;
     [SerializeField] private float _daseDamage;
+    
     private IEnumerator _cdAttack;
 
     private void Start()
@@ -20,9 +21,9 @@ public class SkeletAttack : MonoBehaviour
         if (collision.gameObject.GetComponent<CharacterController>() != null)
         {
             collision.gameObject.GetComponent<IDamageable>().ApplyDamage(_daseDamage);
-            
         }
     }
+    
     IEnumerator DeActiveCollide()
     {
         _collider.enabled = false;

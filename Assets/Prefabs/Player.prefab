@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8650912795958183418}
   - component: {fileID: 7639650130907526909}
   m_Layer: 3
-  m_Name: 'AxeModule '
+  m_Name: Sector 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44959daf4560c30458acaea01fb2792c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectObject: {fileID: 5530189311654307416}
+  _selectObject: {fileID: 0}
 --- !u!1 &133269200005138193
 GameObject:
   m_ObjectHideFlags: 0
@@ -61,7 +61,7 @@ GameObject:
   m_Component:
   - component: {fileID: 345084032149654421}
   m_Layer: 0
-  m_Name: root
+  m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8174860298733081053}
   - component: {fileID: 5597961837030196865}
   m_Layer: 3
-  m_Name: Menu
+  m_Name: Radial Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,10 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _radialMenuRoot: {fileID: 5545576098740968302}
-  Elements:
-  - {fileID: 5020468257878956292}
-  - {fileID: 2974168042973206497}
-  - {fileID: 7639650130907526909}
+  _sectors: []
   NormalMousePos: {x: 0, y: 0}
   CurrentAngle: 0
   Selection: 0
@@ -302,9 +299,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2340817492373683967}
   - {fileID: 3422498061996587643}
   - {fileID: 1962567278680438351}
-  - {fileID: 2340817492373683967}
   m_Father: {fileID: 345084032149654421}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7798542023256995259
@@ -369,7 +366,7 @@ GameObject:
   - component: {fileID: 1767579903295543626}
   - component: {fileID: 1527419662485459563}
   m_Layer: 3
-  m_Name: PickAxeImg
+  m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +440,7 @@ GameObject:
   - component: {fileID: 4726560167688536310}
   - component: {fileID: 3784959612786346601}
   m_Layer: 3
-  m_Name: Slider
+  m_Name: Health Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -533,7 +530,7 @@ GameObject:
   - component: {fileID: 5760758672609460058}
   - component: {fileID: 8911563280800917463}
   m_Layer: 3
-  m_Name: SwordImg
+  m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -690,7 +687,7 @@ GameObject:
   - component: {fileID: 3194340783408078077}
   - component: {fileID: 5020468257878956292}
   m_Layer: 3
-  m_Name: 'SwordModule '
+  m_Name: Sector 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44959daf4560c30458acaea01fb2792c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectObject: {fileID: 7206749152773988194}
+  _selectObject: {fileID: 7206749152773988194}
 --- !u!1 &3862442471781980859
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +738,7 @@ GameObject:
   - component: {fileID: 4526669968456155137}
   - component: {fileID: 7508022360851602043}
   m_Layer: 0
-  m_Name: character-digger
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,7 +994,7 @@ Transform:
   m_GameObject: {fileID: 4826699519128218872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8876456e-15, y: 0.52, z: 7.219114e-16}
+  m_LocalPosition: {x: 0, y: 0.52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1065,7 +1062,7 @@ GameObject:
   - component: {fileID: 8040302516775827480}
   - component: {fileID: 1783615300643761396}
   m_Layer: 3
-  m_Name: GameObject
+  m_Name: Cross
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1215,7 +1212,7 @@ GameObject:
   - component: {fileID: 6303348655657509221}
   - component: {fileID: 7405619066425424368}
   m_Layer: 3
-  m_Name: SelectAxe
+  m_Name: Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1288,12 +1285,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3666771466245529899}
   m_Layer: 3
-  m_Name: RadialMenu
+  m_Name: Radial Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3666771466245529899
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1775,12 +1772,12 @@ GameObject:
   - component: {fileID: 2976429190848915216}
   - component: {fileID: 214410516079718718}
   m_Layer: 3
-  m_Name: SelectSword
+  m_Name: Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4877773170214732369
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1850,7 +1847,7 @@ GameObject:
   - component: {fileID: 2434607041025362058}
   - component: {fileID: 5864871340920727811}
   m_Layer: 3
-  m_Name: SelectPickAxe
+  m_Name: Selection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2100,7 +2097,7 @@ GameObject:
   - component: {fileID: 5893070871489030151}
   - component: {fileID: 409489920046249956}
   m_Layer: 3
-  m_Name: RadialMenuBackground
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2175,7 +2172,7 @@ GameObject:
   - component: {fileID: 2907037700426049316}
   - component: {fileID: 2955987873591734731}
   m_Layer: 3
-  m_Name: AxeImg
+  m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2249,7 +2246,7 @@ GameObject:
   - component: {fileID: 5962266819069840522}
   - component: {fileID: 2974168042973206497}
   m_Layer: 3
-  m_Name: PicAxeModule
+  m_Name: Sector 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2288,4 +2285,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44959daf4560c30458acaea01fb2792c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectObject: {fileID: 7273721943919302233}
+  _selectObject: {fileID: 0}
