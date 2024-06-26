@@ -14,6 +14,7 @@ public class InputHandler : IInputHandler
     public event Action RadialMenuClosed = delegate { };
     public event Action EscPerformed = delegate { };
     public event Action InventoryPerformed = delegate { };
+    public event Action RespawnPerformed = delegate { };
 
 
     private Input _input;
@@ -38,8 +39,7 @@ public class InputHandler : IInputHandler
 
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
-
-        //hui
+        
         Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
         Input.Gameplay.GetTool.performed += ctx => GetToolPerformed?.Invoke();
         
@@ -51,6 +51,7 @@ public class InputHandler : IInputHandler
         Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
 
         Input.Gameplay.Inventory.performed += ctx => InventoryPerformed?.Invoke();
+        Input.Death.Respawn.performed += ctx => RespawnPerformed?.Invoke();
 
         Input.Enable();
     }
@@ -82,6 +83,7 @@ public class InputHandler : IInputHandler
         Input.Gameplay.Esc.performed -= ctx => EscPerformed?.Invoke();
         
         Input.Gameplay.Inventory.performed -= ctx => InventoryPerformed?.Invoke();
+        Input.Death.Respawn.performed -= ctx => RespawnPerformed?.Invoke();
     }
 
     private void OnRotateInputChanged(Vector2 direction)

@@ -5,11 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6de5dc7-9752-41fe-85c9-d537fe8c02a1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Content/Graphics/Models/LightHouseDamagedVersion2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Content/Graphics/Models/LightHouseDamagedVersion2.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Corundium/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/PNG/panel_brown.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/PNG/panel_brown.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyHealthAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyHealthAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyState/EnemyInstance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/AI Navigation/EnemyState/EnemyInstance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/ActorMotor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/ActorMotor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/TpHome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/TpHome.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/IInputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/IInputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/Input.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/Input.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/Input.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/InputHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Runtime/Services/Input/InputHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Graphics/Materials/Shaders/VertexColorShader.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/LighthouseMainVersion (1).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/LighthouseMainVersion (1).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Materials/Foam.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Materials/Foam.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/Water/Plane Meshes/Ocean50x50W750H750.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/Prafabs/tree-pine.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/ui-pack/PNG/grey_crossWhite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Placeholders/kenney/ui-pack/PNG/grey_crossWhite.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/SO/LightHouse/LightHouseData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/SO/LightHouse/LightHouseData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/_Scenes/Ton3m/DiplomGameScene2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/_Scenes/Ton3m/DiplomGameScene2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Island/MainIsland.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/NavMeshAreas.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +60,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/55fbbbd17b724c15b6abe8c1a3e3289c175c00/bf/d40337a6/MeshFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6f3096c279764abca290fd1cada0c4692800/ea/838eb905/SqlDataBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/29/4e0db12d/InjectAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Runtime/Core/Actor/Respawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Runtime/Infrastructure/GameplaySceneBootstrap/TipShowerInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/Runtime/UI/LevelPause/PauseMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/CodeBase/mainMenu/Authorization.cs" root0="FORCE_HIGHLIGHTING" />
@@ -157,6 +183,8 @@
       <workItem from="1719126714658" duration="11907000" />
       <workItem from="1719222355996" duration="3545000" />
       <workItem from="1719240022902" duration="602000" />
+      <workItem from="1719343271654" duration="352000" />
+      <workItem from="1719404880840" duration="13938000" />
     </task>
     <servers />
   </component>

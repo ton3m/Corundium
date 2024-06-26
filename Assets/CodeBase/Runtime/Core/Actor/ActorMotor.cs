@@ -1,3 +1,4 @@
+using System;
 using Mirror;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -28,6 +29,8 @@ public class ActorMotor : NetworkBehaviour
     private bool _isJumpActive = false;
     private Vector3 _currentVelocity;
 
+    [SerializeField] private GameObject _ui;
+
     //[SerializeField] private GameObject _model;
 
     [Inject]
@@ -39,11 +42,6 @@ public class ActorMotor : NetworkBehaviour
 
     private void Awake()
     {
-        // if(isLocalPlayer)
-        // {
-        //     _model.SetActive(false);
-        // }
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -51,23 +49,26 @@ public class ActorMotor : NetworkBehaviour
 
     private void Start()
     {
-        
         _motorObject = transform;
-
-        _inputHandler.RotateInputChanged += SetRotationDirection;
-        _inputHandler.MoveInputChanged += SetMoveDirection;
-        _inputHandler.JumpInputPressed += SetJumpActive;
-
+        
+        OnEnable();
+        
         if (!isLocalPlayer)
         {
             _camera.gameObject.SetActive(false);
+            Destroy(_ui);
         }
         if (isLocalPlayer)
         {
             _model.enabled = false;
         }
-        
-        
+    }
+
+    private void OnEnable()
+    {
+        _inputHandler.RotateInputChanged += SetRotationDirection;
+        _inputHandler.MoveInputChanged += SetMoveDirection;
+        _inputHandler.JumpInputPressed += SetJumpActive;
     }
 
     private void OnDisable()

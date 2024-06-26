@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
+using Zenject.SpaceFighter;
 
 public class TpHome : MonoBehaviour
 {
     [SerializeField] private GameObject _spawnPoint;
+    
 
     private void Start()
     {

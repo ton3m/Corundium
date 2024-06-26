@@ -3,6 +3,7 @@ using UnityEngine;
 
 public interface IInputHandler
 {
+    
     event Action<Vector2> RotateInputChanged;
     event Action<Vector2> MoveInputChanged;
     event Action<bool> JumpInputPressed;
@@ -12,6 +13,7 @@ public interface IInputHandler
     event Action RadialMenuPerformed;
     event Action RadialMenuClosed;
     event Action InventoryPerformed;
+    event Action RespawnPerformed;
     
     
     event Action EscPerformed;

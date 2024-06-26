@@ -5,16 +5,25 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using Zenject;
 
 public class PlayerHelths : NetworkBehaviour, IDamageable
 {
     private ConnectDb _db;
     
     [SerializeField] public float _maxHpPlayer = 100;
-    [SyncVar] private float _hpPlayer = 100;
+    [SyncVar] public float _hpPlayer = 100;
     [SerializeField] private Slider _healthSlider;
+    [SerializeField] private ActorMotor _actorMotor;
+    [SerializeField] private GameObject _deathScreen;
     public Type Type { get; }
     
+    private IInputHandler _inputHandler;
+    [Inject]
+    public void Construct(IInputHandler inputHandler)
+    {
+        _inputHandler = inputHandler;
+    }
     private void Start()
     {
         _db = FindObjectOfType<ConnectDb>();
@@ -22,22 +31,26 @@ public class PlayerHelths : NetworkBehaviour, IDamageable
         
         if (isServer)
             _hpPlayer = _maxHpPlayer;
-        
     }
+
+    private void Update()
+    {
+        SliderUpdate();
+        if (_hpPlayer <= 0)
+        {
+            Died();
+        }
+    }
+
     public void ApplyDamage(float damage)
     {
         RpcTakeDamage(damage);
-        if (_hpPlayer <= 0)
-        {
-            Extract();
-        }
     }
 
     [ClientRpc]
     private void RpcTakeDamage(float damage)
     {
         _hpPlayer -= damage;
-        SliderUpdate();
     }
 
     private void SliderUpdate()
@@ -45,8 +58,10 @@ public class PlayerHelths : NetworkBehaviour, IDamageable
         _healthSlider.value = _hpPlayer / _maxHpPlayer;
     }
 
-    public void Extract()
+    private void Died()
     {   
-        Debug.Log("YOU DIED");
+        _deathScreen.SetActive(true);
+        _actorMotor.enabled = false;
     }
+    
 }

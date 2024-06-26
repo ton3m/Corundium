@@ -16,8 +16,8 @@ MonoBehaviour:
   - UpgradeData:
       Items: []
     ForRadiusDispersion: 1
-    LightHouseMesh: {fileID: -7423539538941619181, guid: 3530127a5f9e66c48aaa78a5e8d71900, type: 3}
+    LightHouseMesh: {fileID: -462981019419857548, guid: de7dec89d1ab26c42818f5952812fd96, type: 3}
   - UpgradeData:
       Items: []
     ForRadiusDispersion: 1
-    LightHouseMesh: {fileID: -3800697525520575676, guid: 9b357a93e5155d649a3460a6b387cf69, type: 3}
+    LightHouseMesh: {fileID: -462981019419857548, guid: d627c4a48b2cd91459f56403c3eee367, type: 3}

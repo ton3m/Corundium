@@ -254,6 +254,34 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Death"",
+            ""id"": ""fad1a40d-c069-4828-b82a-d1f353d819c5"",
+            ""actions"": [
+                {
+                    ""name"": ""Respawn"",
+                    ""type"": ""Button"",
+                    ""id"": ""142e3619-e4f2-46e8-96fe-658dd62f82cc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d338e172-e1cd-4177-829f-9db3381cbc73"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Respawn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -269,6 +297,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Gameplay_OpenRadialMenu = m_Gameplay.FindAction("OpenRadialMenu", throwIfNotFound: true);
         m_Gameplay_GetTool = m_Gameplay.FindAction("GetTool", throwIfNotFound: true);
         m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
+        // Death
+        m_Death = asset.FindActionMap("Death", throwIfNotFound: true);
+        m_Death_Respawn = m_Death.FindAction("Respawn", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -436,6 +467,52 @@ public partial class @Input: IInputActionCollection2, IDisposable
         }
     }
     public GameplayActions @Gameplay => new GameplayActions(this);
+
+    // Death
+    private readonly InputActionMap m_Death;
+    private List<IDeathActions> m_DeathActionsCallbackInterfaces = new List<IDeathActions>();
+    private readonly InputAction m_Death_Respawn;
+    public struct DeathActions
+    {
+        private @Input m_Wrapper;
+        public DeathActions(@Input wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Respawn => m_Wrapper.m_Death_Respawn;
+        public InputActionMap Get() { return m_Wrapper.m_Death; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DeathActions set) { return set.Get(); }
+        public void AddCallbacks(IDeathActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DeathActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DeathActionsCallbackInterfaces.Add(instance);
+            @Respawn.started += instance.OnRespawn;
+            @Respawn.performed += instance.OnRespawn;
+            @Respawn.canceled += instance.OnRespawn;
+        }
+
+        private void UnregisterCallbacks(IDeathActions instance)
+        {
+            @Respawn.started -= instance.OnRespawn;
+            @Respawn.performed -= instance.OnRespawn;
+            @Respawn.canceled -= instance.OnRespawn;
+        }
+
+        public void RemoveCallbacks(IDeathActions instance)
+        {
+            if (m_Wrapper.m_DeathActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDeathActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DeathActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DeathActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DeathActions @Death => new DeathActions(this);
     public interface IGameplayActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -447,5 +524,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
         void OnOpenRadialMenu(InputAction.CallbackContext context);
         void OnGetTool(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+    }
+    public interface IDeathActions
+    {
+        void OnRespawn(InputAction.CallbackContext context);
     }
 }

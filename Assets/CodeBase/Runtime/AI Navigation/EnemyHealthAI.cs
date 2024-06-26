@@ -56,6 +56,5 @@ public class EnemyHealthAi : NetworkBehaviour, IDamageable
         //надо переделать
         ActorMotor target = FindObjectOfType<ActorMotor>();
         _healthSlider.transform.LookAt(target.transform);
-        
     }
 }

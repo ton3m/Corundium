@@ -29,7 +29,11 @@ public class EnemyInstance: MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         _enemyStateMachine = new EnemyStateMachine(_navMeshAgent,_animator, this);
         
-        _navMeshSurface.BuildNavMesh();
+        //_navMeshSurface.BuildNavMesh();
+    }
+
+    private void Start()
+    {
         _animator.SetBool(1,true);
         _enemyStateMachine.EnterIn<PatrolEnemyState>();
     }
@@ -81,7 +85,7 @@ public class EnemyInstance: MonoBehaviour
         Vector3 direction = _playerPosition - transform.position;
         
         _distanceToThePlayer = Vector3.Distance(_playerPosition, transform.position);
-        Debug.Log(_distanceToThePlayer);
+        
         if (_distanceToThePlayer >= _viewRadius)
         {
             _target = null;
