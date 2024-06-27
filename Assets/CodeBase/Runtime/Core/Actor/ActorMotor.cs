@@ -1,3 +1,4 @@
+using CodeBase.Runtime.Core.Actor.SuperStates;
 using Mirror;
 using UnityEngine;
 using Zenject;
@@ -15,54 +16,60 @@ public class ActorMotor : NetworkBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _smoothMoveDeltaTime;
-
+    
     private IInputHandler _inputHandler;
-    private float _yRotation;
+    private PlayerMovementStateMachine _movementStateMachine;
+    private IState _currentState;
     private Transform _motorObject;
     private Vector3 _currentMoveDirection;
     private Vector3 _newMoveDirection;
-    private float _jumpForce;
-    private bool _isJumpActive = false;
     private Vector3 _currentVelocity;
-
-    //[SerializeField] private GameObject _model;
+    private float _yRotation;
+    private float _jumpForce;
+    private bool _isJumpActive;
+    private bool _isMoveActive;
 
     [Inject]
-    public void Construct(IInputHandler inputHandler)
+    public void Construct(IInputHandler inputHandler, PlayerMovementStateMachine movementStateMachine)
     {
-        Debug.Log(" Input in actor move: " + inputHandler);
+        _movementStateMachine = movementStateMachine;
         _inputHandler = inputHandler;
     }
 
-    private void Awake()
+    private void Awake() // потом заменить на вызов курсор сервиса в глобальной стейт машине
     {
-        // if(isLocalPlayer)
-        // {
-        //     _model.SetActive(false);
-        // }
-
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
     
-
     private void Start()
     {
+        _isMoveActive = true;
         _motorObject = transform;
 
-        _inputHandler.RotateInputChanged += SetRotationDirection;
-        _inputHandler.MoveInputChanged += SetMoveDirection;
-        _inputHandler.JumpInputPressed += SetJumpActive;
-
+        OnEnable();
+        
         if (!isLocalPlayer)
             _camera.gameObject.SetActive(false);
     }
 
+    private void OnEnable()
+    {
+        if (_inputHandler == null)
+            return;
+        
+        _inputHandler.RotateInputChanged += SetRotationDirection;
+        _inputHandler.PlayerMoveInputChanged += SetMoveDirection;
+        _inputHandler.JumpInputPressed += SetJumpActive;
+        _movementStateMachine.StateChanged += UpdateMovementState;
+    }
+    
     private void OnDisable()
     {
         _inputHandler.RotateInputChanged -= SetRotationDirection;
-        _inputHandler.MoveInputChanged -= SetMoveDirection;
+        _inputHandler.PlayerMoveInputChanged -= SetMoveDirection;
         _inputHandler.JumpInputPressed -= SetJumpActive;
+        _movementStateMachine.StateChanged -= UpdateMovementState;
     }
 
 
@@ -72,6 +79,9 @@ public class ActorMotor : NetworkBehaviour
             return;
 
         UpdateGravity();
+
+        if (!_isMoveActive)
+            return;
 
         if(_isJumpActive)
             AddJumpForce();
@@ -84,6 +94,8 @@ public class ActorMotor : NetworkBehaviour
         _controller.Move(_currentMoveDirection * Time.deltaTime);     
     }
 
+    
+    
     private void SetRotationDirection(Vector2 rotation)
     {
         rotation = rotation * _rotateSpeed * Time.deltaTime;
@@ -119,5 +131,32 @@ public class ActorMotor : NetworkBehaviour
         {
             _jumpForce += _gravity * Time.deltaTime;
         } 
+    }
+
+    private void UpdateMovementState(IState state)
+    {
+        Debug.Log("Trying Update movement state to: " + state);
+        
+        if (state == _currentState)
+            return;
+
+        if (state is PlayerOnFootState)
+            EnableMove();
+        else
+            DisableMove();
+        
+        _currentState = state;
+    }
+    
+    public void EnableMove()
+    {
+        _isMoveActive = true;
+        _controller.enabled = true;
+    }
+
+    public void DisableMove()
+    {
+        _isMoveActive = false;
+        _controller.enabled = false;
     }
 }
