@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 public class StateMachine : IStateMachine
 {
+    public event Action<IState> StateChanged;
+    
     private Dictionary<Type, IState> _states;
     private IState _currentState;
 
@@ -18,6 +20,8 @@ public class StateMachine : IStateMachine
             _currentState?.Exit();
             _currentState = state;
             _currentState.Enter();
+            
+            StateChanged?.Invoke(_currentState);
         }
     }
 

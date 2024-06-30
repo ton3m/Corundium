@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+using CodeBase.Runtime.Core.Transport;
 using Mirror;
 using UnityEngine;
 using System;
@@ -94,6 +96,11 @@ public class PlayerInteract : NetworkBehaviour
             if (_hitInfo.transform.TryGetComponent(out IInteractable interactable))
             {
                 interactable.Interact();
+            }
+            
+            if (_hitInfo.transform.TryGetComponent(out ITransport transport))
+            {
+                transport.Interact(transform);
             }
         }
     }

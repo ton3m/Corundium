@@ -4,61 +4,57 @@ using Zenject;
 
 public class InputHandler : IInputHandler
 {
-    public event Action<Vector2> RotateInputChanged = delegate { };
-    public event Action<Vector2> MoveInputChanged = delegate { };
+    // Gameplay - Player
+    public event Action<Vector2> PlayerMoveInputChanged = delegate { };
     public event Action<bool> JumpInputPressed = delegate { };
     public event Action AttackPerformed = delegate { };
     public event Action GetToolPerformed = delegate { };
-    public event Action InteractPerformed = delegate { };
     public event Action RadialMenuPerformed = delegate { };
     public event Action RadialMenuClosed = delegate { };
+    
+    // Emergency
+    public event Action<Vector2> RotateInputChanged = delegate { };
+    public event Action InteractPerformed = delegate { };
     public event Action EscPerformed = delegate { };
-    public event Action InventoryPerformed = delegate { };
-
+    
+    // Transport
+    public event Action<Vector2> TransportMoveInputChanged = delegate { };
 
     private Input _input;
-    private Input Input => _input ??= new Input();
-    private IPauseService _pauseService;
-
-    [Inject]
-    public void Construct(IPauseService pauseService)
-    {
-        _pauseService = pauseService;
-    }
+    public Input Input => _input ??= new Input();
 
     public void Enable()
     {
-        _pauseService.PauseActivated += Input.Disable;
-        _pauseService.PauseDeActivated += Input.Enable;
-
-        Input.Gameplay.Rotate.performed += ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
-
-        Input.Gameplay.Move.performed += ctx => OnMoveInputChanged(ctx.ReadValue<Vector2>());
-        Input.Gameplay.Move.canceled += ctx => OnMoveInputChanged(Vector2.zero);
+        Input.Gameplay.Move.performed += ctx => OnPlayerMoveInputChanged(ctx.ReadValue<Vector2>());
+        Input.Gameplay.Move.canceled += ctx => OnPlayerMoveInputChanged(Vector2.zero);
 
         Input.Gameplay.Jump.performed += ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled += ctx => JumpInputPressed?.Invoke(false);
-
-        //hui
+        
         Input.Gameplay.Attack.performed += ctx => AttackPerformed?.Invoke();
         Input.Gameplay.GetTool.performed += ctx => GetToolPerformed?.Invoke();
-        
-        Input.Gameplay.Interact.performed += ctx => InteractPerformed?.Invoke();
         
         Input.Gameplay.OpenRadialMenu.performed += ctx => RadialMenuPerformed?.Invoke();
         Input.Gameplay.OpenRadialMenu.canceled += ctx => RadialMenuClosed?.Invoke();
 
-        Input.Gameplay.Esc.performed += ctx => EscPerformed?.Invoke();
+        Input.Emergency.Rotate.performed += ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
+        Input.Emergency.Interact.performed += ctx => InteractPerformed?.Invoke();
+        Input.Emergency.Esc.performed += ctx => EscPerformed?.Invoke();
+
+        Input.Transport.Move.performed += ctx => OnTransportMoveInputChanged(ctx.ReadValue<Vector2>());
+        Input.Transport.Move.canceled += ctx => OnTransportMoveInputChanged(Vector2.zero);
 
         Input.Gameplay.Inventory.performed += ctx => InventoryPerformed?.Invoke();
 
         Input.Enable();
+        Input.Transport.Disable();
     }
 
     public void Disable()
     {
         Input.Disable();
 
+<<<<<<< HEAD
         _pauseService.PauseActivated -= Input.Disable;
         _pauseService.PauseDeActivated -= Input.Enable;
 
@@ -66,6 +62,10 @@ public class InputHandler : IInputHandler
 
         Input.Gameplay.Move.performed -= ctx => OnMoveInputChanged(ctx.ReadValue<Vector2>());
         Input.Gameplay.Move.canceled -= ctx => OnMoveInputChanged(Vector2.zero);
+=======
+        Input.Gameplay.Move.performed -= ctx => OnPlayerMoveInputChanged(ctx.ReadValue<Vector2>());
+        Input.Gameplay.Move.canceled -= ctx => OnPlayerMoveInputChanged(Vector2.zero);
+>>>>>>> origin/VolumeBlez-Dev
 
         Input.Gameplay.Jump.performed -= ctx => JumpInputPressed?.Invoke(true);
         Input.Gameplay.Jump.canceled -= ctx => JumpInputPressed?.Invoke(false);
@@ -74,14 +74,22 @@ public class InputHandler : IInputHandler
         
         Input.Gameplay.GetTool.performed -= ctx => GetToolPerformed?.Invoke();
         
-        Input.Gameplay.Interact.performed -= ctx => InteractPerformed?.Invoke();
         
         Input.Gameplay.OpenRadialMenu.performed -= ctx => RadialMenuPerformed?.Invoke();
         Input.Gameplay.OpenRadialMenu.canceled -= ctx => RadialMenuClosed?.Invoke();
 
+<<<<<<< HEAD
         Input.Gameplay.Esc.performed -= ctx => EscPerformed?.Invoke();
         
         Input.Gameplay.Inventory.performed -= ctx => InventoryPerformed?.Invoke();
+=======
+        Input.Emergency.Rotate.performed -= ctx => OnRotateInputChanged(ctx.ReadValue<Vector2>());
+        Input.Emergency.Interact.performed -= ctx => InteractPerformed?.Invoke();
+        Input.Emergency.Esc.performed -= ctx => EscPerformed?.Invoke();
+        
+        Input.Transport.Move.performed -= ctx => OnTransportMoveInputChanged(ctx.ReadValue<Vector2>());
+        Input.Transport.Move.canceled -= ctx => OnTransportMoveInputChanged(Vector2.zero);
+>>>>>>> origin/VolumeBlez-Dev
     }
 
     private void OnRotateInputChanged(Vector2 direction)
@@ -89,8 +97,13 @@ public class InputHandler : IInputHandler
         RotateInputChanged?.Invoke(direction);
     }
 
-    private void OnMoveInputChanged(Vector2 direction)
+    private void OnPlayerMoveInputChanged(Vector2 direction)
     {
-        MoveInputChanged?.Invoke(direction);
+        PlayerMoveInputChanged?.Invoke(direction);
+    }
+    
+    private void OnTransportMoveInputChanged(Vector2 direction)
+    {
+        TransportMoveInputChanged?.Invoke(direction);
     }
 }
