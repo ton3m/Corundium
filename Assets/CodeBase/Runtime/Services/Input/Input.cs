@@ -345,6 +345,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_Gameplay_Attack = m_Gameplay.FindAction("Attack", throwIfNotFound: true);
         m_Gameplay_OpenRadialMenu = m_Gameplay.FindAction("OpenRadialMenu", throwIfNotFound: true);
         m_Gameplay_GetTool = m_Gameplay.FindAction("GetTool", throwIfNotFound: true);
+        m_Gameplay_Inventory = m_Gameplay.FindAction("Inventory", throwIfNotFound: true);
         // Transport
         m_Transport = asset.FindActionMap("Transport", throwIfNotFound: true);
         m_Transport_Move = m_Transport.FindAction("Move", throwIfNotFound: true);

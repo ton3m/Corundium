@@ -7,19 +7,19 @@ using Zenject;
 
 public class ActorMotor : NetworkBehaviour
 {
-    [Header("References")]
-    [SerializeField] private CharacterController _controller;
+    [Header("References")] [SerializeField]
+    private CharacterController _controller;
+
     [SerializeField] private Camera _camera;
     [SerializeField] private Renderer _model;
     [SerializeField] private Animator _animator;
 
-    [Header("Settings")]
-    [SerializeField] private float _gravity;
+    [Header("Settings")] [SerializeField] private float _gravity;
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _smoothMoveDeltaTime;
-    
+
     private IInputHandler _inputHandler;
     private PlayerMovementStateMachine _movementStateMachine;
     private IState _currentState;
@@ -44,37 +44,36 @@ public class ActorMotor : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-    
+
     private void Start()
-    {       
-=        _isMoveActive = true;
->        _motorObject = transform;
+    {
+        _isMoveActive = true;
+        _motorObject = transform;
 
         OnEnable();
-        
+
         if (!isLocalPlayer)
         {
             _camera.gameObject.SetActive(false);
         }
+
         if (isLocalPlayer)
         {
             _model.enabled = false;
         }
-        
-        
     }
 
     private void OnEnable()
     {
         if (_inputHandler == null)
             return;
-        
+
         _inputHandler.RotateInputChanged += SetRotationDirection;
         _inputHandler.PlayerMoveInputChanged += SetMoveDirection;
         _inputHandler.JumpInputPressed += SetJumpActive;
         _movementStateMachine.StateChanged += UpdateMovementState;
     }
-    
+
     private void OnDisable()
     {
         _inputHandler.RotateInputChanged -= SetRotationDirection;
@@ -88,31 +87,30 @@ public class ActorMotor : NetworkBehaviour
     {
         if (!isLocalPlayer)
             return;
-        
+
         float velocity = _controller.velocity.magnitude;
-        
+
         _animator.SetFloat("Velocity", velocity);
-        
+
         UpdateGravity();
 
-<       if (!_isMoveActive)
+        if (!_isMoveActive)
             return;
 
-        if(_isJumpActive)
->            AddJumpForce();
-            
-        }
+        if (_isJumpActive)
+            AddJumpForce();
 
-        Vector3 moveVector = transform.TransformDirection(new Vector3(_newMoveDirection.x, 0, _newMoveDirection.y)).normalized;
+        Vector3 moveVector = transform.TransformDirection(new Vector3(_newMoveDirection.x, 0, _newMoveDirection.y))
+            .normalized;
 
         _currentMoveDirection.y = _jumpForce;
-        _currentMoveDirection = Vector3.SmoothDamp(_currentMoveDirection, moveVector * _moveSpeed, ref _currentVelocity, _smoothMoveDeltaTime);
-        
-        _controller.Move(_currentMoveDirection * Time.deltaTime);     
+        _currentMoveDirection = Vector3.SmoothDamp(_currentMoveDirection, moveVector * _moveSpeed, ref _currentVelocity,
+            _smoothMoveDeltaTime);
+
+        _controller.Move(_currentMoveDirection * Time.deltaTime);
     }
 
-    
-    
+
     private void SetRotationDirection(Vector2 rotation)
     {
         rotation = rotation * _rotateSpeed * Time.deltaTime;
@@ -136,7 +134,7 @@ public class ActorMotor : NetworkBehaviour
 
     private void AddJumpForce()
     {
-        if(_controller.isGrounded)
+        if (_controller.isGrounded)
         {
             _jumpForce = _jumpHeight;
         }
@@ -158,7 +156,7 @@ public class ActorMotor : NetworkBehaviour
     private void UpdateMovementState(IState state)
     {
         Debug.Log("Trying Update movement state to: " + state);
-        
+
         if (state == _currentState)
             return;
 
@@ -166,10 +164,10 @@ public class ActorMotor : NetworkBehaviour
             EnableMove();
         else
             DisableMove();
-        
+
         _currentState = state;
     }
-    
+
     public void EnableMove()
     {
         _isMoveActive = true;
